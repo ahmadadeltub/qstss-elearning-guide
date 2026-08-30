@@ -1656,15 +1656,16 @@ footer {
   }
 
   .header-container {
-    padding: 8px 12px;
+    padding: 8px 10px;
+    gap: 8px;
   }
   
   .brand-logo-img {
-    height: 38px;
+    height: 32px;
   }
 
   .brand-title h1 {
-    font-size: 0.88rem;
+    font-size: 0.8rem;
   }
 
   .brand-title p {
@@ -1687,6 +1688,20 @@ footer {
   .mobile-dropdown-toggle-btn {
     padding: 6px 10px;
     font-size: 0.8rem;
+  }
+
+  /* Extra small screens protection (e.g. iPhone SE / 320px - 360px wide) */
+  @media (max-width: 375px) {
+    .brand-logo-img {
+      height: 26px;
+    }
+    .brand-title h1 {
+      font-size: 0.74rem;
+    }
+    .header-container {
+      padding: 6px 8px;
+      gap: 4px;
+    }
   }
 
   /* Hero on mobile */
@@ -1759,14 +1774,24 @@ footer {
   }
 
   .category-filter-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding-bottom: 0;
   }
 
   .filter-tab-btn {
     font-size: 0.74rem;
-    padding: 5px 12px;
+    padding: 6px 12px;
+    flex: 1 1 calc(50% - 6px); /* 2 per row grid for clean, equal fit on mobile screen */
+    justify-content: center;
+    text-align: center;
+  }
+
+  .filter-tab-btn[data-category="all"] {
+    flex: 1 1 100%; /* Make "All" button take full width for premium layout */
   }
 
   /* Stats */
