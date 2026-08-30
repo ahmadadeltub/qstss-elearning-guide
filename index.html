@@ -59,6 +59,12 @@
   --tab-border:         rgba(15, 35, 75, 0.12);
   --tab-active-bg:      #0E265C;
   --tab-active-text:    #FFFFFF;
+
+  /* Mobile Bottom Bar */
+  --bottom-bar-bg:      rgba(255, 255, 255, 0.95);
+  --bottom-bar-border:  rgba(15, 35, 75, 0.12);
+  --bottom-bar-text:    #4C6288;
+  --bottom-bar-active:  #1E5FE0;
 }
 
 [data-theme="dark"] {
@@ -104,6 +110,12 @@
   --tab-border:         rgba(110, 160, 250, 0.18);
   --tab-active-bg:      #3D7DF5;
   --tab-active-text:    #FFFFFF;
+
+  /* Mobile Bottom Bar */
+  --bottom-bar-bg:      rgba(10, 20, 45, 0.95);
+  --bottom-bar-border:  rgba(110, 160, 250, 0.15);
+  --bottom-bar-text:    #8FAEDC;
+  --bottom-bar-active:  #689DFF;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -133,9 +145,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Smooth anchor offsets for sticky headers */
+/* Anchor scrolling offset */
 section, [id] {
-  scroll-margin-top: 135px;
+  scroll-margin-top: 130px;
+}
+
+@keyframes targetHighlight {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30, 95, 224, 0.6); }
+  50% { transform: scale(1.015); box-shadow: 0 0 0 8px rgba(30, 95, 224, 0.3); }
+  100% { transform: scale(1); box-shadow: var(--shadow-md); }
+}
+
+.highlight-target {
+  animation: targetHighlight 1.2s ease;
 }
 
 .en {
@@ -164,7 +186,7 @@ a {
 }
 
 /* ══════════════════════════════════════════════════════
-   TOP ANNOUNCEMENT BAR
+   TOP ANNOUNCEMENT BAR (DESKTOP ONLY)
 ═══════════════════════════════════════════════════ */
 .announcement-bar {
   background: linear-gradient(90deg, #07173B, #0E2963, #153E90);
@@ -192,7 +214,7 @@ a {
 }
 
 /* ══════════════════════════════════════════════════════
-   HEADER (ORGANIZED & PERFECT FIT ON DESKTOP & MOBILE)
+   HEADER (DESKTOP & MOBILE INTEGRATED)
 ═══════════════════════════════════════════════════ */
 header {
   position: sticky;
@@ -295,7 +317,7 @@ header {
   white-space: nowrap;
 }
 
-/* Center: Organized Categorized Desktop Nav Dropdowns */
+/* Center Desktop Navigation Dropdowns */
 .desktop-nav-organized {
   display: flex;
   align-items: center;
@@ -448,8 +470,8 @@ header {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 340px;
-  max-width: 88vw;
+  width: 330px;
+  max-width: 86vw;
   background: var(--bg-surface);
   box-shadow: -8px 0 36px rgba(0, 0, 0, 0.35);
   z-index: 2001;
@@ -465,7 +487,7 @@ header {
 }
 
 .drawer-header {
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -476,11 +498,11 @@ header {
 .drawer-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .drawer-brand img {
-  height: 38px;
+  height: 36px;
 }
 
 .drawer-close-btn {
@@ -505,7 +527,7 @@ header {
 }
 
 .drawer-content {
-  padding: 16px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -513,12 +535,12 @@ header {
 }
 
 .drawer-heading {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 12px 10px 4px;
+  padding: 10px 8px 4px;
 }
 
 .drawer-link {
@@ -546,7 +568,7 @@ header {
 }
 
 .drawer-footer {
-  padding: 18px;
+  padding: 16px;
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-surface-subtle);
 }
@@ -557,7 +579,7 @@ header {
 .hero-section {
   background: var(--hero-gradient);
   color: var(--hero-text);
-  padding: 64px 0 84px;
+  padding: 60px 0 76px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -595,19 +617,19 @@ header {
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: var(--brand-gold-glow);
-  padding: 7px 22px;
+  padding: 6px 20px;
   border-radius: 50px;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .hero-heading {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.85rem, 5vw, 3.2rem);
   font-weight: 900;
   line-height: 1.25;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   color: #FFFFFF;
 }
 
@@ -617,10 +639,10 @@ header {
 }
 
 .hero-description {
-  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-size: clamp(0.92rem, 2.2vw, 1.15rem);
   color: var(--hero-subtext);
   line-height: 1.85;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 /* SMART 4 ACTION HUBS */
@@ -628,7 +650,7 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 28px;
   text-align: right;
 }
 
@@ -637,8 +659,8 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-radius: 18px;
-  padding: 20px 18px;
+  border-radius: 16px;
+  padding: 18px 16px;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -649,33 +671,33 @@ header {
 
 .smart-hub-card:hover {
   background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: var(--brand-gold-glow);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
 }
 
 .smart-hub-icon {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 1.7rem;
+  margin-bottom: 8px;
   display: block;
 }
 
 .smart-hub-card h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   margin-bottom: 4px;
   color: #FFFFFF;
 }
 
 .smart-hub-card p {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.4;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .smart-hub-link {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 800;
   color: var(--brand-gold-glow);
   display: inline-flex;
@@ -813,7 +835,7 @@ header {
 .stats-section {
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 24px 0;
+  padding: 22px 0;
 }
 
 .stats-grid {
@@ -824,7 +846,7 @@ header {
 
 .stat-box {
   text-align: center;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-left: 1px solid var(--border-subtle);
 }
 
@@ -833,14 +855,14 @@ header {
 }
 
 .stat-number {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 900;
   color: var(--brand-blue);
   line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-muted);
   margin-top: 4px;
@@ -850,7 +872,7 @@ header {
    SECTION HEADINGS & CARD WRAPPERS
 ═══════════════════════════════════════════════════ */
 .content-section {
-  padding: 64px 0;
+  padding: 60px 0;
 }
 
 .section-light {
@@ -863,7 +885,7 @@ header {
 
 .section-header-block {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .section-badge-chip {
@@ -872,22 +894,22 @@ header {
   gap: 6px;
   background: var(--tag-bg);
   color: var(--tag-text);
-  padding: 6px 20px;
+  padding: 6px 18px;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: clamp(1.55rem, 3.6vw, 2.2rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.3;
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
   max-width: 600px;
   margin: 8px auto 0;
@@ -895,11 +917,11 @@ header {
 }
 
 .section-accent-line {
-  width: 60px;
+  width: 54px;
   height: 4px;
   background: linear-gradient(90deg, var(--brand-blue), var(--brand-gold));
   border-radius: 4px;
-  margin: 14px auto 0;
+  margin: 12px auto 0;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -908,11 +930,11 @@ header {
 .password-box-card {
   background: var(--hero-gradient);
   color: #FFFFFF;
-  border-radius: 24px;
-  padding: 44px;
+  border-radius: 22px;
+  padding: 40px;
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
@@ -932,15 +954,15 @@ header {
 }
 
 .password-icon-circle {
-  width: 84px;
-  height: 84px;
+  width: 80px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.14);
   border: 2px solid rgba(255, 255, 255, 0.28);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   flex-shrink: 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
@@ -950,17 +972,17 @@ header {
 }
 
 .password-content h3 {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 900;
   color: #FFFFFF;
   margin-bottom: 8px;
 }
 
 .password-content p {
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.85;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .password-action-btn {
@@ -970,8 +992,8 @@ header {
   background: linear-gradient(135deg, #FFB338, #D98200);
   color: #071533 !important;
   font-weight: 800;
-  font-size: 0.95rem;
-  padding: 12px 28px;
+  font-size: 0.92rem;
+  padding: 12px 26px;
   border-radius: 50px;
   box-shadow: 0 4px 18px rgba(217, 130, 0, 0.38);
   transition: all 0.25s ease;
@@ -985,7 +1007,7 @@ header {
 .password-url-text {
   font-family: 'Inter', sans-serif;
   direction: ltr;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.6);
   margin-top: 10px;
 }
@@ -995,13 +1017,13 @@ header {
 ═══════════════════════════════════════════════════ */
 .featured-videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 24px;
 }
 
 .featured-video-card {
   background: var(--bg-surface);
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-md);
@@ -1009,26 +1031,26 @@ header {
 }
 
 .featured-video-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--brand-blue);
 }
 
 .video-card-header {
-  padding: 20px 22px 14px;
+  padding: 18px 20px 12px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .video-badge-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
 }
 
@@ -1043,14 +1065,14 @@ header {
 }
 
 .video-card-title h3 {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.35;
 }
 
 .video-card-title span {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   font-family: 'Inter', sans-serif;
 }
@@ -1072,7 +1094,7 @@ header {
 }
 
 .video-card-footer {
-  padding: 14px 22px 18px;
+  padding: 14px 20px 16px;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1081,36 +1103,36 @@ header {
 .smart-video-player-container {
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  padding: 20px;
-  margin: 18px 0 22px;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 16px 0 20px;
 }
 
 .smart-player-screen {
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .playlist-tabs-row {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
-  padding: 4px 0 8px;
+  padding: 4px 0 6px;
   scrollbar-width: thin;
 }
 
 .playlist-tab-item {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
   color: var(--text-secondary);
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 0.8rem;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -1136,21 +1158,21 @@ header {
 .services-catalog-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
 .service-detail-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-right: 6px solid var(--brand-blue);
-  border-radius: 22px;
-  padding: 32px;
+  border-right: 5px solid var(--brand-blue);
+  border-radius: 20px;
+  padding: 28px;
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
 }
 
 .service-detail-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
@@ -1167,38 +1189,38 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 18px;
+  gap: 14px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
 }
 
 .service-header-left {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .service-avatar-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
 }
 
 .service-title-text h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.3;
 }
 
 .service-title-text span {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   font-family: 'Inter', sans-serif;
 }
@@ -1211,27 +1233,26 @@ header {
   color: var(--brand-blue);
   padding: 4px 12px;
   border-radius: 20px;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
 }
 
 .service-explanation-box {
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 18px 22px;
-  margin-bottom: 20px;
-  font-size: 0.94rem;
-  line-height: 1.9;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+  line-height: 1.85;
   color: var(--text-secondary);
 }
 
-/* Image Click-to-Zoom Containers */
 .service-images-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 16px;
-  margin: 16px 0 20px;
+  gap: 14px;
+  margin: 14px 0 18px;
 }
 
 .service-images-grid.single-img {
@@ -1239,7 +1260,7 @@ header {
 }
 
 .service-image-holder {
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
@@ -1251,14 +1272,14 @@ header {
 .service-image-holder::after {
   content: "🔍 انقر للتكبير";
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   background: rgba(0, 0, 0, 0.75);
   color: #FFFFFF;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
+  padding: 3px 8px;
+  border-radius: 16px;
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
@@ -1282,21 +1303,21 @@ header {
 .image-caption-tag {
   background: var(--brand-navy);
   color: #FFFFFF;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-align: center;
-  padding: 8px 12px;
+  padding: 7px 10px;
 }
 
 .sub-videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 16px;
-  margin: 16px 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 14px;
+  margin: 14px 0 18px;
 }
 
 .sub-video-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--text-muted);
   margin-bottom: 6px;
@@ -1305,7 +1326,7 @@ header {
 
 .service-action-buttons {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   margin-top: 12px;
 }
@@ -1313,10 +1334,10 @@ header {
 .action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 6px;
+  padding: 9px 18px;
   border-radius: 50px;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 800;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -1349,12 +1370,12 @@ header {
 .poster-showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 44px;
   align-items: center;
 }
 
 .poster-frame {
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-subtle);
@@ -1367,7 +1388,7 @@ header {
 }
 
 .poster-info-box h2 {
-  font-size: 1.85rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.3;
@@ -1380,9 +1401,9 @@ header {
 
 .poster-info-box p {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.85;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .poster-features-list {
@@ -1390,28 +1411,28 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .poster-features-list li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: 700;
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
 }
 
 .poster-features-list li .check-icon {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--brand-blue);
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   flex-shrink: 0;
 }
 
@@ -1421,35 +1442,35 @@ header {
 .vision-mission-section {
   background: var(--hero-gradient);
   color: #FFFFFF;
-  padding: 68px 0;
+  padding: 64px 0;
 }
 
 .vision-mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  gap: 24px;
 }
 
 .vm-glass-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 22px;
-  padding: 36px;
+  border-radius: 20px;
+  padding: 32px;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
 .vm-glass-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: var(--brand-gold-glow);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .vm-glass-card p {
   color: rgba(255, 255, 255, 0.92);
-  font-size: 1rem;
-  line-height: 1.95;
+  font-size: 0.98rem;
+  line-height: 1.9;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1457,15 +1478,15 @@ header {
 ═══════════════════════════════════════════════════ */
 .quick-links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
 }
 
 .quick-link-tile {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  padding: 22px 16px;
+  border-radius: 16px;
+  padding: 20px 14px;
   text-align: center;
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
@@ -1475,37 +1496,37 @@ header {
 
 .quick-link-tile:hover {
   border-color: var(--brand-blue);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
 
 .quick-link-tile .tile-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.9rem;
+  margin-bottom: 8px;
   display: block;
 }
 
 .quick-link-tile h4 {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .quick-link-tile p {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
   line-height: 1.4;
 }
 
 .quick-link-tile .tile-arrow {
-  margin-top: 10px;
+  margin-top: 8px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
   color: var(--brand-blue);
   font-weight: 800;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1514,34 +1535,35 @@ header {
 footer {
   background: var(--brand-navy-dark);
   color: rgba(255, 255, 255, 0.75);
-  padding: 56px 0 0;
+  padding: 52px 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0;
 }
 
 .footer-top-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 44px;
-  margin-bottom: 44px;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 .footer-brand-info img {
-  height: 52px;
+  height: 48px;
   filter: brightness(0) invert(1);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .footer-brand-info p {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   line-height: 1.85;
   max-width: 320px;
 }
 
 .footer-col h5 {
   color: var(--brand-gold-glow);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .footer-col ul {
@@ -1549,12 +1571,12 @@ footer {
 }
 
 .footer-col ul li {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .footer-col ul li a {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   transition: color 0.2s ease;
 }
 
@@ -1564,14 +1586,63 @@ footer {
 
 .footer-bottom-bar {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 20px 0;
+  padding: 18px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.45);
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE NATIVE BOTTOM BAR (SMART PHONE NAVIGATION)
+═══════════════════════════════════════════════════ */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bottom-bar-bg);
+  border-top: 1px solid var(--bottom-bar-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1500;
+  padding: 6px 12px calc(6px + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.15);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  color: var(--bottom-bar-text);
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 54px;
+}
+
+.mobile-nav-item span.nav-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.mobile-nav-item:active, .mobile-nav-item.active {
+  color: var(--bottom-bar-active);
+  transform: scale(0.95);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1585,7 +1656,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -1599,38 +1670,33 @@ footer {
 
 .lightbox-img-wrapper {
   position: relative;
-  max-width: 90vw;
+  max-width: 92vw;
   max-height: 90vh;
 }
 
 .lightbox-img-wrapper img {
   max-width: 100%;
-  max-height: 85vh;
-  border-radius: 14px;
+  max-height: 84vh;
+  border-radius: 12px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
   object-fit: contain;
 }
 
 .lightbox-close-btn {
   position: absolute;
-  top: -45px;
+  top: -42px;
   left: 0;
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: #FFFFFF;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
-}
-
-.lightbox-close-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1638,16 +1704,16 @@ footer {
 ═══════════════════════════════════════════════════ */
 .floating-scroll-btn {
   position: fixed;
-  bottom: 28px;
-  left: 28px;
-  width: 48px;
-  height: 48px;
+  bottom: 24px;
+  left: 24px;
+  width: 44px;
+  height: 44px;
   background: var(--brand-blue);
   color: #FFFFFF;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1670,7 +1736,7 @@ footer {
 }
 
 /* ═══════════════════════════════════════════════════
-   MEDIA QUERIES (DESKTOP & MOBILE SPECIALIZATION)
+   MEDIA QUERIES (PERFECT MOBILE & DESKTOP SPECIALIZATION)
 ═══════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .desktop-nav-organized {
@@ -1696,19 +1762,40 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
+/* SMARTPHONE & TABLET ULTRA OPTIMIZATION */
+@media (max-width: 768px) {
+  /* Hide announcement bar on mobile to save vertical space */
   .announcement-bar {
-    font-size: 0.74rem;
-    padding: 6px 12px;
+    display: none;
   }
+
+  /* Show native mobile bottom navigation bar */
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  /* Adjust body padding so bottom bar doesn't cover footer content */
+  body {
+    padding-bottom: 64px;
+  }
+
+  .floating-scroll-btn {
+    bottom: 74px;
+    left: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  /* Header compact sizing */
   .header-container {
-    padding: 10px 16px;
+    padding: 8px 14px;
   }
   .brand-logo-img {
-    height: 42px;
+    height: 38px;
   }
   .brand-title h1 {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
   .brand-title p {
     display: none;
@@ -1716,22 +1803,74 @@ footer {
   .header-cta-btn {
     display: none;
   }
+  .menu-toggle-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+  .theme-switch-btn {
+    padding: 6px 10px;
+    font-size: 0.76rem;
+  }
+  .theme-switch-btn span#themeLabel {
+    display: none;
+  }
+
+  /* Mobile Hero Section */
   .hero-section {
-    padding: 46px 0 54px;
+    padding: 38px 0 46px;
+  }
+  .hero-badge-pill {
+    font-size: 0.74rem;
+    padding: 5px 14px;
+    margin-bottom: 12px;
   }
   .hero-heading {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
+    line-height: 1.28;
+    margin-bottom: 10px;
   }
   .hero-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
   }
+
+  /* Hero 2x2 App Grid */
   .hero-smart-hub-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin-top: 18px;
+  }
+  .smart-hub-card {
+    padding: 12px 10px;
+    border-radius: 12px;
+  }
+  .smart-hub-icon {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  .smart-hub-card h4 {
+    font-size: 0.84rem;
+  }
+  .smart-hub-card p {
+    font-size: 0.68rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .smart-hub-link {
+    font-size: 0.68rem;
+  }
+
+  /* Filter & Search Bar */
+  .filter-search-section {
+    position: static;
+    padding: 10px 0;
   }
   .filter-search-wrapper {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
   .search-input-box {
     max-width: 100%;
@@ -1739,63 +1878,134 @@ footer {
   .category-filter-tabs {
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
+  }
+  .filter-tab-btn {
+    font-size: 0.76rem;
+    padding: 6px 12px;
+  }
+
+  /* Stats grid */
+  .stats-section {
+    padding: 14px 0;
   }
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .stat-box {
+    padding: 6px 4px;
+  }
   .stat-number {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
   .stat-label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
+
+  /* Sections */
   .content-section {
-    padding: 46px 0;
+    padding: 38px 0;
+  }
+  .section-header-block {
+    margin-bottom: 26px;
   }
   .section-title {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
+  .section-subtitle {
+    font-size: 0.88rem;
+  }
+
+  /* Password Card on Mobile */
   .password-box-card {
     flex-direction: column;
-    padding: 26px 18px;
+    padding: 22px 14px;
     text-align: center;
-    gap: 18px;
+    gap: 14px;
+    border-radius: 16px;
   }
   .password-icon-circle {
     margin: 0 auto;
-    width: 70px;
-    height: 70px;
-    font-size: 1.9rem;
+    width: 62px;
+    height: 62px;
+    font-size: 1.7rem;
   }
+  .password-content h3 {
+    font-size: 1.15rem;
+  }
+  .password-content p {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+  .password-action-btn {
+    font-size: 0.84rem;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Service Card on Mobile */
   .service-detail-card {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    border-radius: 16px;
   }
   .service-avatar-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    border-radius: 10px;
   }
   .service-title-text h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
+  .service-explanation-box {
+    padding: 12px 12px;
+    font-size: 0.86rem;
+    line-height: 1.75;
+    border-radius: 12px;
+  }
+  .service-action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .action-btn {
+    font-size: 0.76rem;
+    padding: 8px 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Smart Video playlist tabs */
+  .playlist-tab-item {
+    font-size: 0.74rem;
+    padding: 6px 10px;
+  }
+
+  /* Quick links grid on mobile */
   .quick-links-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
   .quick-link-tile {
-    padding: 16px 10px;
+    padding: 14px 8px;
+    border-radius: 12px;
   }
+  .quick-link-tile .tile-icon {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+  .quick-link-tile h4 {
+    font-size: 0.8rem;
+  }
+  .quick-link-tile p {
+    font-size: 0.66rem;
+  }
+
+  /* Footer */
   .footer-top-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .floating-scroll-btn {
-    bottom: 20px;
-    left: 20px;
-    width: 42px;
-    height: 42px;
-    font-size: 1.05rem;
+    gap: 22px;
   }
 }
 </style>
@@ -1803,7 +2013,7 @@ footer {
 
 <body>
 
-<!-- ══════════════ ANNOUNCEMENT STRIP ══════════════ -->
+<!-- ══════════════ ANNOUNCEMENT STRIP (DESKTOP) ══════════════ -->
 <div class="announcement-bar">
   <span class="badge-gold">دليل 2025/2026</span>
   <span>🎓 مرحباً بكم في البوابة الذكية لدليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا</span>
@@ -1833,7 +2043,7 @@ footer {
       </div>
     </div>
 
-    <!-- Center Desktop Navigation (Clean Organized Categorized Dropdowns) -->
+    <!-- Center Desktop Navigation (Clean Organized Dropdowns) -->
     <ul class="desktop-nav-organized">
       <li class="nav-item-dropdown">
         <button class="nav-dropdown-btn">🎓 الأنظمة الأساسية ▾</button>
@@ -1946,24 +2156,24 @@ footer {
         Your smart, comprehensive digital gateway to all e-learning platforms, school portals, academic tools &amp; student resources.
       </p>
 
-      <!-- 4 Smart Action Hub Cards -->
+      <!-- 4 Smart Action Hub Cards (2x2 on Mobile, 4x1 on Desktop) -->
       <div class="hero-smart-hub-grid">
         <a href="#password" class="smart-hub-card" onclick="smoothNavigate(event, '#password')">
           <div>
             <span class="smart-hub-icon">🔑</span>
-            <h4>تغيير كلمة المرور</h4>
+            <h4>كلمة المرور</h4>
             <p>استعادة وتعيين كلمة المرور للطالب وولي الأمر</p>
           </div>
-          <span class="smart-hub-link">الدخول للخدمة ←</span>
+          <span class="smart-hub-link">الدخول ←</span>
         </a>
 
         <a href="#qeducation" class="smart-hub-card" onclick="smoothNavigate(event, '#qeducation')">
           <div>
             <span class="smart-hub-icon">🎓</span>
-            <h4>نظام قطر للتعليم</h4>
+            <h4>قطر للتعليم</h4>
             <p>الوصول للمناهج والواجبات والحصص اليومية</p>
           </div>
-          <span class="smart-hub-link">تصفح النظام ←</span>
+          <span class="smart-hub-link">تصفح ←</span>
         </a>
 
         <a href="#portal" class="smart-hub-card" onclick="smoothNavigate(event, '#portal')">
@@ -1978,10 +2188,10 @@ footer {
         <a href="#classdojo" class="smart-hub-card" onclick="smoothNavigate(event, '#classdojo')">
           <div>
             <span class="smart-hub-icon">🧑‍🏫</span>
-            <h4>تطبيق ClassDojo</h4>
+            <h4>ClassDojo</h4>
             <p>المتابعة السلوكية والتواصل مع المعلمين</p>
           </div>
-          <span class="smart-hub-link">تحميل وشرح ←</span>
+          <span class="smart-hub-link">شرح وتطبيق ←</span>
         </a>
       </div>
     </div>
@@ -1989,17 +2199,17 @@ footer {
 </section>
 
 <!-- ══════════════ SMART SEARCH & CATEGORY FILTER BAR ══════════════ -->
-<div class="filter-search-section">
+<div class="filter-search-section" id="searchFilterSection">
   <div class="container">
     <div class="filter-search-wrapper">
       
       <!-- Category Filter Tabs -->
       <div class="category-filter-tabs" role="tablist">
-        <button class="filter-tab-btn active" data-category="all">🌟 جميع الخدمات (13)</button>
-        <button class="filter-tab-btn" data-category="core">🎓 الأنظمة الأساسية (3)</button>
-        <button class="filter-tab-btn" data-category="academic">📖 المنصات والمكتبات (3)</button>
-        <button class="filter-tab-btn" data-category="guidance">🎯 الإرشاد والمتابعة (3)</button>
-        <button class="filter-tab-btn" data-category="services">🏛️ الوزارة والسياسات (4)</button>
+        <button class="filter-tab-btn active" data-category="all">🌟 الكل (13)</button>
+        <button class="filter-tab-btn" data-category="core">🎓 الأنظمة (3)</button>
+        <button class="filter-tab-btn" data-category="academic">📖 المنصات (3)</button>
+        <button class="filter-tab-btn" data-category="guidance">🎯 الإرشاد (3)</button>
+        <button class="filter-tab-btn" data-category="services">🏛️ الوزارة والخدمات (4)</button>
       </div>
 
       <!-- Live Search Box -->
@@ -2024,7 +2234,7 @@ footer {
       </div>
       <div class="stat-box">
         <span class="stat-number">15+</span>
-        <span class="stat-label">فيديو شرح وتدريب</span>
+        <span class="stat-label">فيديو تدريب وشرح</span>
       </div>
       <div class="stat-box">
         <span class="stat-number">13</span>
@@ -2063,12 +2273,12 @@ footer {
         <p>
           هل نسيت كلمة المرور الخاصة بحساب الطالب أو ولي الأمر؟ يمكنك إعادة تعيينها وتفعيل الحساب مباشرة من خلال البوابة المركزية لوزارة التربية والتعليم والتعليم العالي.
           <br/>
-          <span class="en" style="font-size:0.88rem; color:rgba(255,255,255,0.75);">
+          <span class="en" style="font-size:0.86rem; color:rgba(255,255,255,0.75);">
             Forgot your password? Reset and manage your student or parent credentials securely.
           </span>
         </p>
         <a href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="password-action-btn">
-          🔑 &nbsp; الدخول لرابط إعادة تعيين كلمة المرور
+          🔑 &nbsp; رابط إعادة تعيين كلمة المرور
         </a>
         <div class="password-url-text">🌐 https://pwdreset.edu.gov.qa/</div>
       </div>
@@ -2154,14 +2364,14 @@ footer {
         </div>
 
         <!-- SMART TABBED VIDEO PLAYER -->
-        <p style="font-weight:800; color:var(--brand-blue); margin-bottom:10px; font-size:0.92rem;">🎬 مشغل الفيديوهات الإرشادية التفاعلي (اختر الفيديو من القائمة):</p>
+        <p style="font-weight:800; color:var(--brand-blue); margin-bottom:8px; font-size:0.9rem;">🎬 مشغل الفيديوهات التفاعلي (اختر الفيديو):</p>
         <div class="smart-video-player-container">
           <div class="video-embed-box smart-player-screen">
             <iframe id="qEducationMainPlayer" src="https://www.youtube.com/embed/DuvZDm4aCts" title="فيديو شرح نظام قطر للتعليم" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="playlist-tabs-row" id="qePlaylistTabs">
-            <button class="playlist-tab-item active" data-videoid="DuvZDm4aCts">▶️ الفيديو التعريفي (1)</button>
-            <button class="playlist-tab-item" data-videoid="qyZ3OeWc-3M">▶️ الفيديو التعريفي (2)</button>
+            <button class="playlist-tab-item active" data-videoid="DuvZDm4aCts">▶️ مقدمة (1)</button>
+            <button class="playlist-tab-item" data-videoid="qyZ3OeWc-3M">▶️ مقدمة (2)</button>
             <button class="playlist-tab-item" data-videoid="iq1hUI5_qj0">👨‍👧 دليل ولي الأمر (1)</button>
             <button class="playlist-tab-item" data-videoid="vpgzkYEPXZI">👨‍👧 دليل ولي الأمر (2)</button>
             <button class="playlist-tab-item" data-videoid="mr70owjZA80">👨‍👧 دليل ولي الأمر (3)</button>
@@ -2171,10 +2381,10 @@ footer {
         </div>
 
         <div class="service-action-buttons">
-          <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">🌐 الدخول على نظام قطر للتعليم</a>
-          <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🔑 معرفة اسم المستخدم وكلمة المرور</a>
-          <a href="https://apps.apple.com/ae/app/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85/id1610018335" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تطبيق iOS (Apple)</a>
-          <a href="https://play.google.com/store/apps/details?id=app.qeducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تطبيق Android</a>
+          <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">🌐 دخول نظام قطر</a>
+          <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🔑 استعادة الحساب</a>
+          <a href="https://apps.apple.com/ae/app/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85/id1610018335" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 iOS Apple</a>
+          <a href="https://play.google.com/store/apps/details?id=app.qeducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 Android Play</a>
         </div>
       </div>
 
@@ -2200,7 +2410,7 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">🌐 الدخول على الموقع الإلكتروني للمدرسة</a>
+          <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">🌐 زيارة الموقع الرسمي للمدرسة</a>
         </div>
       </div>
 
@@ -2228,29 +2438,29 @@ footer {
           </div>
         </div>
 
-        <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📹 فيديوهات توضيحية للبوابة الإلكترونية:</p>
+        <p style="font-weight:800; color:var(--brand-blue); margin:14px 0 8px; font-size:0.88rem;">📹 فيديوهات توضيحية للبوابة الإلكترونية:</p>
         <div class="sub-videos-grid">
           <div>
-            <div class="sub-video-label">البوابة الإلكترونية — لولي الأمر</div>
+            <div class="sub-video-label">بوابة ولي الأمر</div>
             <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/2dkHEhzLtAE" title="portal parent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
           </div>
           <div>
-            <div class="sub-video-label">البوابة الإلكترونية للطالب</div>
+            <div class="sub-video-label">بوابة الطالب</div>
             <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/kK5VXmVQ1bc" title="portal student" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
           </div>
         </div>
 
-        <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📩 الرسالة الأسبوعية للمدرسة:</p>
+        <p style="font-weight:800; color:var(--brand-blue); margin:14px 0 8px; font-size:0.88rem;">📩 الرسالة الأسبوعية للمدرسة:</p>
         <div class="service-images-grid single-img">
           <div class="service-image-holder" onclick="openLightbox('images/img-weekly.png')">
             <img src="images/img-weekly.png" alt="الرسالة الأسبوعية" loading="lazy"/>
-            <div class="image-caption-tag">الرسالة الأسبوعية — قم باختيار المرحلة الدراسية للاطلاع عليها</div>
+            <div class="image-caption-tag">الرسالة الأسبوعية — اختر المرحلة الدراسية</div>
           </div>
         </div>
 
         <div class="service-action-buttons">
-          <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">👨‍👧 البوابة الإلكترونية — ولي الأمر</a>
-          <a href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🎓 التقرير الشهري — الطالب</a>
+          <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">👨‍👧 بوابة ولي الأمر</a>
+          <a href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🎓 تقرير الطالب الشهري</a>
           <a href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📩 الرسالة الأسبوعية</a>
         </div>
       </div>
@@ -2277,7 +2487,7 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 تحميل ملف النصائح الدراسية (PDF)</a>
+          <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 تحميل ملف النصائح (PDF)</a>
         </div>
       </div>
 
@@ -2303,8 +2513,8 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://play.google.com/store/apps/details?id=com.classdojo.android&hl=en_US" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تحميل التطبيق (Android)</a>
-          <a href="https://apps.apple.com/us/app/classdojo/id552602056" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تحميل التطبيق (iOS Apple)</a>
+          <a href="https://play.google.com/store/apps/details?id=com.classdojo.android&hl=en_US" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تحميل (Android)</a>
+          <a href="https://apps.apple.com/us/app/classdojo/id552602056" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تحميل (iOS)</a>
         </div>
       </div>
 
@@ -2330,7 +2540,7 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer" class="action-btn btn-teal-solid">📚 الدخول لمنصة Achieve 3000</a>
+          <a href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer" class="action-btn btn-teal-solid">📚 دخول Achieve 3000</a>
         </div>
       </div>
 
@@ -2351,12 +2561,12 @@ footer {
         </div>
         <div class="sub-videos-grid" style="grid-template-columns:1fr;">
           <div>
-            <div class="sub-video-label">فيديو توضيحي لمنصة أقرأ بالعربية</div>
+            <div class="sub-video-label">فيديو منصة أقرأ بالعربية</div>
             <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/9p7bePK4rTo" title="iReadArabic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📝 الدخول إلى منصة أقرأ بالعربية</a>
+          <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📝 دخول أقرأ بالعربية</a>
         </div>
       </div>
 
@@ -2382,7 +2592,7 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">📋 الاطلاع على جميع السياسات المدرسية</a>
+          <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">📋 استعراض السياسات المدرسية</a>
         </div>
       </div>
 
@@ -2413,8 +2623,8 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📰 تصفح النشرات الشهرية</a>
-          <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📅 استعراض الجدول الدراسي</a>
+          <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📰 النشرات الشهرية</a>
+          <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📅 الجدول الدراسي</a>
         </div>
       </div>
 
@@ -2434,10 +2644,10 @@ footer {
           تضم المدرسة صفحات رسمية على مختلف وسائل التواصل الاجتماعي، تمكن أولياء الأمور والطلاب وأفراد المجتمع من متابعة أحدث الأخبار والفعاليات والتغطيات المباشرة.
         </div>
         <div class="service-action-buttons">
-          <a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-tw">𝕏 منصة X (تويتر)</a>
-          <a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-fb">📘 فيسبوك Facebook</a>
-          <a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-yt">▶ يوتيوب YouTube</a>
-          <a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-ig">📸 إنستغرام Instagram</a>
+          <a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-tw">𝕏 منصة X</a>
+          <a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-fb">📘 فيسبوك</a>
+          <a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-yt">▶ يوتيوب</a>
+          <a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-ig">📸 إنستغرام</a>
         </div>
       </div>
 
@@ -2463,8 +2673,8 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ الدخول لبوابة معارف</a>
-          <a href="https://eduservices.edu.gov.qa/Service.aspx?service=IssueDocuments" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📄 خدمة إصدار الشهادات والإفادات</a>
+          <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ بوابة معارف</a>
+          <a href="https://eduservices.edu.gov.qa/Service.aspx?service=IssueDocuments" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📄 إصدار الشهادات</a>
         </div>
       </div>
 
@@ -2501,9 +2711,9 @@ footer {
           </div>
         </div>
         <div class="service-action-buttons">
-          <a href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📚 موقع المكتبة الإلكترونية (مكتبتي)</a>
-          <a href="https://sway.office.com/scQUx245tQhCgVrz?ref=Link&loc=play" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📖 موقع المكتبة الرقمية</a>
-          <a href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ مكتبة قطر الوطنية QNL</a>
+          <a href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📚 موقع مكتبتي</a>
+          <a href="https://sway.office.com/scQUx245tQhCgVrz?ref=Link&loc=play" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📖 المكتبة الرقمية</a>
+          <a href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ مكتبة قطر QNL</a>
         </div>
       </div>
 
@@ -2535,7 +2745,7 @@ footer {
           </div>
         </div>
 
-        <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">🧠 خدمات وتوجيهات الإرشاد النفسي:</p>
+        <p style="font-weight:800; color:var(--brand-blue); margin:14px 0 8px; font-size:0.88rem;">🧠 خدمات وتوجيهات الإرشاد النفسي:</p>
         <div class="service-images-grid">
           <div class="service-image-holder" onclick="openLightbox('images/img-psych1.jpg')">
             <img src="images/img-psych1.jpg" alt="الإرشاد النفسي 1" loading="lazy"/>
@@ -2570,7 +2780,7 @@ footer {
           <li><span class="check-icon">✓</span>متابعة تسليم الواجبات المدرسية والمشاريع والأنشطة</li>
           <li><span class="check-icon">✓</span>تطبيقات سهلة التثبيت على App Store وGoogle Play وAppGallery</li>
         </ul>
-        <a href="https://QEducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="btn-main btn-gold">
+        <a href="https://QEducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid" style="font-size:0.92rem;">
           🌐 &nbsp; زيارة بوابة نظام قطر للتعليم
         </a>
       </div>
@@ -2760,6 +2970,30 @@ footer {
   </div>
 </footer>
 
+<!-- ══════════════ MOBILE NATIVE BOTTOM BAR ══════════════ -->
+<nav class="mobile-bottom-nav" aria-label="شريط الملاحة السريع للهاتف">
+  <button class="mobile-nav-item" onclick="smoothNavigate(event, 'body')">
+    <span class="nav-icon">🏠</span>
+    <span>الرئيسية</span>
+  </button>
+  <button class="mobile-nav-item" onclick="smoothNavigate(event, '#qeducation')">
+    <span class="nav-icon">🎓</span>
+    <span>الأنظمة</span>
+  </button>
+  <button class="mobile-nav-item" onclick="focusMobileSearch(event)">
+    <span class="nav-icon">🔍</span>
+    <span>البحث</span>
+  </button>
+  <button class="mobile-nav-item" onclick="smoothNavigate(event, '#password')">
+    <span class="nav-icon">🔑</span>
+    <span>كلمة المرور</span>
+  </button>
+  <button class="mobile-nav-item" onclick="openSideDrawer()">
+    <span class="nav-icon">☰</span>
+    <span>القائمة</span>
+  </button>
+</nav>
+
 <!-- ══════════════ IMAGE LIGHTBOX MODAL ══════════════ -->
 <div class="lightbox-modal" id="imageLightbox" onclick="closeLightbox(event)">
   <div class="lightbox-img-wrapper">
@@ -2789,10 +3023,10 @@ function applyTheme(theme) {
   
   if (theme === "dark") {
     themeIcon.textContent = "☀️";
-    themeLabel.textContent = "الوضع النهاري";
+    if (themeLabel) themeLabel.textContent = "الوضع النهاري";
   } else {
     themeIcon.textContent = "🌙";
-    themeLabel.textContent = "الوضع الليلي";
+    if (themeLabel) themeLabel.textContent = "الوضع الليلي";
   }
 }
 
@@ -2806,7 +3040,7 @@ themeBtn.addEventListener("click", () => {
 });
 
 // ══════════════════════════════════════════════
-// 2. RIGHT-SIDE DRAWER (MOBILE & QUICK MENU)
+// 2. RIGHT-SIDE DRAWER (AUTO CLOSE ON SELECTION)
 // ══════════════════════════════════════════════
 const drawerOpenBtn = document.getElementById("drawerOpenBtn");
 const drawerCloseBtn = document.getElementById("drawerCloseBtn");
@@ -2826,22 +3060,42 @@ function closeSideDrawer() {
 }
 
 function handleDrawerClick(event, targetSelector) {
-  event.preventDefault();
+  if (event) event.preventDefault();
   closeSideDrawer();
   
   setTimeout(() => {
     const targetEl = document.querySelector(targetSelector);
     if (targetEl) {
       targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetEl.classList.remove("highlight-target");
+      void targetEl.offsetWidth; // trigger reflow
+      targetEl.classList.add("highlight-target");
     }
-  }, 150);
+  }, 200);
 }
 
 function smoothNavigate(event, targetSelector) {
-  event.preventDefault();
+  if (event) event.preventDefault();
+  closeSideDrawer();
   const targetEl = document.querySelector(targetSelector);
   if (targetEl) {
     targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    targetEl.classList.remove("highlight-target");
+    void targetEl.offsetWidth;
+    targetEl.classList.add("highlight-target");
+  }
+}
+
+function focusMobileSearch(event) {
+  if (event) event.preventDefault();
+  closeSideDrawer();
+  const searchSec = document.getElementById("searchFilterSection");
+  if (searchSec) {
+    searchSec.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => {
+      const input = document.getElementById("serviceSearchInput");
+      if (input) input.focus();
+    }, 400);
   }
 }
 
@@ -2961,7 +3215,7 @@ function closeLightbox(e) {
 // ══════════════════════════════════════════════
 const scrollUpBtn = document.getElementById("scrollUpBtn");
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
+  if (window.scrollY > 350) {
     scrollUpBtn.classList.add("show");
   } else {
     scrollUpBtn.classList.remove("show");
