@@ -23,10 +23,10 @@
   --bg-surface:         #FFFFFF;
   --bg-surface-subtle:  #F7FAFC;
   --bg-surface-elevated:#FFFFFF;
-  --bg-header:          rgba(255, 255, 255, 0.95);
+  --bg-header:          rgba(255, 255, 255, 0.96);
   --header-border:      rgba(10, 25, 60, 0.08);
   --border-subtle:      rgba(10, 25, 60, 0.07);
-  --border-strong:      rgba(10, 25, 60, 0.15);
+  --border-strong:      rgba(10, 25, 60, 0.14);
 
   /* Typography */
   --text-primary:       #0A193B;
@@ -48,6 +48,7 @@
   --shadow-sm:          0 2px 6px rgba(10, 25, 60, 0.05);
   --shadow-md:          0 6px 18px rgba(10, 25, 60, 0.07);
   --shadow-lg:          0 14px 36px rgba(10, 25, 60, 0.1);
+  --shadow-dropdown:    0 20px 40px -8px rgba(10, 25, 60, 0.22);
 
   /* Hero Gradient */
   --hero-gradient:      linear-gradient(145deg, #071533 0%, #0E275E 55%, #18429A 100%);
@@ -67,7 +68,7 @@
   --bg-surface:         #0B1730;
   --bg-surface-subtle:  #101F40;
   --bg-surface-elevated:#142750;
-  --bg-header:          rgba(7, 15, 35, 0.95);
+  --bg-header:          rgba(7, 15, 35, 0.96);
   --header-border:      rgba(110, 160, 250, 0.14);
   --border-subtle:      rgba(110, 160, 250, 0.1);
   --border-strong:      rgba(110, 160, 250, 0.22);
@@ -92,6 +93,7 @@
   --shadow-sm:          0 2px 10px rgba(0, 0, 0, 0.4);
   --shadow-md:          0 8px 24px rgba(0, 0, 0, 0.55);
   --shadow-lg:          0 18px 44px rgba(0, 0, 0, 0.7);
+  --shadow-dropdown:    0 24px 50px rgba(0, 0, 0, 0.85);
 
   /* Hero Gradient */
   --hero-gradient:      linear-gradient(145deg, #040A18 0%, #091733 55%, #102654 100%);
@@ -217,8 +219,8 @@ header {
   top: 0;
   z-index: 1000;
   background: var(--bg-header);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--header-border);
   transition: all 0.3s ease;
 }
@@ -229,52 +231,15 @@ header {
   justify-content: space-between;
   padding: 10px 20px;
   gap: 12px;
+  position: relative;
 }
 
-/* Right: Menu Button + School Brand */
+/* Right: Brand + Logo */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-shrink: 0;
-}
-
-.menu-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--bg-surface-subtle);
-  border: 1px solid var(--border-strong);
-  color: var(--text-primary);
-  padding: 8px 14px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 800;
-  font-size: 0.88rem;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.menu-toggle-btn:hover {
-  background: var(--brand-blue-subtle);
-  border-color: var(--brand-blue);
-  color: var(--brand-blue);
-}
-
-.menu-icon-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 18px;
-}
-
-.menu-icon-bars span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  border-radius: 2px;
 }
 
 .brand-wrapper {
@@ -383,11 +348,11 @@ header {
   transform: translateX(-3px);
 }
 
-/* Left Side Controls */
+/* Left Side Controls (Theme Switch + Mobile Dropdown Toggle Button) */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
@@ -398,7 +363,7 @@ header {
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-strong);
   color: var(--text-primary);
-  padding: 8px 14px;
+  padding: 7px 12px;
   border-radius: 50px;
   cursor: pointer;
   font-size: 0.82rem;
@@ -431,148 +396,162 @@ header {
   filter: brightness(1.15);
 }
 
+/* Modern Mobile Dropdown Menu Toggle Button */
+.mobile-dropdown-toggle-btn {
+  display: none; /* Shown on mobile */
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--brand-blue-subtle);
+  border: 1.5px solid var(--brand-blue);
+  color: var(--brand-blue);
+  padding: 7px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.82rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.mobile-dropdown-toggle-btn.open {
+  background: var(--brand-blue);
+  color: #FFFFFF;
+}
+
+.toggle-arrow-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.mobile-dropdown-toggle-btn.open .toggle-arrow-icon {
+  transform: rotate(180deg);
+}
+
 /* ══════════════════════════════════════════════════════
-   MOBILE & DESKTOP SLIDE DRAWER (ORGANIZED & AUTO-COLLAPSE)
+   PRO MOBILE DROP-DOWN MENU (ACCORDION & CATEGORIZED)
 ═══════════════════════════════════════════════════ */
-.drawer-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 2000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.drawer-backdrop.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.side-drawer {
-  position: fixed;
-  top: 0;
+.mobile-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
   right: 0;
-  bottom: 0;
-  width: 320px;
-  max-width: 86vw;
   background: var(--bg-surface);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.35);
-  z-index: 2001;
-  transform: translateX(100%);
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 2px solid var(--border-strong);
+  box-shadow: var(--shadow-dropdown);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.28s ease,
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+.mobile-dropdown-panel.open {
+  max-height: 82vh;
+  overflow-y: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-dropdown-body {
+  padding: 14px 16px 20px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  gap: 10px;
 }
 
-.side-drawer.active {
-  transform: translateX(0);
+/* Accordion Folders inside Mobile Dropdown */
+.m-accordion-group {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
 }
 
-.drawer-header {
-  padding: 16px 18px;
+.m-accordion-header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-subtle);
-  background: var(--bg-surface-subtle);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.drawer-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.drawer-brand img {
-  height: 34px;
-}
-
-.drawer-close-btn {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-strong);
+  padding: 11px 14px;
+  background: none;
+  border: none;
   color: var(--text-primary);
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 800;
+  font-size: 0.88rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  text-align: right;
 }
 
-.drawer-close-btn:hover {
-  background: var(--brand-blue-subtle);
-  color: var(--brand-blue);
-  transform: rotate(90deg);
-}
-
-.drawer-content {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.drawer-group {
-  margin-bottom: 8px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--bg-surface-subtle);
-  border: 1px solid var(--border-subtle);
-}
-
-.drawer-group-title {
-  font-size: 0.76rem;
-  font-weight: 900;
-  color: var(--brand-blue);
-  padding: 10px 14px 6px;
+.m-accordion-header .acc-title {
   display: flex;
   align-items: center;
   gap: 8px;
-  border-bottom: 1px dashed var(--border-subtle);
 }
 
-.drawer-link {
+.m-accordion-header .acc-chevron {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+}
+
+.m-accordion-group.active .acc-chevron {
+  transform: rotate(180deg);
+  color: var(--brand-blue);
+}
+
+.m-accordion-links {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border-top: 1px solid transparent;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.m-accordion-group.active .m-accordion-links {
+  max-height: 320px;
+  border-top-color: var(--border-subtle);
+}
+
+.m-nav-link {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 700;
+  border-bottom: 1px solid var(--border-subtle);
   transition: all 0.15s ease;
-  border-radius: 8px;
-  margin: 2px 4px;
 }
 
-.drawer-link span.icon {
+.m-nav-link:last-child {
+  border-bottom: none;
+}
+
+.m-nav-link:active {
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue);
+  padding-right: 20px;
+}
+
+.m-nav-link span.m-icon {
   font-size: 1.15rem;
   width: 22px;
   text-align: center;
 }
 
-.drawer-link:active, .drawer-link:hover {
-  background: var(--brand-blue-subtle);
-  color: var(--brand-blue);
-  transform: translateX(-3px);
-}
-
-.drawer-footer {
-  padding: 14px;
-  border-top: 1px solid var(--border-subtle);
-  background: var(--bg-surface-subtle);
-  position: sticky;
-  bottom: 0;
+.mobile-dropdown-footer {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -696,7 +675,7 @@ header {
 }
 
 /* ══════════════════════════════════════════════════════
-   FILTER & SEARCH HUB (CLEAN SEGMENTED CONTROLLER)
+   FILTER & SEARCH HUB (SEGMENTED CONTROLLER)
 ═══════════════════════════════════════════════════ */
 .filter-search-section {
   background: var(--bg-surface);
@@ -1641,6 +1620,12 @@ footer {
   .desktop-nav-organized {
     display: none;
   }
+  .mobile-dropdown-toggle-btn {
+    display: inline-flex;
+  }
+  .mobile-dropdown-panel {
+    display: block;
+  }
   .hero-smart-hub-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1661,22 +1646,22 @@ footer {
   }
 }
 
-/* ── PHONE OPTIMIZATION (CLEAN, LOGICAL, FIT) ── */
+/* PHONE SPECIALIZATION */
 @media (max-width: 768px) {
   .announcement-bar {
     display: none;
   }
 
   .header-container {
-    padding: 8px 14px;
+    padding: 8px 12px;
   }
   
   .brand-logo-img {
-    height: 36px;
+    height: 38px;
   }
 
   .brand-title h1 {
-    font-size: 0.86rem;
+    font-size: 0.88rem;
   }
 
   .brand-title p {
@@ -1696,10 +1681,9 @@ footer {
     display: none;
   }
 
-  .menu-toggle-btn {
+  .mobile-dropdown-toggle-btn {
     padding: 6px 10px;
     font-size: 0.8rem;
-    border-radius: 10px;
   }
 
   /* Hero on mobile */
@@ -1725,7 +1709,7 @@ footer {
     margin-bottom: 16px;
   }
 
-  /* 2x2 App Style Quick Hub */
+  /* 2x2 Quick Action Hub on mobile */
   .hero-smart-hub-grid {
     grid-template-columns: 1fr 1fr;
     gap: 8px;
@@ -1782,7 +1766,7 @@ footer {
     padding: 5px 12px;
   }
 
-  /* Stats on mobile */
+  /* Stats */
   .stats-section {
     padding: 12px 0;
   }
@@ -1803,7 +1787,7 @@ footer {
     font-size: 0.64rem;
   }
 
-  /* Sections on mobile */
+  /* Sections */
   .content-section {
     padding: 34px 0;
   }
@@ -1934,17 +1918,8 @@ footer {
 <header id="mainHeader">
   <div class="header-container">
     
-    <!-- Right Side: Menu Toggle + School Brand -->
+    <!-- Right Side: School Brand + Logo -->
     <div class="header-right">
-      <button class="menu-toggle-btn" id="drawerOpenBtn" aria-label="فتح القائمة الرئيسية">
-        <div class="menu-icon-bars">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span>القائمة</span>
-      </button>
-
       <div class="brand-wrapper">
         <img src="school-logo.png" alt="شعار مدارس قطر للعلوم والتكنولوجيا" class="brand-logo-img"/>
         <div class="brand-title">
@@ -1998,69 +1973,123 @@ footer {
       </li>
     </ul>
 
-    <!-- Left Side: Theme Switch & Direct Password Button -->
+    <!-- Left Side: Theme Switch + Direct CTA + Mobile Dropdown Trigger -->
     <div class="header-left">
       <button class="theme-switch-btn" id="themeToggleBtn" aria-label="تبديل وضع الألوان">
         <span id="themeIcon">🌙</span>
         <span id="themeLabel">الوضع الليلي</span>
       </button>
+
       <a href="#password" class="header-cta-btn" onclick="navigateToSection(event, '#password')">🔑 كلمة المرور</a>
+
+      <!-- Mobile Drop-Down Toggle Button -->
+      <button class="mobile-dropdown-toggle-btn" id="mobileDropdownToggle" aria-label="فتح القائمة المنسدلة">
+        <span>القائمة</span>
+        <span class="toggle-arrow-icon">▼</span>
+      </button>
     </div>
 
+  </div>
+
+  <!-- ══════════════ PRO MOBILE DROP-DOWN ACCORDION PANEL ══════════════ -->
+  <div class="mobile-dropdown-panel" id="mobileDropdownPanel">
+    <div class="mobile-dropdown-body">
+      
+      <!-- Accordion 1: Core Systems -->
+      <div class="m-accordion-group active">
+        <button class="m-accordion-header" onclick="toggleAccordion(this)">
+          <span class="acc-title">🎓 الأنظمة والخدمات الأساسية</span>
+          <span class="acc-chevron">▲</span>
+        </button>
+        <div class="m-accordion-links">
+          <a href="#qeducation" class="m-nav-link" onclick="navigateToSection(event, '#qeducation')">
+            <span class="m-icon">🎓</span>
+            <span>نظام قطر للتعليم (QEducation)</span>
+          </a>
+          <a href="#portal" class="m-nav-link" onclick="navigateToSection(event, '#portal')">
+            <span class="m-icon">📊</span>
+            <span>البوابة الإلكترونية والتقرير الشهري</span>
+          </a>
+          <a href="#password" class="m-nav-link" onclick="navigateToSection(event, '#password')">
+            <span class="m-icon">🔑</span>
+            <span>تغيير واستعادة كلمة المرور</span>
+          </a>
+          <a href="#classdojo" class="m-nav-link" onclick="navigateToSection(event, '#classdojo')">
+            <span class="m-icon">🧑‍🏫</span>
+            <span>متابعة السلوك (ClassDojo)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Accordion 2: Academic Platforms -->
+      <div class="m-accordion-group">
+        <button class="m-accordion-header" onclick="toggleAccordion(this)">
+          <span class="acc-title">📖 المنصات التعليمية والمكتبات</span>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="m-accordion-links">
+          <a href="#achieve" class="m-nav-link" onclick="navigateToSection(event, '#achieve')">
+            <span class="m-icon">📖</span>
+            <span>منصة Achieve 3000 (اللغة الإنجليزية)</span>
+          </a>
+          <a href="#iread" class="m-nav-link" onclick="navigateToSection(event, '#iread')">
+            <span class="m-icon">📝</span>
+            <span>منصة أقرأ بالعربية</span>
+          </a>
+          <a href="#library" class="m-nav-link" onclick="navigateToSection(event, '#library')">
+            <span class="m-icon">📚</span>
+            <span>المكتبة الإلكترونية والرقمية</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Accordion 3: Guidance & Services -->
+      <div class="m-accordion-group">
+        <button class="m-accordion-header" onclick="toggleAccordion(this)">
+          <span class="acc-title">🎯 الإرشاد والخدمات المدرسية والوزارة</span>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="m-accordion-links">
+          <a href="#guidance" class="m-nav-link" onclick="navigateToSection(event, '#guidance')">
+            <span class="m-icon">🎯</span>
+            <span>الإرشاد الأكاديمي والنفسي</span>
+          </a>
+          <a href="#studytips" class="m-nav-link" onclick="navigateToSection(event, '#studytips')">
+            <span class="m-icon">💡</span>
+            <span>النصائح والتوجيهات الدراسية</span>
+          </a>
+          <a href="#policies" class="m-nav-link" onclick="navigateToSection(event, '#policies')">
+            <span class="m-icon">📋</span>
+            <span>السياسات واللوائح المدرسية</span>
+          </a>
+          <a href="#timetable" class="m-nav-link" onclick="navigateToSection(event, '#timetable')">
+            <span class="m-icon">📅</span>
+            <span>جدول الحصص والنشرة الشهرية</span>
+          </a>
+          <a href="#ministry" class="m-nav-link" onclick="navigateToSection(event, '#ministry')">
+            <span class="m-icon">🏛️</span>
+            <span>خدمات وزارة التربية (بوابة معارف)</span>
+          </a>
+          <a href="#social" class="m-nav-link" onclick="navigateToSection(event, '#social')">
+            <span class="m-icon">📱</span>
+            <span>قنوات التواصل الاجتماعي</span>
+          </a>
+          <a href="#links" class="m-nav-link" onclick="navigateToSection(event, '#links')">
+            <span class="m-icon">🔗</span>
+            <span>دليل جميع الروابط السريعة</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-dropdown-footer">
+        <a href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid" style="width:100%; justify-content:center;">
+          🔑 إعادة تعيين كلمة المرور مباشرة
+        </a>
+      </div>
+
+    </div>
   </div>
 </header>
-
-<!-- ══════════════ RIGHT-SIDE DRAWER (MOBILE & QUICK MENU) ══════════════ -->
-<div class="drawer-backdrop" id="drawerBackdrop"></div>
-
-<aside class="side-drawer" id="sideDrawer" aria-label="القائمة الشاملة">
-  <div class="drawer-header">
-    <div class="drawer-brand">
-      <img src="school-logo.png" alt="شعار المدرسة"/>
-      <strong style="font-size:0.88rem; color:var(--text-primary);">دليل التعليم الإلكتروني</strong>
-    </div>
-    <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="إغلاق القائمة">✕</button>
-  </div>
-
-  <div class="drawer-content">
-    
-    <!-- Group 1: Core Systems -->
-    <div class="drawer-group">
-      <div class="drawer-group-title">🎓 الأنظمة والخدمات الأساسية</div>
-      <a href="#password" class="drawer-link" onclick="navigateToSection(event, '#password')"><span class="icon">🔑</span><span>تغيير كلمة المرور</span></a>
-      <a href="#qeducation" class="drawer-link" onclick="navigateToSection(event, '#qeducation')"><span class="icon">🎓</span><span>نظام قطر للتعليم (QEducation)</span></a>
-      <a href="#portal" class="drawer-link" onclick="navigateToSection(event, '#portal')"><span class="icon">📊</span><span>البوابة الإلكترونية والتقارير</span></a>
-      <a href="#classdojo" class="drawer-link" onclick="navigateToSection(event, '#classdojo')"><span class="icon">🧑‍🏫</span><span>متابعة السلوك (ClassDojo)</span></a>
-    </div>
-
-    <!-- Group 2: Platforms & Libraries -->
-    <div class="drawer-group">
-      <div class="drawer-group-title">📖 المنصات الأكاديمية والمكتبات</div>
-      <a href="#achieve" class="drawer-link" onclick="navigateToSection(event, '#achieve')"><span class="icon">📖</span><span>منصة Achieve 3000 (الإنجليزية)</span></a>
-      <a href="#iread" class="drawer-link" onclick="navigateToSection(event, '#iread')"><span class="icon">📝</span><span>منصة أقرأ بالعربية</span></a>
-      <a href="#library" class="drawer-link" onclick="navigateToSection(event, '#library')"><span class="icon">📚</span><span>المكتبة الإلكترونية والرقمية</span></a>
-    </div>
-
-    <!-- Group 3: Guidance & Services -->
-    <div class="drawer-group">
-      <div class="drawer-group-title">🎯 الإرشاد والخدمات المدرسية</div>
-      <a href="#guidance" class="drawer-link" onclick="navigateToSection(event, '#guidance')"><span class="icon">🎯</span><span>الإرشاد الأكاديمي والنفسي</span></a>
-      <a href="#studytips" class="drawer-link" onclick="navigateToSection(event, '#studytips')"><span class="icon">💡</span><span>النصائح الدراسية</span></a>
-      <a href="#policies" class="drawer-link" onclick="navigateToSection(event, '#policies')"><span class="icon">📋</span><span>السياسات واللوائح المدرسية</span></a>
-      <a href="#timetable" class="drawer-link" onclick="navigateToSection(event, '#timetable')"><span class="icon">📅</span><span>جدول الحصص والنشرة الشهرية</span></a>
-      <a href="#ministry" class="drawer-link" onclick="navigateToSection(event, '#ministry')"><span class="icon">🏛️</span><span>خدمات وزارة التربية والتعليم</span></a>
-      <a href="#social" class="drawer-link" onclick="navigateToSection(event, '#social')"><span class="icon">📱</span><span>قنوات التواصل الاجتماعي</span></a>
-      <a href="#links" class="drawer-link" onclick="navigateToSection(event, '#links')"><span class="icon">🔗</span><span>دليل جميع الروابط</span></a>
-    </div>
-
-  </div>
-
-  <div class="drawer-footer">
-    <a href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid" style="width:100%; justify-content:center;">
-      🔑 إعادة تعيين كلمة المرور
-    </a>
-  </div>
-</aside>
 
 <!-- ══════════════ HERO SECTION ══════════════ -->
 <section class="hero-section">
@@ -2938,28 +2967,68 @@ themeBtn.addEventListener("click", () => {
 });
 
 // ══════════════════════════════════════════════
-// 2. RIGHT-SIDE DRAWER & SMOOTH NAVIGATION
+// 2. MOBILE PRO DROP-DOWN MENU LOGIC
 // ══════════════════════════════════════════════
-const drawerOpenBtn = document.getElementById("drawerOpenBtn");
-const drawerCloseBtn = document.getElementById("drawerCloseBtn");
-const sideDrawer = document.getElementById("sideDrawer");
-const drawerBackdrop = document.getElementById("drawerBackdrop");
+const mobileDropdownToggle = document.getElementById("mobileDropdownToggle");
+const mobileDropdownPanel = document.getElementById("mobileDropdownPanel");
 
-function openSideDrawer() {
-  sideDrawer.classList.add("active");
-  drawerBackdrop.classList.add("active");
-  document.body.style.overflow = "hidden";
+function openMobileDropdown() {
+  mobileDropdownPanel.classList.add("open");
+  mobileDropdownToggle.classList.add("open");
 }
 
-function closeSideDrawer() {
-  sideDrawer.classList.remove("active");
-  drawerBackdrop.classList.remove("active");
-  document.body.style.overflow = "";
+function closeMobileDropdown() {
+  mobileDropdownPanel.classList.remove("open");
+  mobileDropdownToggle.classList.remove("open");
 }
 
+function toggleMobileDropdown() {
+  if (mobileDropdownPanel.classList.contains("open")) {
+    closeMobileDropdown();
+  } else {
+    openMobileDropdown();
+  }
+}
+
+if (mobileDropdownToggle) {
+  mobileDropdownToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMobileDropdown();
+  });
+}
+
+// Accordion toggle inside mobile dropdown
+function toggleAccordion(headerBtn) {
+  const group = headerBtn.closest(".m-accordion-group");
+  const wasActive = group.classList.contains("active");
+  
+  // Close other accordion groups for clean focus
+  document.querySelectorAll(".m-accordion-group").forEach(g => {
+    g.classList.remove("active");
+    const chev = g.querySelector(".acc-chevron");
+    if (chev) chev.textContent = "▼";
+  });
+
+  if (!wasActive) {
+    group.classList.add("active");
+    const chev = group.querySelector(".acc-chevron");
+    if (chev) chev.textContent = "▲";
+  }
+}
+
+// Global click-outside closer for mobile dropdown
+document.addEventListener("click", (e) => {
+  if (mobileDropdownPanel && mobileDropdownPanel.classList.contains("open")) {
+    if (!mobileDropdownPanel.contains(e.target) && !mobileDropdownToggle.contains(e.target)) {
+      closeMobileDropdown();
+    }
+  }
+});
+
+// Smooth navigation with instant auto-close
 function navigateToSection(event, targetSelector) {
   if (event) event.preventDefault();
-  closeSideDrawer();
+  closeMobileDropdown();
   
   setTimeout(() => {
     const targetEl = document.querySelector(targetSelector);
@@ -2969,17 +3038,13 @@ function navigateToSection(event, targetSelector) {
       void targetEl.offsetWidth; // trigger reflow
       targetEl.classList.add("highlight-card");
     }
-  }, 120);
+  }, 100);
 }
-
-drawerOpenBtn.addEventListener("click", openSideDrawer);
-drawerCloseBtn.addEventListener("click", closeSideDrawer);
-drawerBackdrop.addEventListener("click", closeSideDrawer);
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    if (sideDrawer.classList.contains("active")) closeSideDrawer();
-    if (lightboxModal.classList.contains("active")) closeLightboxDirect();
+    if (mobileDropdownPanel && mobileDropdownPanel.classList.contains("open")) closeMobileDropdown();
+    if (lightboxModal && lightboxModal.classList.contains("active")) closeLightboxDirect();
   }
 });
 
