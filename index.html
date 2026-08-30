@@ -4,40 +4,40 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#0A193B"/>
-<meta name="description" content="دليل التعليم الإلكتروني الموحد لمدارس قطر للعلوم والتكنولوجيا الإعدادية الثانوية للبنين - منصات، خدمات، روابط وفيديوهات إرشادية للطلاب وأولياء الأمور."/>
-<title>دليل التعليم الإلكتروني | مدارس قطر للعلوم والتكنولوجيا</title>
+<meta name="description" content="البوابة الذكية الموحدة لدليل التعليم الإلكتروني لمدارس قطر للعلوم والتكنولوجيا الإعدادية الثانوية للبنين - منصات تفاعلية، خدمات رقمية، إرشادات وروابط مباشرة للطلاب وأولياء الأمور."/>
+<title>البوابة الذكية للتعليم الإلكتروني | مدارس قطر للعلوم والتكنولوجيا</title>
 
-<!-- Google Fonts -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
 <style>
 /* ══════════════════════════════════════════════════════
-   DESIGN SYSTEM & THEME TOKENS (LIGHT & DARK MODE)
+   DESIGN TOKENS & DYNAMIC THEMES
 ══════════════════════════════════════════════════════ */
 :root, [data-theme="light"] {
   --bg-page:            #F4F7FC;
   --bg-surface:         #FFFFFF;
   --bg-surface-subtle:  #F8FAFE;
   --bg-surface-elevated:#FFFFFF;
-  --bg-header:          rgba(255, 255, 255, 0.92);
+  --bg-header:          rgba(255, 255, 255, 0.94);
   --header-border:      rgba(15, 35, 75, 0.08);
   --border-subtle:      rgba(15, 35, 75, 0.08);
   --border-strong:      rgba(15, 35, 75, 0.16);
 
   /* High-Contrast Typography */
   --text-primary:       #0A193B;
-  --text-secondary:     #22365D;
-  --text-muted:         #4E648B;
+  --text-secondary:     #20345B;
+  --text-muted:         #4C6288;
   --text-inverse:       #FFFFFF;
 
-  /* Brand Colors (Royal Navy, Blue & Amber Gold) */
+  /* Brand Colors */
   --brand-navy-dark:    #06132D;
   --brand-navy:         #0E265C;
   --brand-navy-light:   #18429A;
   --brand-blue:         #1E5FE0;
-  --brand-blue-hover:   #1349B5;
+  --brand-blue-hover:   #144BB8;
   --brand-blue-subtle:  rgba(30, 95, 224, 0.08);
   --brand-gold:         #D98200;
   --brand-gold-glow:    #FFAE26;
@@ -50,21 +50,15 @@
 
   /* Gradients */
   --hero-gradient:      linear-gradient(145deg, #071533 0%, #0E275E 55%, #18429A 100%);
-  --card-hero-grad:     linear-gradient(135deg, #091C47 0%, #153E90 100%);
   --hero-text:          #FFFFFF;
   --hero-subtext:       rgba(255, 255, 255, 0.88);
 
-  /* Badges & Tags */
-  --tag-bg:             rgba(30, 95, 224, 0.08);
-  --tag-text:           #1548B2;
-  --img-caption-bg:     #0E265C;
-
-  /* Sticky Navigation Pills */
-  --pill-bg:            #FFFFFF;
-  --pill-text:          #24385E;
-  --pill-border:        rgba(15, 35, 75, 0.12);
-  --pill-active-bg:     #0E265C;
-  --pill-active-text:   #FFFFFF;
+  /* Filter Tabs */
+  --tab-bg:             #FFFFFF;
+  --tab-text:           #20345B;
+  --tab-border:         rgba(15, 35, 75, 0.12);
+  --tab-active-bg:      #0E265C;
+  --tab-active-text:    #FFFFFF;
 }
 
 [data-theme="dark"] {
@@ -72,7 +66,7 @@
   --bg-surface:         #0C1935;
   --bg-surface-subtle:  #112247;
   --bg-surface-elevated:#142750;
-  --bg-header:          rgba(8, 17, 39, 0.92);
+  --bg-header:          rgba(8, 17, 39, 0.94);
   --header-border:      rgba(110, 160, 250, 0.14);
   --border-subtle:      rgba(110, 160, 250, 0.12);
   --border-strong:      rgba(110, 160, 250, 0.24);
@@ -101,21 +95,15 @@
 
   /* Gradients */
   --hero-gradient:      linear-gradient(145deg, #040A18 0%, #091733 55%, #102654 100%);
-  --card-hero-grad:     linear-gradient(135deg, #08142F 0%, #0D224E 100%);
   --hero-text:          #FFFFFF;
   --hero-subtext:       rgba(255, 255, 255, 0.88);
 
-  /* Badges & Tags */
-  --tag-bg:             rgba(75, 139, 245, 0.18);
-  --tag-text:           #88B4FF;
-  --img-caption-bg:     #08142C;
-
-  /* Sticky Navigation Pills */
-  --pill-bg:            #0C1935;
-  --pill-text:          #D2E0FA;
-  --pill-border:        rgba(110, 160, 250, 0.18);
-  --pill-active-bg:     #3D7DF5;
-  --pill-active-text:   #FFFFFF;
+  /* Filter Tabs */
+  --tab-bg:             #0C1935;
+  --tab-text:           #D2E0FA;
+  --tab-border:         rgba(110, 160, 250, 0.18);
+  --tab-active-bg:      #3D7DF5;
+  --tab-active-text:    #FFFFFF;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -143,7 +131,6 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .en {
@@ -189,7 +176,7 @@ a {
 
 /* ══════════════════════════════════════════════════════
    TOP ANNOUNCEMENT BAR
-══════════════════════════════════════════════════════ */
+═══════════════════════════════════════════════════ */
 .announcement-bar {
   background: linear-gradient(90deg, #07173B, #0E2963, #153E90);
   color: #FFFFFF;
@@ -217,7 +204,7 @@ a {
 
 /* ══════════════════════════════════════════════════════
    HEADER (DESKTOP & MOBILE INTEGRATED)
-══════════════════════════════════════════════════════ */
+═══════════════════════════════════════════════════ */
 header {
   position: sticky;
   top: 0;
@@ -237,7 +224,6 @@ header {
   gap: 16px;
 }
 
-/* Right Side: Menu Button + Brand */
 .header-right {
   display: flex;
   align-items: center;
@@ -283,7 +269,6 @@ header {
   height: 2px;
   background-color: currentColor;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
 .brand-wrapper {
@@ -297,10 +282,6 @@ header {
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
-}
-
-.brand-logo-img:hover {
-  transform: scale(1.03);
 }
 
 [data-theme="dark"] .brand-logo-img {
@@ -323,7 +304,6 @@ header {
   white-space: nowrap;
 }
 
-/* Center Desktop Navigation Links */
 .desktop-nav-links {
   display: flex;
   align-items: center;
@@ -352,7 +332,6 @@ header {
   transform: translateY(-1px);
 }
 
-/* Left Side: Theme Switch & Fast Action Button */
 .header-left {
   display: flex;
   align-items: center;
@@ -532,12 +511,12 @@ header {
 }
 
 /* ══════════════════════════════════════════════════════
-   HERO SECTION
+   HERO SECTION & 4 SMART ACTION CARDS
 ═══════════════════════════════════════════════════ */
 .hero-section {
   background: var(--hero-gradient);
   color: var(--hero-text);
-  padding: 76px 0 88px;
+  padding: 68px 0 88px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -564,7 +543,7 @@ header {
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 860px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -579,15 +558,15 @@ header {
   border-radius: 50px;
   font-size: 0.84rem;
   font-weight: 800;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .hero-heading {
-  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  font-size: clamp(2rem, 5.2vw, 3.3rem);
   font-weight: 900;
   line-height: 1.25;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   color: #FFFFFF;
 }
 
@@ -597,104 +576,193 @@ header {
 }
 
 .hero-description {
-  font-size: clamp(0.96rem, 2.4vw, 1.2rem);
+  font-size: clamp(0.96rem, 2.3vw, 1.18rem);
   color: var(--hero-subtext);
   line-height: 1.85;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 
-.hero-buttons {
+/* SMART 4 ACTION HUBS */
+.hero-smart-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  text-align: right;
+}
+
+.smart-hub-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 20px 18px;
+  color: #FFFFFF;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-.btn-main {
+.smart-hub-card:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-5px);
+  border-color: var(--brand-gold-glow);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+.smart-hub-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.smart-hub-card h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: #FFFFFF;
+}
+
+.smart-hub-card p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.smart-hub-link {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--brand-gold-glow);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 32px;
-  border-radius: 50px;
-  font-size: 0.98rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: var(--shadow-md);
-}
-
-.btn-gold {
-  background: linear-gradient(135deg, #FFB338 0%, #D98200 100%);
-  color: #071533 !important;
-}
-
-.btn-gold:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(217, 130, 0, 0.45);
-}
-
-.btn-outline-white {
-  background: rgba(255, 255, 255, 0.1);
-  color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(8px);
-}
-
-.btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: #FFFFFF;
-  transform: translateY(-3px);
+  gap: 4px;
 }
 
 /* ══════════════════════════════════════════════════════
-   QUICK NAVIGATION PILLS (STICKY SUB-NAV)
+   SMART FILTER & SEARCH HUB (ORGANIZED CATEGORIES)
 ═══════════════════════════════════════════════════ */
-.quick-nav-bar {
+.filter-search-section {
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 12px 0;
+  padding: 16px 0;
   position: sticky;
   top: 77px;
   z-index: 990;
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.pills-scroll-wrapper {
+.filter-search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Search Bar */
+.search-input-box {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 440px;
+}
+
+.search-input-box input {
+  width: 100%;
+  background: var(--bg-surface-subtle);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 50px;
+  padding: 10px 42px 10px 18px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.search-input-box input:focus {
+  border-color: var(--brand-blue);
+  background: var(--bg-surface);
+  box-shadow: 0 0 0 4px var(--brand-blue-subtle);
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.search-clear-btn {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Category Filter Tabs */
+.category-filter-tabs {
   display: flex;
   align-items: center;
   gap: 8px;
   overflow-x: auto;
-  padding: 4px 0;
   scrollbar-width: none;
-  -ms-overflow-style: none;
+  padding: 4px 0;
 }
 
-.pills-scroll-wrapper::-webkit-scrollbar {
+.category-filter-tabs::-webkit-scrollbar {
   display: none;
 }
 
-.nav-pill {
+.filter-tab-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--pill-bg);
-  color: var(--pill-text);
-  border: 1px solid var(--pill-border);
+  background: var(--tab-bg);
+  color: var(--tab-text);
+  border: 1px solid var(--tab-border);
   padding: 8px 18px;
   border-radius: 50px;
   font-size: 0.84rem;
   font-weight: 700;
   white-space: nowrap;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.nav-pill:hover {
+.filter-tab-btn:hover {
   border-color: var(--brand-blue);
   color: var(--brand-blue);
-  transform: translateY(-1px);
+}
+
+.filter-tab-btn.active {
+  background: var(--tab-active-bg);
+  color: var(--tab-active-text);
+  border-color: var(--tab-active-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Search results counter */
+.search-count-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: none;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -703,7 +771,7 @@ header {
 .stats-section {
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 26px 0;
+  padding: 24px 0;
 }
 
 .stats-grid {
@@ -714,7 +782,7 @@ header {
 
 .stat-box {
   text-align: center;
-  padding: 12px 14px;
+  padding: 10px 14px;
   border-left: 1px solid var(--border-subtle);
 }
 
@@ -723,7 +791,7 @@ header {
 }
 
 .stat-number {
-  font-size: 1.85rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: var(--brand-blue);
   line-height: 1.2;
@@ -740,7 +808,7 @@ header {
    SECTION HEADINGS & CARD WRAPPERS
 ═══════════════════════════════════════════════════ */
 .content-section {
-  padding: 72px 0;
+  padding: 68px 0;
 }
 
 .section-light {
@@ -753,7 +821,7 @@ header {
 
 .section-header-block {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 }
 
 .section-badge-chip {
@@ -799,10 +867,10 @@ header {
   background: var(--hero-gradient);
   color: #FFFFFF;
   border-radius: 24px;
-  padding: 48px;
+  padding: 44px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 36px;
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
@@ -822,15 +890,15 @@ header {
 }
 
 .password-icon-circle {
-  width: 88px;
-  height: 88px;
+  width: 84px;
+  height: 84px;
   background: rgba(255, 255, 255, 0.14);
   border: 2px solid rgba(255, 255, 255, 0.28);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   flex-shrink: 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
@@ -840,17 +908,17 @@ header {
 }
 
 .password-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 900;
   color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .password-content p {
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.85;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .password-action-btn {
@@ -860,8 +928,8 @@ header {
   background: linear-gradient(135deg, #FFB338, #D98200);
   color: #071533 !important;
   font-weight: 800;
-  font-size: 0.96rem;
-  padding: 13px 30px;
+  font-size: 0.95rem;
+  padding: 12px 28px;
   border-radius: 50px;
   box-shadow: 0 4px 18px rgba(217, 130, 0, 0.38);
   transition: all 0.25s ease;
@@ -877,7 +945,7 @@ header {
   direction: ltr;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.6);
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -886,7 +954,7 @@ header {
 .featured-videos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
-  gap: 32px;
+  gap: 28px;
 }
 
 .featured-video-card {
@@ -899,26 +967,26 @@ header {
 }
 
 .featured-video-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   border-color: var(--brand-blue);
 }
 
 .video-card-header {
-  padding: 22px 24px 16px;
+  padding: 20px 22px 14px;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .video-badge-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
 }
 
@@ -933,14 +1001,14 @@ header {
 }
 
 .video-card-title h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.35;
 }
 
 .video-card-title span {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   font-family: 'Inter', sans-serif;
 }
@@ -962,33 +1030,71 @@ header {
 }
 
 .video-card-footer {
-  padding: 16px 24px 20px;
+  padding: 14px 22px 18px;
+}
+
+/* ═══════════════════════════════════════════════════
+   SMART TABBED VIDEO PLAYER FOR QATAR EDUCATION
+═══════════════════════════════════════════════════ */
+.smart-video-player-container {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 18px 0 22px;
+}
+
+.smart-player-screen {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 16px;
+}
+
+.playlist-tabs-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 8px;
+  scrollbar-width: thin;
+}
+
+.playlist-tab-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.playlist-tab-item:hover {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.playlist-tab-item.active {
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  border-color: var(--brand-blue);
+  box-shadow: 0 2px 8px rgba(30, 95, 224, 0.35);
 }
 
 /* ═══════════════════════════════════════════════════
    DETAILED SERVICE CARDS
 ═══════════════════════════════════════════════════ */
-.intro-lead-box {
-  background: var(--hero-gradient);
-  color: #FFFFFF;
-  border-radius: 22px;
-  padding: 36px;
-  margin-bottom: 40px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.intro-lead-box h3 {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--brand-gold-glow);
-  margin-bottom: 12px;
-}
-
-.intro-lead-box p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.9;
+.services-catalog-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .service-detail-card {
@@ -996,10 +1102,9 @@ header {
   border: 1px solid var(--border-subtle);
   border-right: 6px solid var(--brand-blue);
   border-radius: 22px;
-  padding: 36px;
-  margin-bottom: 32px;
+  padding: 32px;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
 }
 
 .service-detail-card:hover {
@@ -1019,51 +1124,72 @@ header {
 .service-header-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.service-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .service-avatar-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
 }
 
 .service-title-text h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.3;
 }
 
 .service-title-text span {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   font-family: 'Inter', sans-serif;
+}
+
+.service-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.74rem;
+  font-weight: 800;
 }
 
 .service-explanation-box {
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  padding: 20px 24px;
-  margin-bottom: 22px;
-  font-size: 0.96rem;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  font-size: 0.94rem;
   line-height: 1.9;
   color: var(--text-secondary);
 }
 
+/* Image Click-to-Zoom Containers */
 .service-images-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 18px;
-  margin: 18px 0 22px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin: 16px 0 20px;
 }
 
 .service-images-grid.single-img {
@@ -1076,6 +1202,28 @@ header {
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
   background: var(--bg-surface);
+  cursor: pointer;
+  position: relative;
+}
+
+.service-image-holder::after {
+  content: "🔍 انقر للتكبير";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.service-image-holder:hover::after {
+  opacity: 1;
 }
 
 .service-image-holder img {
@@ -1090,26 +1238,26 @@ header {
 }
 
 .image-caption-tag {
-  background: var(--img-caption-bg);
+  background: var(--brand-navy);
   color: #FFFFFF;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-align: center;
-  padding: 9px 14px;
+  padding: 8px 12px;
 }
 
 .sub-videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
-  gap: 18px;
-  margin: 18px 0 22px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+  margin: 16px 0 20px;
 }
 
 .sub-video-label {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   text-align: center;
 }
 
@@ -1117,16 +1265,16 @@ header {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .action-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 22px;
+  padding: 10px 20px;
   border-radius: 50px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 800;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -1159,7 +1307,7 @@ header {
 .poster-showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 52px;
+  gap: 48px;
   align-items: center;
 }
 
@@ -1169,6 +1317,7 @@ header {
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-subtle);
   transition: transform 0.35s ease;
+  cursor: pointer;
 }
 
 .poster-frame:hover {
@@ -1176,11 +1325,11 @@ header {
 }
 
 .poster-info-box h2 {
-  font-size: 1.95rem;
+  font-size: 1.85rem;
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.3;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .poster-info-box h2 span {
@@ -1189,17 +1338,17 @@ header {
 
 .poster-info-box p {
   color: var(--text-secondary);
-  font-size: 1.02rem;
-  line-height: 1.9;
-  margin-bottom: 26px;
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 24px;
 }
 
 .poster-features-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 32px;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
 .poster-features-list li {
@@ -1207,20 +1356,20 @@ header {
   align-items: center;
   gap: 12px;
   font-weight: 700;
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   color: var(--text-secondary);
 }
 
 .poster-features-list li .check-icon {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: var(--brand-blue);
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   flex-shrink: 0;
 }
 
@@ -1230,34 +1379,34 @@ header {
 .vision-mission-section {
   background: var(--hero-gradient);
   color: #FFFFFF;
-  padding: 72px 0;
+  padding: 68px 0;
 }
 
 .vision-mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 28px;
 }
 
 .vm-glass-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 22px;
-  padding: 38px;
+  padding: 36px;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
 .vm-glass-card h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 900;
   color: var(--brand-gold-glow);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .vm-glass-card p {
   color: rgba(255, 255, 255, 0.92);
-  font-size: 1.02rem;
+  font-size: 1rem;
   line-height: 1.95;
 }
 
@@ -1266,15 +1415,15 @@ header {
 ═══════════════════════════════════════════════════ */
 .quick-links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 .quick-link-tile {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 18px;
-  padding: 24px 18px;
+  padding: 22px 16px;
   text-align: center;
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
@@ -1289,32 +1438,32 @@ header {
 }
 
 .quick-link-tile .tile-icon {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
+  font-size: 2rem;
+  margin-bottom: 10px;
   display: block;
 }
 
 .quick-link-tile h4 {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .quick-link-tile p {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .quick-link-tile .tile-arrow {
-  margin-top: 12px;
+  margin-top: 10px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
   color: var(--brand-blue);
   font-weight: 800;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1323,34 +1472,34 @@ header {
 footer {
   background: var(--brand-navy-dark);
   color: rgba(255, 255, 255, 0.75);
-  padding: 60px 0 0;
+  padding: 56px 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-top-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
+  gap: 44px;
+  margin-bottom: 44px;
 }
 
 .footer-brand-info img {
-  height: 54px;
+  height: 52px;
   filter: brightness(0) invert(1);
   margin-bottom: 16px;
 }
 
 .footer-brand-info p {
-  font-size: 0.88rem;
-  line-height: 1.9;
-  max-width: 340px;
+  font-size: 0.86rem;
+  line-height: 1.85;
+  max-width: 320px;
 }
 
 .footer-col h5 {
   color: var(--brand-gold-glow);
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   font-weight: 800;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .footer-col ul {
@@ -1358,12 +1507,12 @@ footer {
 }
 
 .footer-col ul li {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .footer-col ul li a {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   transition: color 0.2s ease;
 }
 
@@ -1373,14 +1522,73 @@ footer {
 
 .footer-bottom-bar {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 22px 0;
+  padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 14px;
-  font-size: 0.82rem;
+  gap: 12px;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.45);
+}
+
+/* ═══════════════════════════════════════════════════
+   IMAGE LIGHTBOX MODAL
+═══════════════════════════════════════════════════ */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img-wrapper {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-img-wrapper img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 14px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
+  object-fit: contain;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #FFFFFF;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1426,6 +1634,9 @@ footer {
   .desktop-nav-links {
     display: none;
   }
+  .hero-smart-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .poster-showcase-grid {
     grid-template-columns: 1fr;
   }
@@ -1464,19 +1675,24 @@ footer {
     display: none;
   }
   .hero-section {
-    padding: 50px 0 60px;
+    padding: 48px 0 56px;
   }
   .hero-heading {
-    font-size: 1.75rem;
+    font-size: 1.7rem;
   }
   .hero-description {
-    font-size: 0.94rem;
+    font-size: 0.92rem;
   }
-  .hero-buttons .btn-main {
-    font-size: 0.88rem;
-    padding: 12px 20px;
-    width: 100%;
-    justify-content: center;
+  .hero-smart-hub-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .filter-search-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-input-box {
+    max-width: 100%;
   }
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1488,44 +1704,44 @@ footer {
     font-size: 0.7rem;
   }
   .content-section {
-    padding: 52px 0;
+    padding: 48px 0;
   }
   .section-title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
   .password-box-card {
     flex-direction: column;
-    padding: 28px 20px;
+    padding: 26px 18px;
     text-align: center;
-    gap: 20px;
+    gap: 18px;
   }
   .password-icon-circle {
     margin: 0 auto;
-    width: 72px;
-    height: 72px;
-    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+    font-size: 1.9rem;
   }
   .service-detail-card {
-    padding: 24px 18px;
+    padding: 22px 16px;
   }
   .service-avatar-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 1.4rem;
+    width: 46px;
+    height: 46px;
+    font-size: 1.35rem;
   }
   .service-title-text h3 {
     font-size: 1.1rem;
   }
   .quick-links-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
   }
   .quick-link-tile {
-    padding: 18px 12px;
+    padding: 16px 10px;
   }
   .footer-top-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 28px;
   }
   .floating-scroll-btn {
     bottom: 20px;
@@ -1543,7 +1759,7 @@ footer {
 <!-- ══════════════ ANNOUNCEMENT STRIP ══════════════ -->
 <div class="announcement-bar">
   <span class="badge-gold">دليل 2025/2026</span>
-  <span>🎓 مرحباً بكم في بوابة دليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا</span>
+  <span>🎓 مرحباً بكم في البوابة الذكية لدليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا</span>
 </div>
 
 <!-- ══════════════ MAIN HEADER ══════════════ -->
@@ -1647,34 +1863,74 @@ footer {
         <span class="highlight">للطلاب وأولياء الأمور</span>
       </h2>
       <p class="hero-description en">
-        Your comprehensive, modern digital gateway to all e-learning portals, services &amp; academic resources at Qatar Science &amp; Technology Preparatory Secondary School for Boys.
+        Your smart, comprehensive digital gateway to all e-learning platforms, school portals, academic tools &amp; student resources.
       </p>
-      <div class="hero-buttons">
-        <a href="#qeducation" class="btn-main btn-gold">🎓 الدخول لنظام قطر للتعليم</a>
-        <a href="#password" class="btn-main btn-outline-white">🔑 تغيير كلمة المرور</a>
-        <a href="#portal" class="btn-main btn-outline-white">📊 البوابة الإلكترونية</a>
+
+      <!-- 4 Smart Action Hub Cards -->
+      <div class="hero-smart-hub-grid">
+        <a href="#password" class="smart-hub-card">
+          <div>
+            <span class="smart-hub-icon">🔑</span>
+            <h4>تغيير كلمة المرور</h4>
+            <p>استعادة وتعيين كلمة المرور للطالب وولي الأمر</p>
+          </div>
+          <span class="smart-hub-link">الدخول للخدمة ←</span>
+        </a>
+
+        <a href="#qeducation" class="smart-hub-card">
+          <div>
+            <span class="smart-hub-icon">🎓</span>
+            <h4>نظام قطر للتعليم</h4>
+            <p>الوصول للمناهج والواجبات والحصص اليومية</p>
+          </div>
+          <span class="smart-hub-link">تصفح النظام ←</span>
+        </a>
+
+        <a href="#portal" class="smart-hub-card">
+          <div>
+            <span class="smart-hub-icon">📊</span>
+            <h4>بوابة ولي الأمر</h4>
+            <p>التقارير الأكاديمية والرسائل الأسبوعية</p>
+          </div>
+          <span class="smart-hub-link">فتح البوابة ←</span>
+        </a>
+
+        <a href="#classdojo" class="smart-hub-card">
+          <div>
+            <span class="smart-hub-icon">🧑‍🏫</span>
+            <h4>تطبيق ClassDojo</h4>
+            <p>المتابعة السلوكية والتواصل مع المعلمين</p>
+          </div>
+          <span class="smart-hub-link">تحميل وشرح ←</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════ QUICK NAV BAR (HORIZONTAL SCROLL) ══════════════ -->
-<div class="quick-nav-bar">
+<!-- ══════════════ SMART SEARCH & CATEGORY FILTER BAR ══════════════ -->
+<div class="filter-search-section">
   <div class="container">
-    <div class="pills-scroll-wrapper">
-      <a href="#password" class="nav-pill">🔑 كلمة المرور</a>
-      <a href="#qeducation" class="nav-pill">🎓 نظام قطر للتعليم</a>
-      <a href="#portal" class="nav-pill">📊 البوابة الإلكترونية</a>
-      <a href="#classdojo" class="nav-pill">🧑‍🏫 ClassDojo</a>
-      <a href="#achieve" class="nav-pill">📖 Achieve 3000</a>
-      <a href="#iread" class="nav-pill">📝 أقرأ بالعربية</a>
-      <a href="#library" class="nav-pill">📚 المكتبة الإلكترونية</a>
-      <a href="#guidance" class="nav-pill">🎯 الإرشاد والتوجيه</a>
-      <a href="#policies" class="nav-pill">📋 السياسات</a>
-      <a href="#ministry" class="nav-pill">🏛️ خدمات الوزارة</a>
-      <a href="#social" class="nav-pill">📱 قنوات التواصل</a>
-      <a href="#links" class="nav-pill">🔗 جميع الروابط</a>
+    <div class="filter-search-wrapper">
+      
+      <!-- Category Filter Tabs -->
+      <div class="category-filter-tabs" role="tablist">
+        <button class="filter-tab-btn active" data-category="all">🌟 جميع الخدمات (13)</button>
+        <button class="filter-tab-btn" data-category="core">🎓 الأنظمة الأساسية</button>
+        <button class="filter-tab-btn" data-category="academic">📖 المنصات والمكتبات</button>
+        <button class="filter-tab-btn" data-category="guidance">🎯 الإرشاد والمتابعة</button>
+        <button class="filter-tab-btn" data-category="services">🏛️ الوزارة والسياسات</button>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="search-input-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="serviceSearchInput" placeholder="ابحث عن منصة، خدمة، فيديو، أو دليل..." autocomplete="off"/>
+        <button class="search-clear-btn" id="searchClearBtn" aria-label="مسح البحث">✕</button>
+      </div>
+
     </div>
+    <div class="search-count-badge" id="searchCountBadge"></div>
   </div>
 </div>
 
@@ -1684,15 +1940,15 @@ footer {
     <div class="stats-grid">
       <div class="stat-box">
         <span class="stat-number">13+</span>
-        <span class="stat-label">خدمة رقمية متكاملة</span>
+        <span class="stat-label">خدمة رقمية معتمدة</span>
       </div>
       <div class="stat-box">
         <span class="stat-number">15+</span>
-        <span class="stat-label">فيديو إرشادي وشرح</span>
+        <span class="stat-label">فيديو شرح وتدريب</span>
       </div>
       <div class="stat-box">
         <span class="stat-number">13</span>
-        <span class="stat-label">دليل مصور وتوضيحي</span>
+        <span class="stat-label">دليل مصور تفاعلي</span>
       </div>
       <div class="stat-box">
         <span class="stat-number">STEM</span>
@@ -1716,7 +1972,7 @@ footer {
     <div class="section-header-block">
       <div class="section-badge-chip">🔐 الدعم الفني والتقني</div>
       <h2 class="section-title">تغيير وإعادة تعيين كلمة المرور</h2>
-      <p class="section-subtitle">للطالب وولي الأمر — يمكنكم استعادة أو تحديث كلمة المرور بكل سهولة عبر الرابط المباشر</p>
+      <p class="section-subtitle">للطالب وولي الأمر — استعادة أو تحديث كلمة المرور بكل سهولة عبر البوابة الرسمية</p>
       <div class="section-accent-line"></div>
     </div>
 
@@ -1727,8 +1983,8 @@ footer {
         <p>
           هل نسيت كلمة المرور الخاصة بحساب الطالب أو ولي الأمر؟ يمكنك إعادة تعيينها وتفعيل الحساب مباشرة من خلال البوابة المركزية لوزارة التربية والتعليم والتعليم العالي.
           <br/>
-          <span class="en" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">
-            Forgot your password? Reset and manage your student or parent account credentials securely.
+          <span class="en" style="font-size:0.88rem; color:rgba(255,255,255,0.75);">
+            Forgot your password? Reset and manage your student or parent credentials securely.
           </span>
         </p>
         <a href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="password-action-btn">
@@ -1788,7 +2044,7 @@ footer {
   </div>
 </section>
 
-<!-- ══════════════ 3. DETAILED SERVICES (FROM ADOBE EXPRESS GUIDE) ══════════════ -->
+<!-- ══════════════ 3. DETAILED SERVICES CATALOG ══════════════ -->
 <section class="content-section section-light" id="guide">
   <div class="container">
     <div class="section-header-block">
@@ -1798,390 +2054,421 @@ footer {
       <div class="section-accent-line"></div>
     </div>
 
-    <!-- Intro Box -->
-    <div class="intro-lead-box">
-      <h3>📖 مقدمة الدليل الرقمي</h3>
-      <p>
-        يتضمن الدليل الرقمي للخدمات الإلكترونية أهم المواقع الإلكترونية والتطبيقات الرقمية التي يمكن لولي الأمر من خلالها متابعة العملية التعليمية في <strong>مدارس قطر للعلوم والتكنولوجيا الثانوية للبنين</strong>، للبقاء على اطلاع دائم على أداء الطالب والمستجدات التعليمية الخاصة بالمنهج الدراسي.
-      </p>
+    <!-- Services Catalog Grid with Data Categories for Instant Filtering & Search -->
+    <div class="services-catalog-wrapper" id="servicesCatalog">
+
+      <!-- 1. Qatar Education System -->
+      <div class="service-detail-card" id="qeducation" data-category="core" data-keywords="قطر للتعليم نظام qeducation واجبات درجات مناهج حصص جدول فيديوهات">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">🎓</div>
+            <div class="service-title-text">
+              <h3>نظام قطر للتعليم — Qatar Education</h3>
+              <span class="en">QEducation.edu.gov.qa</span>
+            </div>
+          </div>
+          <span class="service-status-tag">🟢 متاح ونشط</span>
+        </div>
+        <div class="service-explanation-box">
+          نظام قطر للتعليم هي بيئة رقمية تمكن الطلاب وأولياء الأمور من الوصول إلى جميع جوانب المنهج الدراسي في جميع المواد. يُعتبر نظام قطر للتعليم مساحة تفاعلية تجمع بين الطلاب وأولياء الأمور والمعلمين. يُمكن للمعلمين رفع المواد الدراسية، والعروض التقديمية، والاختبارات القصيرة، والواجبات للطلاب. ويمكن للطلاب متابعة جميع دروسهم من خلال نظام قطر للتعليم. كما يتيح لأولياء الأمور الولوج إلى النظام باستخدام اسم المستخدم وكلمة المرور الخاص بهم لمتابعة سير العملية التعليمية.
+        </div>
+
+        <!-- SMART TABBED VIDEO PLAYER -->
+        <p style="font-weight:800; color:var(--brand-blue); margin-bottom:10px; font-size:0.92rem;">🎬 مشغل الفيديوهات الإرشادية التفاعلي (اختر الفيديو من القائمة):</p>
+        <div class="smart-video-player-container">
+          <div class="video-embed-box smart-player-screen">
+            <iframe id="qEducationMainPlayer" src="https://www.youtube.com/embed/DuvZDm4aCts" title="فيديو شرح نظام قطر للتعليم" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="playlist-tabs-row" id="qePlaylistTabs">
+            <button class="playlist-tab-item active" data-videoid="DuvZDm4aCts">▶️ الفيديو التعريفي (1)</button>
+            <button class="playlist-tab-item" data-videoid="qyZ3OeWc-3M">▶️ الفيديو التعريفي (2)</button>
+            <button class="playlist-tab-item" data-videoid="iq1hUI5_qj0">👨‍👧 دليل ولي الأمر (1)</button>
+            <button class="playlist-tab-item" data-videoid="vpgzkYEPXZI">👨‍👧 دليل ولي الأمر (2)</button>
+            <button class="playlist-tab-item" data-videoid="mr70owjZA80">👨‍👧 دليل ولي الأمر (3)</button>
+            <button class="playlist-tab-item" data-videoid="g0pPf2SOQFY">👨‍👧 دليل ولي الأمر (4)</button>
+            <button class="playlist-tab-item" data-videoid="3wzFAMtT7mo">👨‍👧 دليل ولي الأمر (5)</button>
+          </div>
+        </div>
+
+        <div class="service-action-buttons">
+          <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">🌐 الدخول على نظام قطر للتعليم</a>
+          <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🔑 معرفة اسم المستخدم وكلمة المرور</a>
+          <a href="https://apps.apple.com/ae/app/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85/id1610018335" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تطبيق iOS (Apple)</a>
+          <a href="https://play.google.com/store/apps/details?id=app.qeducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تطبيق Android</a>
+        </div>
+      </div>
+
+      <!-- 2. School Official Website -->
+      <div class="service-detail-card border-green" id="website" data-category="services" data-keywords="الموقع الرسمي المدرسة اخبار فعاليات تقويم qstssboys.qa">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">🏫</div>
+            <div class="service-title-text">
+              <h3>الموقع الإلكتروني للمدرسة</h3>
+              <span class="en">qstssboys.qa — School Official Website</span>
+            </div>
+          </div>
+          <span class="service-status-tag">🟢 رسمي ومباشر</span>
+        </div>
+        <div class="service-explanation-box">
+          الموقع الإلكتروني الخاص بالمدرسة يوفر مجموعة متنوعة من الأدوات والموارد التي تهدف إلى تعزيز تجربة التعلم. يتضمن ذلك موارد تعليمية متنوعة في شتى المواد الدراسية. كما يوفر الموقع واجهة للفعاليات والأخبار والمراجع الخاصة بالمدرسة، بالإضافة إلى متابعة الأنشطة المدرسية عبر التقويم الإلكتروني والوصول للتقارير الدورية.
+        </div>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-website.png')">
+            <img src="images/img-website.png" alt="الموقع الإلكتروني للمدرسة" loading="lazy"/>
+            <div class="image-caption-tag">الموقع الإلكتروني الرسمي — qstssboys.qa (انقر للتكبير)</div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">🌐 الدخول على الموقع الإلكتروني للمدرسة</a>
+        </div>
+      </div>
+
+      <!-- 3. E-Portal -->
+      <div class="service-detail-card border-navy" id="portal" data-category="core" data-keywords="البوابة الإلكترونية تقارير شهرية رسالة أسبوعية درجات ولي أمر طالب portal">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📊</div>
+            <div class="service-title-text">
+              <h3>البوابة الإلكترونية للمدرسة (E-Portal)</h3>
+              <span class="en">School E-Portal — Parent &amp; Student Access</span>
+            </div>
+          </div>
+          <span class="service-status-tag">🟢 بوابة التقارير</span>
+        </div>
+        <div class="service-explanation-box">
+          البوابة الإلكترونية للمدرسة هي واجهة رقمية تمكن أولياء الأمور من الاطلاع على الرسائل الأسبوعية والتقارير الأكاديمية الشهرية المتعلقة بالمنهج الدراسي الخاصة بالطالب، حيث تتيح لولي الأمر متابعة سير العملية التعليمية والمتابعة الأكاديمية للطالب.
+          <br/><br/>
+          ⚠️ <strong>للدخول على التقرير الشهري:</strong> يجب استخدام اسم المستخدم والرقم الشخصي للطالب.
+        </div>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-portal.png')">
+            <img src="images/img-portal.png" alt="البوابة الإلكترونية" loading="lazy"/>
+            <div class="image-caption-tag">بوابة ولي الأمر وبوابة الطالب الإلكترونية (انقر للتكبير)</div>
+          </div>
+        </div>
+
+        <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📹 فيديوهات توضيحية للبوابة الإلكترونية:</p>
+        <div class="sub-videos-grid">
+          <div>
+            <div class="sub-video-label">البوابة الإلكترونية — لولي الأمر</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/2dkHEhzLtAE" title="portal parent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+          <div>
+            <div class="sub-video-label">البوابة الإلكترونية للطالب</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/kK5VXmVQ1bc" title="portal student" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+        </div>
+
+        <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📩 الرسالة الأسبوعية للمدرسة:</p>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-weekly.png')">
+            <img src="images/img-weekly.png" alt="الرسالة الأسبوعية" loading="lazy"/>
+            <div class="image-caption-tag">الرسالة الأسبوعية — قم باختيار المرحلة الدراسية للاطلاع عليها</div>
+          </div>
+        </div>
+
+        <div class="service-action-buttons">
+          <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">👨‍👧 البوابة الإلكترونية — ولي الأمر</a>
+          <a href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🎓 التقرير الشهري — الطالب</a>
+          <a href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📩 الرسالة الأسبوعية</a>
+        </div>
+      </div>
+
+      <!-- 4. Study Tips -->
+      <div class="service-detail-card border-gold" id="studytips" data-category="guidance" data-keywords="النصائح الدراسية توجيهات مذاكرة اختبارات تفوق pdf">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#D98200,#FFB338); color:#071533;">💡</div>
+            <div class="service-title-text">
+              <h3>النصائح والتوجيهات الدراسية</h3>
+              <span class="en">Study Tips — Academic Guidance</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📄 ملف إرشادي</span>
+        </div>
+        <div class="service-explanation-box">
+          النصائح الدراسية للطالب وهي بعض التوجيهات والنصائح القيمة التي تساعد الطالب على تعميق فهم المواد الدراسية، وتنظيم وقت المذاكرة، وتحسين نتائج الاختبارات والتحصيل العلمي مستقبلاً.
+        </div>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-tips.jpg')">
+            <img src="images/img-tips.jpg" alt="النصائح الدراسية" loading="lazy"/>
+            <div class="image-caption-tag">النصائح والتوجيهات الدراسية المعتمدة للطالب (انقر للتكبير)</div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 تحميل ملف النصائح الدراسية (PDF)</a>
+        </div>
+      </div>
+
+      <!-- 5. ClassDojo -->
+      <div class="service-detail-card border-purple" id="classdojo" data-category="guidance" data-keywords="classdojo كلاس دوجو سلوك متابعة ولي أمر تواصل معلم تطبيق">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B1FA2,#AB47BC); color:#fff;">🧑‍🏫</div>
+            <div class="service-title-text">
+              <h3>تطبيق ClassDojo — المتابعة السلوكية للطالب</h3>
+              <span class="en">ClassDojo — Student Behavioral Tracking</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📱 تطبيق هاتف</span>
+        </div>
+        <div class="service-explanation-box">
+          يُستخدم تطبيق ClassDojo لمتابعة السلوك والمشاركة الإيجابية في الصف بشكل يومي وتفاعلي. يتيح التطبيق لأولياء الأمور متابعة تفاصيل يومية ومباشرة عن أداء أبنائهم السلوكي والتواصل المباشر والمستمر مع المعلم.
+        </div>
+        <div class="sub-videos-grid" style="grid-template-columns:1fr;">
+          <div>
+            <div class="sub-video-label">فيديو شرح تطبيق ClassDojo</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/7F0txQY_XtE" title="ClassDojo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.classdojo.android&hl=en_US" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تحميل التطبيق (Android)</a>
+          <a href="https://apps.apple.com/us/app/classdojo/id552602056" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تحميل التطبيق (iOS Apple)</a>
+        </div>
+      </div>
+
+      <!-- 6. Achieve 3000 -->
+      <div class="service-detail-card border-teal" id="achieve" data-category="academic" data-keywords="achieve 3000 اتشيف لغة انجليزية قراءة فهم مقالات لغات literacy">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#00897B,#26A69A); color:#fff;">📖</div>
+            <div class="service-title-text">
+              <h3>منصة Achieve 3000 التعليمية</h3>
+              <span class="en">Achieve 3000 — English Literacy Platform</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📚 منصة إنجليزية</span>
+        </div>
+        <div class="service-explanation-box">
+          موقع Achieve 3000 هو منصة تعليمية مبتكرة يعتمدها قسم اللغة الإنجليزية وتهدف إلى تحسين مهارات القراءة والفهم للطلاب من مختلف المستويات العمرية. يستند الموقع إلى البحث العلمي وتقنيات التعلم الآلي لتخصيص محتوى تعليمي ملائم لكل طالب بناءً على مستواه الحالي، مع أدوات تقييم تفصيلية للمعلمين.
+        </div>
+        <div class="sub-videos-grid" style="grid-template-columns:1fr;">
+          <div>
+            <div class="sub-video-label">فيديو شرح منصة Achieve 3000</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/O8t1VxUgqws" title="Achieve3000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer" class="action-btn btn-teal-solid">📚 الدخول لمنصة Achieve 3000</a>
+        </div>
+      </div>
+
+      <!-- 7. iRead Arabic -->
+      <div class="service-detail-card" id="iread" data-category="academic" data-keywords="اقرأ بالعربية iread arabic لغة عربية قراءة قصص كتب نحو stem">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">📝</div>
+            <div class="service-title-text">
+              <h3>منصة أقرأ بالعربية التعليمية</h3>
+              <span class="en">iRead Arabic — Arabic Language Platform</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📝 منصة عربية</span>
+        </div>
+        <div class="service-explanation-box">
+          منصة "أقرأ بالعربية" منصة تعليمية يعتمدها قسم اللغة العربية في المدرسة وتقدم تجربة تعلم تفاعلية عالية الجودة، مصممة لتعزيز مهارات القرن الحادي والعشرين. يشمل البرنامج كتباً إلكترونية مسجلة صوتياً، واختبارات تحليلية تركز على فهم النصوص والنحو، وأوراق عمل تقييمية، وفيديوهات قصيرة تعزز المفاهيم مع التركيز على موضوعات STEM.
+        </div>
+        <div class="sub-videos-grid" style="grid-template-columns:1fr;">
+          <div>
+            <div class="sub-video-label">فيديو توضيحي لمنصة أقرأ بالعربية</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/9p7bePK4rTo" title="iReadArabic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📝 الدخول إلى منصة أقرأ بالعربية</a>
+        </div>
+      </div>
+
+      <!-- 8. School Policies -->
+      <div class="service-detail-card border-green" id="policies" data-category="services" data-keywords="السياسات المدرسية لوائح دليل الطالب تقويم سلوكي خطة استراتيجية">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">📋</div>
+            <div class="service-title-text">
+              <h3>السياسات واللوائح المدرسية</h3>
+              <span class="en">School Policies — Student &amp; Parent Guide</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📋 دليل تنظيمي</span>
+        </div>
+        <div class="service-explanation-box">
+          يمكنكم من خلال الرابط أدناه الاطلاع على كافة السياسات الخاصة بالمدرسة والتي تتضمن: دليل الطالب وولي الأمر، سياسة التقويم السلوكي، الخطة الإستراتيجية للمدرسة، سياسة التعليم والتعلم، سياسة تقييم الطلاب وغيرها من السياسات التي تخدم العملية التعليمية.
+        </div>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-policies.png')">
+            <img src="images/img-policies.png" alt="السياسات المدرسية" loading="lazy"/>
+            <div class="image-caption-tag">السياسات واللوائح التنظيمية — مدارس قطر للعلوم والتكنولوجيا (انقر للتكبير)</div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">📋 الاطلاع على جميع السياسات المدرسية</a>
+        </div>
+      </div>
+
+      <!-- 9. Newsletter & Timetable -->
+      <div class="service-detail-card border-navy" id="timetable" data-category="services" data-keywords="جدول الحصص النشرة الشهرية فعاليات اخبار الحصص الدراسية timetable">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📰</div>
+            <div class="service-title-text">
+              <h3>النشرة الشهرية وجدول الحصص الدراسي</h3>
+              <span class="en">Monthly Newsletter &amp; Class Timetable</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📅 جدول ونشرة</span>
+        </div>
+        <div class="service-explanation-box">
+          <strong>النشرة الشهرية:</strong> يتم إصدارها بشكل دوري وتحتوي على كافة الفعاليات والأنشطة وإنجازات المدرسة.<br/>
+          <strong>الجدول الدراسي:</strong> يمكنكم الاطلاع على جدول الحصص الدراسية اليومية — يرجى اختيار الصف الدراسي المعني للاطلاع على الجدول بدقة.
+        </div>
+        <div class="service-images-grid">
+          <div class="service-image-holder" onclick="openLightbox('images/img-newsletter.png')">
+            <img src="images/img-newsletter.png" alt="النشرة الشهرية" loading="lazy"/>
+            <div class="image-caption-tag">النشرة الشهرية الإلكترونية للمدرسة (انقر للتكبير)</div>
+          </div>
+          <div class="service-image-holder" onclick="openLightbox('images/img-timetable.png')">
+            <img src="images/img-timetable.png" alt="الجدول الدراسي" loading="lazy"/>
+            <div class="image-caption-tag">الجدول الدراسي — اختر الصف والمرحلة (انقر للتكبير)</div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📰 تصفح النشرات الشهرية</a>
+          <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📅 استعراض الجدول الدراسي</a>
+        </div>
+      </div>
+
+      <!-- 10. Social Media -->
+      <div class="service-detail-card border-social" id="social" data-category="services" data-keywords="تواصل اجتماعي تويتر فيسبوك يوتيوب انستغرام twitter facebook instagram youtube">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#833AB4,#E1306C,#F77737); color:#fff;">📱</div>
+            <div class="service-title-text">
+              <h3>صفحات التواصل الاجتماعي الرسمية للمدرسة</h3>
+              <span class="en">QSTSS Social Media Channels</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📱 قنوات رسمية</span>
+        </div>
+        <div class="service-explanation-box">
+          تضم المدرسة صفحات رسمية على مختلف وسائل التواصل الاجتماعي، تمكن أولياء الأمور والطلاب وأفراد المجتمع من متابعة أحدث الأخبار والفعاليات والتغطيات المباشرة.
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-tw">𝕏 منصة X (تويتر)</a>
+          <a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-fb">📘 فيسبوك Facebook</a>
+          <a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-yt">▶ يوتيوب YouTube</a>
+          <a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-ig">📸 إنستغرام Instagram</a>
+        </div>
+      </div>
+
+      <!-- 11. Ministry Services -->
+      <div class="service-detail-card border-navy" id="ministry" data-category="services" data-keywords="وزارة التربية والتعليم بوابة معارف شهادات إفادات eduservices">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">🏛️</div>
+            <div class="service-title-text">
+              <h3>الخدمات الإلكترونية — وزارة التربية والتعليم والتعليم العالي</h3>
+              <span class="en">Ministry of Education Digital Services — بوابة معارف</span>
+            </div>
+          </div>
+          <span class="service-status-tag">🏛️ بوابة الوزارة</span>
+        </div>
+        <div class="service-explanation-box">
+          بوابة موحدة تتيح للجمهور من المواطنين والمقيمين في دولة قطر الحصول على كافة الخدمات الإلكترونية التابعة لوزارة التربية والتعليم والتعليم العالي تحت مظلة واحدة متكاملة وسهلة الاستخدام.
+        </div>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-ministry.png')">
+            <img src="images/img-ministry.png" alt="بوابة معارف" loading="lazy"/>
+            <div class="image-caption-tag">بوابة معارف لخدمات الجمهور — وزارة التربية والتعليم والتعليم العالي (انقر للتكبير)</div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ الدخول لبوابة معارف</a>
+          <a href="https://eduservices.edu.gov.qa/Service.aspx?service=IssueDocuments" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📄 خدمة إصدار الشهادات والإفادات</a>
+        </div>
+      </div>
+
+      <!-- 12. Library -->
+      <div class="service-detail-card border-brown" id="library" data-category="academic" data-keywords="المكتبة الإلكترونية الرقمية مكتبة قطر الوطنية مصادر تعلم كتب إعارة maktabaty qnl">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B4A1A,#C07830); color:#fff;">📚</div>
+            <div class="service-title-text">
+              <h3>المكتبة الإلكترونية والمكتبة الرقمية</h3>
+              <span class="en">E-Library &amp; Digital Library Portal</span>
+            </div>
+          </div>
+          <span class="service-status-tag">📚 مكتبة وبحوث</span>
+        </div>
+        <div class="service-explanation-box">
+          <strong>المكتبة الإلكترونية:</strong> تتيح البحث في مصادر المعلومات المتاحة بمركز مصادر التعلم بالمدرسة مع إمكانية حجز وتجديد إعارة الكتب.<br/>
+          <strong>المكتبة الرقمية:</strong> تتيح الوصول والبحث في قواعد البيانات والمكتبات العالمية بالتعاون مع مكتبة قطر الوطنية.
+        </div>
+        <div class="service-images-grid single-img">
+          <div class="service-image-holder" onclick="openLightbox('images/img-diglib.jpg')">
+            <img src="images/img-diglib.jpg" alt="المكتبة الرقمية" loading="lazy"/>
+            <div class="image-caption-tag">المكتبة الرقمية — بالتعاون مع مكتبة قطر الوطنية (انقر للتكبير)</div>
+          </div>
+        </div>
+        <div class="sub-videos-grid">
+          <div>
+            <div class="sub-video-label">شرح المكتبة الإلكترونية للمدرسة</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/IbZT1yPe_Ds" title="elibrary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+          <div>
+            <div class="sub-video-label">خدمات مكتبة قطر الوطنية</div>
+            <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/8UELQQbk4OU" title="qnl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+          </div>
+        </div>
+        <div class="service-action-buttons">
+          <a href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📚 موقع المكتبة الإلكترونية (مكتبتي)</a>
+          <a href="https://sway.office.com/scQUx245tQhCgVrz?ref=Link&loc=play" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📖 موقع المكتبة الرقمية</a>
+          <a href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ مكتبة قطر الوطنية QNL</a>
+        </div>
+      </div>
+
+      <!-- 13. Guidance -->
+      <div class="service-detail-card border-slate" id="guidance" data-category="guidance" data-keywords="الإرشاد الأكاديمي النفسي توجيه طلاب مرشد أحمد عصام تواصل بريد">
+        <div class="service-header-row">
+          <div class="service-header-left">
+            <div class="service-avatar-icon" style="background:linear-gradient(135deg,#394B6B,#5C749E); color:#fff;">🎯</div>
+            <div class="service-title-text">
+              <h3>الإرشاد الأكاديمي والإرشاد النفسي</h3>
+              <span class="en">Academic &amp; Psychological Guidance</span>
+            </div>
+          </div>
+          <span class="service-status-tag">🎯 دعم وتوجيه</span>
+        </div>
+        <div class="service-explanation-box">
+          <strong>الإرشاد الأكاديمي:</strong> يهدف إلى مساعدة الطلاب على اختيار المسار والتخصص المناسب وفقاً لإمكاناتهم واهتماماتهم العلمية واحتياجات سوق العمل، وتوجيههم في اختيار المقررات الدراسية المناسبة.<br/><br/>
+          👨‍🏫 <strong>الأستاذ / أحمد عصام — المرشد الأكاديمي</strong><br/>
+          📧 البريد الإلكتروني: <a href="mailto:a.a.wagialla0909@education.qa" style="color:var(--brand-blue); font-weight:700;">a.a.wagialla0909@education.qa</a>
+        </div>
+        <div class="service-images-grid">
+          <div class="service-image-holder" onclick="openLightbox('images/img-academic.jpg')">
+            <img src="images/img-academic.jpg" alt="الإرشاد الأكاديمي" loading="lazy"/>
+            <div class="image-caption-tag">خدمات وتوجيهات الإرشاد الأكاديمي (انقر للتكبير)</div>
+          </div>
+          <div class="service-image-holder" onclick="openLightbox('images/img-contact.jpg')">
+            <img src="images/img-contact.jpg" alt="بيانات التواصل" loading="lazy"/>
+            <div class="image-caption-tag">بيانات التواصل المباشر مع المرشد الأكاديمي (انقر للتكبير)</div>
+          </div>
+        </div>
+
+        <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">🧠 خدمات وتوجيهات الإرشاد النفسي:</p>
+        <div class="service-images-grid">
+          <div class="service-image-holder" onclick="openLightbox('images/img-psych1.jpg')">
+            <img src="images/img-psych1.jpg" alt="الإرشاد النفسي 1" loading="lazy"/>
+            <div class="image-caption-tag">الإرشاد النفسي والتوجيه الطلابي 1 (انقر للتكبير)</div>
+          </div>
+          <div class="service-image-holder" onclick="openLightbox('images/img-psych2.jpg')">
+            <img src="images/img-psych2.jpg" alt="الإرشاد النفسي 2" loading="lazy"/>
+            <div class="image-caption-tag">الإرشاد النفسي والتوجيه الطلابي 2 (انقر للتكبير)</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- 1. Qatar Education System -->
-    <div class="service-detail-card" id="qeducation">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">🎓</div>
-        <div class="service-title-text">
-          <h3>نظام قطر للتعليم — Qatar Education</h3>
-          <span class="en">QEducation.edu.gov.qa</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        نظام قطر للتعليم هي بيئة رقمية تمكن الطلاب وأولياء الأمور من الوصول إلى جميع جوانب المنهج الدراسي في جميع المواد. يُعتبر نظام قطر للتعليم مساحة تفاعلية تجمع بين الطلاب وأولياء الأمور والمعلمين. يُمكن للمعلمين رفع المواد الدراسية، والعروض التقديمية، والاختبارات القصيرة، والواجبات للطلاب. ويمكن للطلاب متابعة جميع دروسهم من خلال نظام قطر للتعليم. كما يتيح لأولياء الأمور الولوج إلى النظام باستخدام اسم المستخدم وكلمة المرور الخاص بهم لمتابعة سير العملية التعليمية.
-      </div>
-      
-      <p style="font-weight:800; color:var(--brand-blue); margin-bottom:10px; font-size:0.9rem;">📹 فيديوهات تعريفية بنظام قطر للتعليم:</p>
-      <div class="sub-videos-grid">
-        <div>
-          <div class="sub-video-label">الفيديو التعريفي الأول</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/DuvZDm4aCts" title="QE1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-        <div>
-          <div class="sub-video-label">الفيديو التعريفي الثاني</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/qyZ3OeWc-3M" title="QE2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-      </div>
-
-      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📹 فيديوهات إرشادية — دليل استخدام ولي الأمر:</p>
-      <div class="sub-videos-grid">
-        <div><div class="sub-video-label">دليل ولي الأمر (1)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/iq1hUI5_qj0" title="g1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-        <div><div class="sub-video-label">دليل ولي الأمر (2)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/vpgzkYEPXZI" title="g2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-        <div><div class="sub-video-label">دليل ولي الأمر (3)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/mr70owjZA80" title="g3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-        <div><div class="sub-video-label">دليل ولي الأمر (4)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/g0pPf2SOQFY" title="g4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-        <div><div class="sub-video-label">دليل ولي الأمر (5)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/3wzFAMtT7mo" title="g5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      </div>
-
-      <div class="service-action-buttons">
-        <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">🌐 الدخول على نظام قطر للتعليم</a>
-        <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🔑 معرفة اسم المستخدم وكلمة المرور</a>
-        <a href="https://apps.apple.com/ae/app/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85/id1610018335" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تطبيق iOS (Apple)</a>
-        <a href="https://play.google.com/store/apps/details?id=app.qeducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تطبيق Android</a>
-      </div>
-    </div>
-
-    <!-- 2. School Official Website -->
-    <div class="service-detail-card border-green">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">🏫</div>
-        <div class="service-title-text">
-          <h3>الموقع الإلكتروني للمدرسة</h3>
-          <span class="en">qstssboys.qa — School Official Website</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        الموقع الإلكتروني الخاص بالمدرسة يوفر مجموعة متنوعة من الأدوات والموارد التي تهدف إلى تعزيز تجربة التعلم. يتضمن ذلك موارد تعليمية متنوعة في شتى المواد الدراسية. كما يوفر الموقع واجهة للفعاليات والأخبار والمراجع الخاصة بالمدرسة، بالإضافة إلى متابعة الأنشطة المدرسية عبر التقويم الإلكتروني والوصول للتقارير الدورية.
-      </div>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-website.png" alt="الموقع الإلكتروني للمدرسة" loading="lazy"/>
-          <div class="image-caption-tag">الموقع الإلكتروني الرسمي — qstssboys.qa</div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">🌐 الدخول على الموقع الإلكتروني للمدرسة</a>
-      </div>
-    </div>
-
-    <!-- 3. E-Portal -->
-    <div class="service-detail-card border-navy" id="portal">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📊</div>
-        <div class="service-title-text">
-          <h3>البوابة الإلكترونية للمدرسة (E-Portal)</h3>
-          <span class="en">School E-Portal — Parent &amp; Student Access</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        البوابة الإلكترونية للمدرسة هي واجهة رقمية تمكن أولياء الأمور من الاطلاع على الرسائل الأسبوعية والتقارير الأكاديمية الشهرية المتعلقة بالمنهج الدراسي الخاصة بالطالب، حيث تتيح لولي الأمر متابعة سير العملية التعليمية والمتابعة الأكاديمية للطالب.
-        <br/><br/>
-        ⚠️ <strong>للدخول على التقرير الشهري:</strong> يجب استخدام اسم المستخدم والرقم الشخصي للطالب.
-      </div>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-portal.png" alt="البوابة الإلكترونية" loading="lazy"/>
-          <div class="image-caption-tag">بوابة ولي الأمر وبوابة الطالب الإلكترونية</div>
-        </div>
-      </div>
-
-      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📹 فيديوهات توضيحية للبوابة الإلكترونية:</p>
-      <div class="sub-videos-grid">
-        <div>
-          <div class="sub-video-label">البوابة الإلكترونية — لولي الأمر</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/2dkHEhzLtAE" title="portal parent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-        <div>
-          <div class="sub-video-label">البوابة الإلكترونية للطالب</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/kK5VXmVQ1bc" title="portal student" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-      </div>
-
-      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📩 الرسالة الأسبوعية للمدرسة:</p>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-weekly.png" alt="الرسالة الأسبوعية" loading="lazy"/>
-          <div class="image-caption-tag">الرسالة الأسبوعية — قم باختيار المرحلة الدراسية للاطلاع عليها</div>
-        </div>
-      </div>
-
-      <div class="service-action-buttons">
-        <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">👨‍👧 البوابة الإلكترونية — ولي الأمر</a>
-        <a href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🎓 التقرير الشهري — الطالب</a>
-        <a href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📩 الرسالة الأسبوعية</a>
-      </div>
-    </div>
-
-    <!-- 4. Study Tips -->
-    <div class="service-detail-card border-gold">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#D98200,#FFB338); color:#071533;">💡</div>
-        <div class="service-title-text">
-          <h3>النصائح والتوجيهات الدراسية</h3>
-          <span class="en">Study Tips — Academic Guidance</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        النصائح الدراسية للطالب وهي بعض التوجيهات والنصائح القيمة التي تساعد الطالب على تعميق فهم المواد الدراسية، وتنظيم وقت المذاكرة، وتحسين نتائج الاختبارات والتحصيل العلمي مستقبلاً.
-      </div>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-tips.jpg" alt="النصائح الدراسية" loading="lazy"/>
-          <div class="image-caption-tag">النصائح والتوجيهات الدراسية المعتمدة للطالب</div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 تحميل ملف النصائح الدراسية (PDF)</a>
-      </div>
-    </div>
-
-    <!-- 5. ClassDojo -->
-    <div class="service-detail-card border-purple" id="classdojo">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B1FA2,#AB47BC); color:#fff;">🧑‍🏫</div>
-        <div class="service-title-text">
-          <h3>تطبيق ClassDojo — المتابعة السلوكية للطالب</h3>
-          <span class="en">ClassDojo — Student Behavioral Tracking</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        يُستخدم تطبيق ClassDojo لمتابعة السلوك والمشاركة الإيجابية في الصف بشكل يومي وتفاعلي. يتيح التطبيق لأولياء الأمور متابعة تفاصيل يومية ومباشرة عن أداء أبنائهم السلوكي والتواصل المباشر والمستمر مع المعلم.
-      </div>
-      <div class="sub-videos-grid" style="grid-template-columns:1fr;">
-        <div>
-          <div class="sub-video-label">فيديو شرح تطبيق ClassDojo</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/7F0txQY_XtE" title="ClassDojo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.classdojo.android&hl=en_US" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تحميل التطبيق (Android)</a>
-        <a href="https://apps.apple.com/us/app/classdojo/id552602056" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تحميل التطبيق (iOS Apple)</a>
-      </div>
-    </div>
-
-    <!-- 6. Achieve 3000 -->
-    <div class="service-detail-card border-teal" id="achieve">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#00897B,#26A69A); color:#fff;">📖</div>
-        <div class="service-title-text">
-          <h3>منصة Achieve 3000 التعليمية</h3>
-          <span class="en">Achieve 3000 — English Literacy Platform</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        موقع Achieve 3000 هو منصة تعليمية مبتكرة يعتمدها قسم اللغة الإنجليزية وتهدف إلى تحسين مهارات القراءة والفهم للطلاب من مختلف المستويات العمرية. يستند الموقع إلى البحث العلمي وتقنيات التعلم الآلي لتخصيص محتوى تعليمي ملائم لكل طالب بناءً على مستواه الحالي، مع أدوات تقييم تفصيلية للمعلمين.
-      </div>
-      <div class="sub-videos-grid" style="grid-template-columns:1fr;">
-        <div>
-          <div class="sub-video-label">فيديو شرح منصة Achieve 3000</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/O8t1VxUgqws" title="Achieve3000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer" class="action-btn btn-teal-solid">📚 الدخول لمنصة Achieve 3000</a>
-      </div>
-    </div>
-
-    <!-- 7. iRead Arabic -->
-    <div class="service-detail-card" id="iread">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">📝</div>
-        <div class="service-title-text">
-          <h3>منصة أقرأ بالعربية التعليمية</h3>
-          <span class="en">iRead Arabic — Arabic Language Platform</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        منصة "أقرأ بالعربية" منصة تعليمية يعتمدها قسم اللغة العربية في المدرسة وتقدم تجربة تعلم تفاعلية عالية الجودة، مصممة لتعزيز مهارات القرن الحادي والعشرين. يشمل البرنامج كتباً إلكترونية مسجلة صوتياً، واختبارات تحليلية تركز على فهم النصوص والنحو، وأوراق عمل تقييمية، وفيديوهات قصيرة تعزز المفاهيم مع التركيز على موضوعات STEM.
-      </div>
-      <div class="sub-videos-grid" style="grid-template-columns:1fr;">
-        <div>
-          <div class="sub-video-label">فيديو توضيحي لمنصة أقرأ بالعربية</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/9p7bePK4rTo" title="iReadArabic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📝 الدخول إلى منصة أقرأ بالعربية</a>
-      </div>
-    </div>
-
-    <!-- 8. School Policies -->
-    <div class="service-detail-card border-green" id="policies">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">📋</div>
-        <div class="service-title-text">
-          <h3>السياسات واللوائح المدرسية</h3>
-          <span class="en">School Policies — Student &amp; Parent Guide</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        يمكنكم من خلال الرابط أدناه الاطلاع على كافة السياسات الخاصة بالمدرسة والتي تتضمن: دليل الطالب وولي الأمر، سياسة التقويم السلوكي، الخطة الإستراتيجية للمدرسة، سياسة التعليم والتعلم، سياسة تقييم الطلاب وغيرها من السياسات التي تخدم العملية التعليمية.
-      </div>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-policies.png" alt="السياسات المدرسية" loading="lazy"/>
-          <div class="image-caption-tag">السياسات واللوائح التنظيمية — مدارس قطر للعلوم والتكنولوجيا</div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">📋 الاطلاع على جميع السياسات المدرسية</a>
-      </div>
-    </div>
-
-    <!-- 9. Newsletter & Timetable -->
-    <div class="service-detail-card border-navy">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📰</div>
-        <div class="service-title-text">
-          <h3>النشرة الشهرية وجدول الحصص الدراسي</h3>
-          <span class="en">Monthly Newsletter &amp; Class Timetable</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        <strong>النشرة الشهرية:</strong> يتم إصدارها بشكل دوري وتحتوي على كافة الفعاليات والأنشطة وإنجازات المدرسة.<br/>
-        <strong>الجدول الدراسي:</strong> يمكنكم الاطلاع على جدول الحصص الدراسية اليومية — يرجى اختيار الصف الدراسي المعني للاطلاع على الجدول بدقة.
-      </div>
-      <div class="service-images-grid">
-        <div class="service-image-holder">
-          <img src="images/img-newsletter.png" alt="النشرة الشهرية" loading="lazy"/>
-          <div class="image-caption-tag">النشرة الشهرية الإلكترونية للمدرسة</div>
-        </div>
-        <div class="service-image-holder">
-          <img src="images/img-timetable.png" alt="الجدول الدراسي" loading="lazy"/>
-          <div class="image-caption-tag">الجدول الدراسي — اختر الصف والمرحلة</div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📰 تصفح النشرات الشهرية</a>
-        <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📅 استعراض الجدول الدراسي</a>
-      </div>
-    </div>
-
-    <!-- 10. Social Media -->
-    <div class="service-detail-card border-social" id="social">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#833AB4,#E1306C,#F77737); color:#fff;">📱</div>
-        <div class="service-title-text">
-          <h3>صفحات التواصل الاجتماعي الرسمية للمدرسة</h3>
-          <span class="en">QSTSS Social Media Channels</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        تضم المدرسة صفحات رسمية على مختلف وسائل التواصل الاجتماعي، تمكن أولياء الأمور والطلاب وأفراد المجتمع من متابعة أحدث الأخبار والفعاليات والتغطيات المباشرة.
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-tw">𝕏 منصة X (تويتر)</a>
-        <a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-fb">📘 فيسبوك Facebook</a>
-        <a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-yt">▶ يوتيوب YouTube</a>
-        <a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-ig">📸 إنستغرام Instagram</a>
-      </div>
-    </div>
-
-    <!-- 11. Ministry Services -->
-    <div class="service-detail-card border-navy" id="ministry">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">🏛️</div>
-        <div class="service-title-text">
-          <h3>الخدمات الإلكترونية — وزارة التربية والتعليم والتعليم العالي</h3>
-          <span class="en">Ministry of Education Digital Services — بوابة معارف</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        بوابة موحدة تتيح للجمهور من المواطنين والمقيمين في دولة قطر الحصول على كافة الخدمات الإلكترونية التابعة لوزارة التربية والتعليم والتعليم العالي تحت مظلة واحدة متكاملة وسهلة الاستخدام.
-      </div>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-ministry.png" alt="بوابة معارف" loading="lazy"/>
-          <div class="image-caption-tag">بوابة معارف لخدمات الجمهور — وزارة التربية والتعليم والتعليم العالي</div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ الدخول لبوابة معارف</a>
-        <a href="https://eduservices.edu.gov.qa/Service.aspx?service=IssueDocuments" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📄 خدمة إصدار الشهادات والإفادات</a>
-      </div>
-    </div>
-
-    <!-- 12. Library -->
-    <div class="service-detail-card border-brown" id="library">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B4A1A,#C07830); color:#fff;">📚</div>
-        <div class="service-title-text">
-          <h3>المكتبة الإلكترونية والمكتبة الرقمية</h3>
-          <span class="en">E-Library &amp; Digital Library Portal</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        <strong>المكتبة الإلكترونية:</strong> تتيح البحث في مصادر المعلومات المتاحة بمركز مصادر التعلم بالمدرسة مع إمكانية حجز وتجديد إعارة الكتب.<br/>
-        <strong>المكتبة الرقمية:</strong> تتيح الوصول والبحث في قواعد البيانات والمكتبات العالمية بالتعاون مع مكتبة قطر الوطنية.
-      </div>
-      <div class="service-images-grid single-img">
-        <div class="service-image-holder">
-          <img src="images/img-diglib.jpg" alt="المكتبة الرقمية" loading="lazy"/>
-          <div class="image-caption-tag">المكتبة الرقمية — بالتعاون مع مكتبة قطر الوطنية</div>
-        </div>
-      </div>
-      <div class="sub-videos-grid">
-        <div>
-          <div class="sub-video-label">شرح المكتبة الإلكترونية للمدرسة</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/IbZT1yPe_Ds" title="elibrary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-        <div>
-          <div class="sub-video-label">خدمات مكتبة قطر الوطنية</div>
-          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/8UELQQbk4OU" title="qnl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-        </div>
-      </div>
-      <div class="service-action-buttons">
-        <a href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📚 موقع المكتبة الإلكترونية (مكتبتي)</a>
-        <a href="https://sway.office.com/scQUx245tQhCgVrz?ref=Link&loc=play" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📖 موقع المكتبة الرقمية</a>
-        <a href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ مكتبة قطر الوطنية QNL</a>
-      </div>
-    </div>
-
-    <!-- 13. Guidance -->
-    <div class="service-detail-card border-slate" id="guidance">
-      <div class="service-header-row">
-        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#394B6B,#5C749E); color:#fff;">🎯</div>
-        <div class="service-title-text">
-          <h3>الإرشاد الأكاديمي والإرشاد النفسي</h3>
-          <span class="en">Academic &amp; Psychological Guidance</span>
-        </div>
-      </div>
-      <div class="service-explanation-box">
-        <strong>الإرشاد الأكاديمي:</strong> يهدف إلى مساعدة الطلاب على اختيار المسار والتخصص المناسب وفقاً لإمكاناتهم واهتماماتهم العلمية واحتياجات سوق العمل، وتوجيههم في اختيار المقررات الدراسية المناسبة.<br/><br/>
-        👨‍🏫 <strong>الأستاذ / أحمد عصام — المرشد الأكاديمي</strong><br/>
-        📧 البريد الإلكتروني: <a href="mailto:a.a.wagialla0909@education.qa" style="color:var(--brand-blue); font-weight:700;">a.a.wagialla0909@education.qa</a>
-      </div>
-      <div class="service-images-grid">
-        <div class="service-image-holder">
-          <img src="images/img-academic.jpg" alt="الإرشاد الأكاديمي" loading="lazy"/>
-          <div class="image-caption-tag">خدمات وتوجيهات الإرشاد الأكاديمي</div>
-        </div>
-        <div class="service-image-holder">
-          <img src="images/img-contact.jpg" alt="بيانات التواصل" loading="lazy"/>
-          <div class="image-caption-tag">بيانات التواصل المباشر مع المرشد الأكاديمي</div>
-        </div>
-      </div>
-
-      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">🧠 خدمات وتوجيهات الإرشاد النفسي:</p>
-      <div class="service-images-grid">
-        <div class="service-image-holder">
-          <img src="images/img-psych1.jpg" alt="الإرشاد النفسي 1" loading="lazy"/>
-          <div class="image-caption-tag">الإرشاد النفسي والتوجيه الطلابي (1)</div>
-        </div>
-        <div class="service-image-holder">
-          <img src="images/img-psych2.jpg" alt="الإرشاد النفسي 2" loading="lazy"/>
-          <div class="image-caption-tag">الإرشاد النفسي والتوجيه الطلابي (2)</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -2189,7 +2476,7 @@ footer {
 <section class="content-section section-subtle" id="poster">
   <div class="container">
     <div class="poster-showcase-grid">
-      <div class="poster-frame">
+      <div class="poster-frame" onclick="openLightbox('qatar-education-poster.jpg')">
         <img src="qatar-education-poster.jpg" alt="ولي الأمر خَلّك متابع — نظام قطر للتعليم" loading="lazy"/>
       </div>
       <div class="poster-info-box">
@@ -2393,12 +2680,20 @@ footer {
   </div>
 </footer>
 
+<!-- ══════════════ IMAGE LIGHTBOX MODAL ══════════════ -->
+<div class="lightbox-modal" id="imageLightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-img-wrapper">
+    <button class="lightbox-close-btn" onclick="closeLightboxDirect()">✕</button>
+    <img id="lightboxImageTag" src="" alt="صورة توضيحية مكبرة"/>
+  </div>
+</div>
+
 <!-- ══════════════ FLOATING SCROLL-TO-TOP BUTTON ══════════════ -->
 <button class="floating-scroll-btn" id="scrollUpBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="العودة لأعلى الصفحة" aria-label="العودة لأعلى الصفحة">
   ▲
 </button>
 
-<!-- ══════════════ JAVASCRIPT LOGIC ══════════════ -->
+<!-- ══════════════ SMART JAVASCRIPT LOGIC ══════════════ -->
 <script>
 // ══════════════════════════════════════════════
 // 1. THEME SWITCHER (DEFAULT: LIGHT MODE)
@@ -2421,7 +2716,6 @@ function applyTheme(theme) {
   }
 }
 
-// Initial theme: check saved or default to light
 const savedTheme = localStorage.getItem("qstss_theme") || "light";
 applyTheme(savedTheme);
 
@@ -2455,15 +2749,115 @@ drawerOpenBtn.addEventListener("click", openSideDrawer);
 drawerCloseBtn.addEventListener("click", closeSideDrawer);
 drawerBackdrop.addEventListener("click", closeSideDrawer);
 
-// Escape key to close drawer
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && sideDrawer.classList.contains("active")) {
-    closeSideDrawer();
+  if (e.key === "Escape") {
+    if (sideDrawer.classList.contains("active")) closeSideDrawer();
+    if (lightboxModal.classList.contains("active")) closeLightboxDirect();
   }
 });
 
 // ══════════════════════════════════════════════
-// 3. SCROLL-TO-TOP BUTTON
+// 3. SMART SEARCH & CATEGORY FILTER
+// ══════════════════════════════════════════════
+const searchInput = document.getElementById("serviceSearchInput");
+const searchClearBtn = document.getElementById("searchClearBtn");
+const searchCountBadge = document.getElementById("searchCountBadge");
+const filterTabs = document.querySelectorAll(".filter-tab-btn");
+const serviceCards = document.querySelectorAll("#servicesCatalog .service-detail-card");
+
+let currentCategory = "all";
+
+function filterServices() {
+  const query = searchInput.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  if (query.length > 0) {
+    searchClearBtn.style.display = "block";
+  } else {
+    searchClearBtn.style.display = "none";
+  }
+
+  serviceCards.forEach(card => {
+    const cardCat = card.getAttribute("data-category");
+    const keywords = (card.getAttribute("data-keywords") || "").toLowerCase();
+    const textContent = card.innerText.toLowerCase();
+
+    const matchesCategory = (currentCategory === "all" || cardCat === currentCategory);
+    const matchesSearch = (query === "" || keywords.includes(query) || textContent.includes(query));
+
+    if (matchesCategory && matchesSearch) {
+      card.style.display = "block";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  if (query.length > 0) {
+    searchCountBadge.style.display = "block";
+    searchCountBadge.textContent = `تم العثور على (${visibleCount}) خدمة تطابق بحثك`;
+  } else {
+    searchCountBadge.style.display = "none";
+  }
+}
+
+searchInput.addEventListener("input", filterServices);
+
+searchClearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  filterServices();
+  searchInput.focus();
+});
+
+filterTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    filterTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    currentCategory = tab.getAttribute("data-category");
+    filterServices();
+  });
+});
+
+// ══════════════════════════════════════════════
+// 4. SMART TABBED VIDEO PLAYER FOR QATAR EDUCATION
+// ══════════════════════════════════════════════
+const qePlayer = document.getElementById("qEducationMainPlayer");
+const qeTabs = document.querySelectorAll("#qePlaylistTabs .playlist-tab-item");
+
+qeTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    qeTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    const videoId = tab.getAttribute("data-videoid");
+    qePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  });
+});
+
+// ══════════════════════════════════════════════
+// 5. IMAGE LIGHTBOX MODAL
+// ══════════════════════════════════════════════
+const lightboxModal = document.getElementById("imageLightbox");
+const lightboxImg = document.getElementById("lightboxImageTag");
+
+function openLightbox(imgSrc) {
+  lightboxImg.src = imgSrc;
+  lightboxModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightboxDirect() {
+  lightboxModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+function closeLightbox(e) {
+  if (e.target === lightboxModal) {
+    closeLightboxDirect();
+  }
+}
+
+// ══════════════════════════════════════════════
+// 6. SCROLL-TO-TOP BUTTON
 // ══════════════════════════════════════════════
 const scrollUpBtn = document.getElementById("scrollUpBtn");
 window.addEventListener("scroll", () => {
