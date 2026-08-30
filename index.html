@@ -2,803 +2,2427 @@
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0"/>
-<meta name="theme-color" content="#0D1B3E"/>
-<title>دليل التعليم الإلكتروني | E-Learning Guide — QSTSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="theme-color" content="#0A193B"/>
+<title>دليل التعليم الإلكتروني | مدارس قطر للعلوم والتكنولوجيا</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
 <style>
-/* ═══════════════════════════════════════════════════
-   CSS CUSTOM PROPERTIES — LIGHT & DARK MODE
-═══════════════════════════════════════════════════ */
-:root,[data-theme="light"]{
-  --bg:          #F0F4FF;
-  --bg2:         #FFFFFF;
-  --bg3:         #E4EAFF;
-  --surface:     #FFFFFF;
-  --surface2:    #F7F9FF;
-  --border:      rgba(13,27,62,.1);
-  --text:        #0D1B3E;
-  --text2:       #3A4A6B;
-  --text3:       #6B7A9B;
-  --primary:     #0D1B3E;
-  --primary2:    #1A3A7B;
-  --accent:      #2855C4;
-  --accent2:     #4A90D9;
-  --accent3:     #6AAEFF;
-  --white:       #FFFFFF;
-  --gold:        #F0A500;
-  --gold2:       #FFD166;
-  --header-bg:   #0D1B3E;
-  --hero-bg:     linear-gradient(160deg,#0D1B3E 0%,#1A3A7B 50%,#2855C4 100%);
-  --card-shadow: 0 4px 20px rgba(13,27,62,.1);
-  --card-hover:  0 12px 40px rgba(13,27,62,.18);
-  --big-shadow:  0 24px 64px rgba(13,27,62,.2);
-  --nav-border:  rgba(255,255,255,.25);
-  --toggle-bg:   #E4EAFF;
-  --toggle-icon: "🌙";
-  --intro-bg:    linear-gradient(135deg,#0D1B3E,#1A3A7B);
-  --vm-bg:       linear-gradient(135deg,#0D1B3E,#0a1226);
-  --footer-bg:   linear-gradient(135deg,#0D1B3E,#070e20);
-  --tag-bg:      rgba(13,27,62,.08);
-  --tag-color:   #1A3A7B;
-  --icap-bg:     #1A3A7B;
-}
-[data-theme="dark"]{
-  --bg:          #070E20;
-  --bg2:         #0D1B3E;
-  --bg3:         #0a1530;
-  --surface:     #112050;
-  --surface2:    #0f1a40;
-  --border:      rgba(74,144,217,.15);
-  --text:        #E8EEFF;
-  --text2:       #A8BBDD;
-  --text3:       #6B85BB;
-  --primary:     #E8EEFF;
-  --primary2:    #A8BBDD;
-  --accent:      #4A90D9;
-  --accent2:     #6AAEFF;
-  --accent3:     #90C4FF;
-  --white:       #E8EEFF;
-  --gold:        #FFD166;
-  --gold2:       #FFE599;
-  --header-bg:   #070E20;
-  --hero-bg:     linear-gradient(160deg,#070E20 0%,#0D1B3E 50%,#1A3A7B 100%);
-  --card-shadow: 0 4px 20px rgba(0,0,0,.4);
-  --card-hover:  0 12px 40px rgba(0,0,0,.55);
-  --big-shadow:  0 24px 64px rgba(0,0,0,.6);
-  --nav-border:  rgba(74,144,217,.3);
-  --toggle-bg:   #1A3A7B;
-  --intro-bg:    linear-gradient(135deg,#070E20,#0D1B3E);
-  --vm-bg:       linear-gradient(135deg,#050B18,#0D1B3E);
-  --footer-bg:   linear-gradient(135deg,#050B18,#020810);
-  --tag-bg:      rgba(74,144,217,.12);
-  --tag-color:   #6AAEFF;
-  --icap-bg:     #0D1B3E;
+/* ══════════════════════════════════════════════════════
+   DESIGN TOKENS & DYNAMIC THEMES (LIGHT / DARK)
+══════════════════════════════════════════════════════ */
+:root, [data-theme="light"] {
+  --bg-page:            #F4F7FC;
+  --bg-surface:         #FFFFFF;
+  --bg-surface-subtle:  #F8FAFE;
+  --bg-surface-hover:   #F0F4FC;
+  --bg-header:          rgba(255, 255, 255, 0.88);
+  --header-border:      rgba(15, 35, 75, 0.08);
+  --border-subtle:      rgba(15, 35, 75, 0.08);
+  --border-strong:      rgba(15, 35, 75, 0.16);
+
+  /* High-Contrast Typography */
+  --text-primary:       #0A193B;
+  --text-secondary:     #24385E;
+  --text-muted:         #51678E;
+  --text-inverse:       #FFFFFF;
+
+  /* Primary Deep Navy & Accents */
+  --brand-navy-dark:    #07142E;
+  --brand-navy:         #0E265C;
+  --brand-navy-light:   #18429A;
+  --brand-blue:         #1E5FE0;
+  --brand-blue-subtle:  rgba(30, 95, 224, 0.08);
+  --brand-gold:         #D98200;
+  --brand-gold-glow:    #FFB338;
+  --brand-gold-bg:      rgba(217, 130, 0, 0.1);
+
+  /* Elevation Shadows */
+  --shadow-sm:          0 2px 8px -2px rgba(10, 25, 60, 0.06);
+  --shadow-md:          0 8px 24px -4px rgba(10, 25, 60, 0.08), 0 2px 6px -1px rgba(10, 25, 60, 0.04);
+  --shadow-lg:          0 18px 48px -8px rgba(10, 25, 60, 0.12), 0 4px 12px -2px rgba(10, 25, 60, 0.06);
+
+  /* Hero Gradient */
+  --hero-gradient:      linear-gradient(145deg, #071533 0%, #0E275E 55%, #18429A 100%);
+  --hero-text:          #FFFFFF;
+  --hero-subtext:       rgba(255, 255, 255, 0.85);
+
+  /* Cards Accent Strips */
+  --tag-bg:             rgba(30, 95, 224, 0.08);
+  --tag-text:           #1548B2;
+  --img-caption-bg:     #0E265C;
+
+  /* Quick Nav Pills */
+  --pill-bg:            #FFFFFF;
+  --pill-text:          #24385E;
+  --pill-border:        rgba(15, 35, 75, 0.12);
+  --pill-active-bg:     #0E265C;
+  --pill-active-text:   #FFFFFF;
 }
 
-/* ═══════════════════════════════════════════════════
-   RESET & BASE
+[data-theme="dark"] {
+  --bg-page:            #060D1E;
+  --bg-surface:         #0C1935;
+  --bg-surface-subtle:  #112247;
+  --bg-surface-hover:   #162B59;
+  --bg-header:          rgba(8, 17, 39, 0.88);
+  --header-border:      rgba(110, 160, 250, 0.12);
+  --border-subtle:      rgba(110, 160, 250, 0.1);
+  --border-strong:      rgba(110, 160, 250, 0.22);
+
+  /* High-Contrast Typography */
+  --text-primary:       #FFFFFF;
+  --text-secondary:     #D2E0FA;
+  --text-muted:         #8FAEDC;
+  --text-inverse:       #0A193B;
+
+  /* Primary Deep Navy & Accents */
+  --brand-navy-dark:    #040915;
+  --brand-navy:         #3D7DF5;
+  --brand-navy-light:   #689DFF;
+  --brand-blue:         #4B8BF5;
+  --brand-blue-subtle:  rgba(75, 139, 245, 0.15);
+  --brand-gold:         #FFBA38;
+  --brand-gold-glow:    #FFD580;
+  --brand-gold-bg:      rgba(255, 186, 56, 0.15);
+
+  /* Elevation Shadows */
+  --shadow-sm:          0 2px 10px rgba(0, 0, 0, 0.4);
+  --shadow-md:          0 8px 30px rgba(0, 0, 0, 0.55);
+  --shadow-lg:          0 20px 50px rgba(0, 0, 0, 0.7);
+
+  /* Hero Gradient */
+  --hero-gradient:      linear-gradient(145deg, #040A18 0%, #091733 55%, #102654 100%);
+  --hero-text:          #FFFFFF;
+  --hero-subtext:       rgba(255, 255, 255, 0.85);
+
+  /* Cards Accent Strips */
+  --tag-bg:             rgba(75, 139, 245, 0.18);
+  --tag-text:           #88B4FF;
+  --img-caption-bg:     #08142C;
+
+  /* Quick Nav Pills */
+  --pill-bg:            #0C1935;
+  --pill-text:          #D2E0FA;
+  --pill-border:        rgba(110, 160, 250, 0.15);
+  --pill-active-bg:     #3D7DF5;
+  --pill-active-text:   #FFFFFF;
+}
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL RESETS & TYPOGRAPHY
+══════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Tajawal', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.75;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.en {
+  font-family: 'Inter', sans-serif;
+  direction: ltr;
+  display: inline-block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* ══════════════════════════════════════════════════════
+   TOP ANNOUNCEMENT BAR
+══════════════════════════════════════════════════════ */
+.announcement-bar {
+  background: linear-gradient(90deg, #091D47, #133987);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.announcement-bar .badge-gold {
+  background: var(--brand-gold);
+  color: #0A193B;
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+/* ══════════════════════════════════════════════════════
+   HEADER (RTL: BRAND & MENU ON THE RIGHT, ACTIONS LEFT)
+══════════════════════════════════════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--header-border);
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  gap: 16px;
+}
+
+/* Right Side: Hamburger + Logo + Title */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Hamburger Button (Right aligned in RTL) */
+.menu-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
+}
+
+.menu-toggle-btn:hover {
+  background: var(--brand-blue-subtle);
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.menu-icon-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 18px;
+}
+
+.menu-icon-bars span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Logo & Title */
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .brand-logo-img {
+  filter: brightness(0) invert(1);
+}
+
+.brand-title h1 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.brand-title p {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* Center: Desktop Navigation Links (Right adjacent) */
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin-right: auto;
+  margin-left: 16px;
+}
+
+.desktop-nav-links a {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.desktop-nav-links a:hover {
+  color: var(--brand-blue);
+  background: var(--brand-blue-subtle);
+}
+
+/* Left Side: Theme Toggle & Direct Support */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.theme-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  padding: 8px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-switch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand-gold);
+}
+
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-navy);
+  color: #FFFFFF !important;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(14, 38, 92, 0.25);
+}
+
+.header-cta-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+/* ══════════════════════════════════════════════════════
+   RIGHT-SIDE DRAWER (MOBILE & QUICK MENU)
+══════════════════════════════════════════════════════ */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--bg-surface);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
+  z-index: 2001;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.side-drawer.active {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-brand img {
+  height: 38px;
+}
+
+.drawer-close-btn {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.drawer-close-btn:hover {
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue);
+}
+
+.drawer-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.drawer-heading {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 10px 4px;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.drawer-link span.icon {
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+}
+
+.drawer-link:hover, .drawer-link:active {
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue);
+  transform: translateX(-4px);
+}
+
+.drawer-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface-subtle);
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO SECTION
 ═══════════════════════════════════════════════════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;font-size:16px;}
-body{font-family:"Tajawal","Inter",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;transition:background .3s,color .3s;}
-.en{font-family:"Inter",sans-serif;direction:ltr;}
-img{max-width:100%;height:auto;display:block;}
-a{text-decoration:none;}
+.hero-section {
+  background: var(--hero-gradient);
+  color: var(--hero-text);
+  padding: 68px 0 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
 
-/* ═══════════════════════════════════════════════════
-   LAYOUT
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(30, 95, 224, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(217, 130, 0, 0.15) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--brand-gold-glow);
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero-heading {
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+}
+
+.hero-heading span.highlight {
+  color: var(--brand-gold-glow);
+  text-shadow: 0 2px 14px rgba(255, 179, 56, 0.3);
+}
+
+.hero-description {
+  font-size: clamp(0.95rem, 2.4vw, 1.18rem);
+  color: var(--hero-subtext);
+  line-height: 1.8;
+  margin-bottom: 34px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #FFB338 0%, #D98200 100%);
+  color: #071533 !important;
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(217, 130, 0, 0.4);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+/* ══════════════════════════════════════════════════════
+   QUICK NAVIGATION PILLS (STICKY SUB-NAV)
+══════════════════════════════════════════════════════ */
+.quick-nav-bar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+  position: sticky;
+  top: 77px;
+  z-index: 990;
+  box-shadow: var(--shadow-sm);
+}
+
+.pills-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pills-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  border: 1px solid var(--pill-border);
+  padding: 7px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.nav-pill:hover {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+/* ══════════════════════════════════════════════════════
+   STATS BAR
 ═══════════════════════════════════════════════════ */
-.c{max-width:1200px;margin:0 auto;padding:0 20px;}
+.stats-section {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 24px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 10px 12px;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.stat-box:last-child {
+  border-left: none;
+}
+
+.stat-number {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--brand-blue);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
 
 /* ═══════════════════════════════════════════════════
-   TOP STRIP
+   SECTION HEADINGS & COMMON CARD STYLES
 ═══════════════════════════════════════════════════ */
-.top-strip{background:var(--accent);color:#fff;text-align:center;font-size:.78rem;padding:7px 16px;font-weight:600;letter-spacing:.02em;}
+.content-section {
+  padding: 68px 0;
+}
 
-/* ═══════════════════════════════════════════════════
-   HEADER & NAV
+.section-light {
+  background-color: var(--bg-surface);
+}
+
+.section-subtle {
+  background-color: var(--bg-page);
+}
+
+.section-header-block {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.section-badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 5px 18px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3.8vw, 2.2rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 8px auto 0;
+  line-height: 1.7;
+}
+
+.section-accent-line {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-gold));
+  border-radius: 4px;
+  margin: 14px auto 0;
+}
+
+/* ══════════════════════════════════════════════════════
+   PASSWORD RESET SPECIAL CARD
 ═══════════════════════════════════════════════════ */
-header{background:var(--header-bg);padding:0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.3);}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;flex-wrap:nowrap;}
-.logo-block{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-.logo-block img{height:56px;width:auto;filter:brightness(0) invert(1);}
-.site-title{color:#fff;}
-.site-title h1{font-size:1.05rem;font-weight:800;line-height:1.25;white-space:nowrap;}
-.site-title p{font-size:.65rem;color:var(--accent3);margin-top:1px;font-family:"Inter",sans-serif;white-space:nowrap;}
-.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.password-box-card {
+  background: var(--hero-gradient);
+  color: #FFFFFF;
+  border-radius: 24px;
+  padding: 44px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-/* THEME TOGGLE */
-.theme-btn{background:var(--toggle-bg);border:1.5px solid var(--nav-border);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;transition:all .25s;flex-shrink:0;}
-.theme-btn:hover{background:var(--accent);transform:rotate(20deg);}
+.password-box-card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 179, 56, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
 
-/* HAMBURGER */
-.ham-btn{background:transparent;border:1.5px solid var(--nav-border);color:#fff;width:42px;height:42px;border-radius:10px;display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;flex-shrink:0;}
-.ham-btn span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
-.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.ham-btn.open span:nth-child(2){opacity:0;}
-.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.password-icon-circle {
+  width: 84px;
+  height: 84px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
 
-/* DESKTOP NAV */
-nav.desktop-nav{display:flex;gap:4px;flex-wrap:nowrap;align-items:center;}
-nav.desktop-nav a{color:rgba(255,255,255,.85);font-size:.73rem;font-weight:600;padding:7px 11px;border-radius:8px;border:1px solid var(--nav-border);transition:all .2s;white-space:nowrap;}
-nav.desktop-nav a:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
+.password-content {
+  flex: 1;
+}
 
-/* MOBILE NAV */
-.mobile-nav{display:none;background:var(--header-bg);border-top:1px solid rgba(255,255,255,.08);padding:12px 20px 20px;flex-direction:column;gap:6px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
-.mobile-nav.open{display:flex;max-height:600px;}
-.mobile-nav a{color:rgba(255,255,255,.85);font-size:.9rem;font-weight:600;padding:11px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.1);display:block;transition:all .2s;}
-.mobile-nav a:hover,.mobile-nav a:active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.password-content h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
 
-/* ═══════════════════════════════════════════════════
-   HERO
+.password-content p {
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.password-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FFB338, #D98200);
+  color: #071533 !important;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(217, 130, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.password-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 130, 0, 0.5);
+}
+
+.password-url-text {
+  font-family: 'Inter', sans-serif;
+  direction: ltr;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 10px;
+}
+
+/* ══════════════════════════════════════════════════════
+   MAIN 2 FEATURED VIDEOS
 ═══════════════════════════════════════════════════ */
-.hero{background:var(--hero-bg);color:#fff;padding:72px 0 84px;text-align:center;position:relative;overflow:hidden;}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 15% 50%,rgba(74,144,217,.2),transparent 70%),radial-gradient(ellipse 60% 50% at 85% 30%,rgba(42,85,196,.18),transparent 70%);pointer-events:none;}
-.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
-.hero-content{position:relative;z-index:2;}
-.hero-badge{display:inline-block;background:rgba(74,144,217,.25);border:1px solid rgba(74,144,217,.6);color:var(--gold2);border-radius:50px;padding:6px 20px;font-size:.78rem;font-weight:700;margin-bottom:20px;letter-spacing:.04em;}
-.hero h2{font-size:clamp(1.7rem,5vw,3rem);font-weight:900;line-height:1.2;margin-bottom:10px;}
-.hero h2 span{color:var(--gold);}
-.hero .sub{font-size:clamp(.9rem,2.5vw,1.15rem);color:rgba(255,255,255,.8);max-width:640px;margin:0 auto 32px;direction:ltr;font-family:"Inter",sans-serif;}
-.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:.92rem;font-weight:700;transition:all .25s;white-space:nowrap;border:none;cursor:pointer;}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 18px rgba(40,85,196,.45);}
-.btn-primary:hover{background:#1A45A8;transform:translateY(-2px);}
-.btn-gold{background:var(--gold);color:#0D1B3E;box-shadow:0 4px 18px rgba(240,165,0,.4);}
-.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
-.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45);}
-.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px);}
+.featured-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 28px;
+}
 
-/* ═══════════════════════════════════════════════════
-   STATS
+.featured-video-card {
+  background: var(--bg-surface);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-blue);
+}
+
+.video-card-header {
+  padding: 20px 22px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.video-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.icon-parent {
+  background: linear-gradient(135deg, #1E5FE0, #4A90D9);
+  color: #FFFFFF;
+}
+
+.icon-student {
+  background: linear-gradient(135deg, #0D6E4A, #1AA56E);
+  color: #FFFFFF;
+}
+
+.video-card-title h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.video-card-title span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.video-embed-box {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: #000000;
+}
+
+.video-embed-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-card-footer {
+  padding: 14px 22px 18px;
+}
+
+/* ══════════════════════════════════════════════════════
+   DETAILED SERVICES ACCORDIONS / BLOCKS
 ═══════════════════════════════════════════════════ */
-.stats-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:22px 0;}
-.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;}
-.stat-item{text-align:center;padding:10px 6px;border-left:1px solid var(--border);}
-.stat-item:last-child{border-left:none;}
-.stat-num{font-size:1.5rem;font-weight:900;color:var(--accent);display:block;}
-.stat-label{font-size:.7rem;color:var(--text3);margin-top:2px;}
+.intro-lead-box {
+  background: var(--hero-gradient);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-md);
+}
 
-/* ═══════════════════════════════════════════════════
-   SECTIONS COMMON
+.intro-lead-box h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--brand-gold-glow);
+  margin-bottom: 10px;
+}
+
+.intro-lead-box p {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.9;
+}
+
+/* Service Block Container */
+.service-detail-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-right: 5px solid var(--brand-blue);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-detail-card.border-green   { border-right-color: #0D6E4A; }
+.service-detail-card.border-purple  { border-right-color: #7B1FA2; }
+.service-detail-card.border-teal    { border-right-color: #00897B; }
+.service-detail-card.border-gold    { border-right-color: #D98200; }
+.service-detail-card.border-social  { border-right-color: #E1306C; }
+.service-detail-card.border-navy    { border-right-color: #0D3B86; }
+.service-detail-card.border-brown   { border-right-color: #7B4A1A; }
+.service-detail-card.border-slate   { border-right-color: #394B6B; }
+
+.service-header-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.service-avatar-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.service-title-text h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.service-title-text span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.service-explanation-box {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  font-size: 0.94rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+
+/* Image Grid inside Services */
+.service-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin: 16px 0 20px;
+}
+
+.service-images-grid.single-img {
+  grid-template-columns: 1fr;
+}
+
+.service-image-holder {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-surface);
+}
+
+.service-image-holder img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-image-holder:hover img {
+  transform: scale(1.02);
+}
+
+.image-caption-tag {
+  background: var(--img-caption-bg);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+/* Video Sub-grids */
+.sub-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 16px;
+  margin: 16px 0 20px;
+}
+
+.sub-video-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* Action Buttons inside Services */
+.service-action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-navy-solid   { background: var(--brand-navy); color: #FFFFFF !important; }
+.btn-blue-solid   { background: var(--brand-blue); color: #FFFFFF !important; }
+.btn-green-solid  { background: #0D6E4A; color: #FFFFFF !important; }
+.btn-gold-solid   { background: var(--brand-gold); color: #071533 !important; }
+.btn-purple-solid { background: #7B1FA2; color: #FFFFFF !important; }
+.btn-teal-solid   { background: #00897B; color: #FFFFFF !important; }
+.btn-outline-blue { background: transparent; color: var(--brand-blue) !important; border: 1.5px solid var(--brand-blue); }
+.btn-outline-blue:hover { background: var(--brand-blue); color: #FFFFFF !important; }
+
+/* Store Badges */
+.btn-app-store    { background: #333333; color: #FFFFFF !important; }
+.btn-play-store   { background: #0F9D58; color: #FFFFFF !important; }
+
+/* Social Media Buttons */
+.btn-social-tw    { background: #1DA1F2; color: #FFFFFF !important; }
+.btn-social-fb    { background: #1877F2; color: #FFFFFF !important; }
+.btn-social-yt    { background: #FF0000; color: #FFFFFF !important; }
+.btn-social-ig    { background: linear-gradient(45deg, #833AB4, #E1306C, #F77737); color: #FFFFFF !important; }
+
+/* ══════════════════════════════════════════════════════
+   POSTER SECTION
 ═══════════════════════════════════════════════════ */
-section{padding:64px 0;}
-.sec-alt{background:var(--bg3);}
-.sec-white{background:var(--bg2);}
-.sh{text-align:center;margin-bottom:44px;}
-.sbadge{display:inline-block;background:var(--tag-bg);color:var(--tag-color);border-radius:50px;padding:5px 18px;font-size:.74rem;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em;}
-.sh h2{font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:800;color:var(--text);line-height:1.25;}
-.sh p{margin-top:10px;color:var(--text3);font-size:.97rem;max-width:540px;margin-left:auto;margin-right:auto;}
-.divider{width:52px;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:4px;margin:12px auto 0;}
+.poster-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
 
-/* ═══════════════════════════════════════════════════
-   PASSWORD CARD
+.poster-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.3s ease;
+}
+
+.poster-frame:hover {
+  transform: scale(1.015);
+}
+
+.poster-info-box h2 {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.poster-info-box h2 span {
+  color: var(--brand-gold);
+}
+
+.poster-info-box p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+
+.poster-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.poster-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+}
+
+.poster-features-list li .check-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════
+   VISION & MISSION CARDS
 ═══════════════════════════════════════════════════ */
-.pw-card{background:linear-gradient(135deg,var(--primary),var(--primary2));border-radius:24px;padding:44px;display:flex;align-items:center;gap:36px;flex-wrap:wrap;box-shadow:var(--big-shadow);}
-.pw-icon{width:80px;height:80px;background:rgba(74,144,217,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:2rem;border:2px solid rgba(74,144,217,.4);}
-.pw-text{flex:1;min-width:200px;}
-.pw-text h3{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:8px;}
-.pw-text p{color:rgba(255,255,255,.8);font-size:.93rem;margin-bottom:18px;line-height:1.8;}
-.pw-btn{background:var(--gold);color:#0D1B3E;font-weight:800;font-size:.92rem;padding:12px 26px;border-radius:50px;display:inline-flex;align-items:center;gap:8px;transition:all .25s;}
-.pw-btn:hover{background:var(--gold2);transform:translateY(-2px);}
-.pw-url{font-family:"Inter",sans-serif;direction:ltr;font-size:.76rem;color:rgba(255,255,255,.5);margin-top:9px;}
+.vision-mission-section {
+  background: var(--hero-gradient);
+  color: #FFFFFF;
+  padding: 68px 0;
+}
 
-/* ═══════════════════════════════════════════════════
-   VIDEO GRID
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.vm-glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 36px;
+  backdrop-filter: blur(12px);
+}
+
+.vm-glass-card h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--brand-gold-glow);
+  margin-bottom: 12px;
+}
+
+.vm-glass-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* ══════════════════════════════════════════════════════
+   QUICK LINKS DIRECTORY
 ═══════════════════════════════════════════════════ */
-.v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;}
-.v-card{background:var(--surface);border-radius:20px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .3s,box-shadow .3s;border:1px solid var(--border);}
-.v-card:hover{transform:translateY(-5px);box-shadow:var(--card-hover);}
-.v-card-head{padding:18px 18px 12px;display:flex;align-items:flex-start;gap:12px;}
-.v-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.v-meta h3{font-size:.97rem;font-weight:800;color:var(--text);margin-bottom:2px;line-height:1.3;}
-.v-meta span{font-size:.72rem;color:var(--text3);font-family:"Inter",sans-serif;}
-.v-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
-.v-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.v-foot{padding:12px 18px 18px;}
-.vtag{display:inline-block;padding:3px 12px;border-radius:50px;font-size:.7rem;font-weight:700;background:var(--tag-bg);color:var(--tag-color);}
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
 
-/* ═══════════════════════════════════════════════════
-   SERVICE BLOCKS
-═══════════════════════════════════════════════════ */
-.guide-intro{background:linear-gradient(135deg,var(--primary),var(--primary2));border-radius:22px;padding:36px;margin-bottom:40px;box-shadow:var(--big-shadow);}
-.guide-intro h3{font-size:1.2rem;font-weight:800;color:var(--gold);margin-bottom:10px;}
-.guide-intro p{font-size:.96rem;line-height:1.9;color:rgba(255,255,255,.9);}
+.quick-link-tile {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 22px 16px;
+  text-align: center;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: block;
+}
 
-.sblock{background:var(--surface);border-radius:20px;padding:30px;margin-bottom:24px;box-shadow:var(--card-shadow);border:1px solid var(--border);border-right:5px solid var(--accent);transition:transform .25s,box-shadow .25s;}
-.sblock:hover{transform:translateY(-2px);box-shadow:var(--card-hover);}
-.sblock.b1{border-right-color:#2855C4;}
-.sblock.b2{border-right-color:#0D6E4A;}
-.sblock.b3{border-right-color:#6B1A8A;}
-.sblock.b4{border-right-color:#1A7B7B;}
-.sblock.b5{border-right-color:#C48A00;}
-.sblock.b6{border-right-color:#E1306C;}
-.sblock.b7{border-right-color:#0D3B86;}
-.sblock.b8{border-right-color:#7B4A1A;}
-.sblock.b9{border-right-color:#3D5A8A;}
+.quick-link-tile:hover {
+  border-color: var(--brand-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
 
-.sb-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-.sb-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
-.sb-title h3{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:2px;line-height:1.3;}
-.sb-title span{font-size:.73rem;color:var(--text3);font-family:"Inter",sans-serif;}
-.sb-desc{background:var(--bg);border-radius:12px;padding:16px 20px;margin-bottom:18px;font-size:.91rem;line-height:1.9;color:var(--text2);border:1px solid var(--border);}
+.quick-link-tile .tile-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
 
-/* image boxes */
-.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin:14px 0 18px;}
-.img-grid.one{grid-template-columns:1fr;}
-.img-grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));}
-.img-box{border-radius:12px;overflow:hidden;box-shadow:var(--card-shadow);border:1px solid var(--border);}
-.img-box img{width:100%;height:auto;display:block;transition:transform .3s;}
-.img-box:hover img{transform:scale(1.02);}
-.img-cap{background:var(--icap-bg);color:rgba(255,255,255,.9);font-size:.73rem;text-align:center;padding:7px 10px;}
+.quick-link-tile h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
 
-/* sub video grid */
-.sv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin:14px 0 18px;}
-.sv-label{font-size:.78rem;font-weight:700;color:var(--text3);margin-bottom:6px;text-align:center;}
+.quick-link-tile p {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
 
-/* buttons row */
-.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
-.sbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:50px;font-size:.82rem;font-weight:700;transition:all .22s;border:none;cursor:pointer;text-decoration:none;}
-.s-blue{background:var(--accent);color:#fff;} .s-blue:hover{background:#1A45A8;transform:translateY(-2px);}
-.s-navy{background:#0D3B86;color:#fff;} .s-navy:hover{background:#092A61;transform:translateY(-2px);}
-.s-green{background:#0D6E4A;color:#fff;} .s-green:hover{background:#095437;transform:translateY(-2px);}
-.s-gold{background:var(--gold);color:#0D1B3E;} .s-gold:hover{background:var(--gold2);transform:translateY(-2px);}
-.s-purple{background:#6B1A8A;color:#fff;} .s-purple:hover{background:#501468;transform:translateY(-2px);}
-.s-teal{background:#1A7B7B;color:#fff;} .s-teal:hover{background:#125A5A;transform:translateY(-2px);}
-.s-out{background:transparent;color:var(--accent);border:2px solid var(--accent);} .s-out:hover{background:var(--accent);color:#fff;transform:translateY(-2px);}
-.s-ios{background:#555;color:#fff;} .s-ios:hover{background:#333;transform:translateY(-2px);}
-.s-and{background:#3DDC84;color:#000;} .s-and:hover{background:#28C270;transform:translateY(-2px);}
-.s-tw{background:#1DA1F2;color:#fff;} .s-fb{background:#1877F2;color:#fff;} .s-yt{background:#FF0000;color:#fff;} .s-ig{background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);color:#fff;}
-.s-social:hover{transform:translateY(-2px);filter:brightness(1.1);}
+.quick-link-tile .tile-arrow {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--brand-blue);
+  font-weight: 700;
+  font-size: 0.74rem;
+}
 
-/* ═══════════════════════════════════════════════════
-   POSTER
-═══════════════════════════════════════════════════ */
-.poster-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-.poster-img-wrap{border-radius:20px;overflow:hidden;box-shadow:var(--big-shadow);transition:transform .3s;}
-.poster-img-wrap:hover{transform:scale(1.02);}
-.poster-info h2{font-size:1.7rem;font-weight:900;color:var(--text);line-height:1.25;margin-bottom:14px;}
-.poster-info h2 span{color:var(--gold);}
-.poster-info .desc-text{color:var(--text2);font-size:.97rem;margin-bottom:24px;line-height:1.85;}
-.feat-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.feat-list li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;color:var(--text2);}
-.feat-list li .chk{width:26px;height:26px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.68rem;}
-
-/* ═══════════════════════════════════════════════════
-   VISION / MISSION
-═══════════════════════════════════════════════════ */
-.vm-section{background:var(--vm-bg);padding:64px 0;}
-.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-.vm-card{background:rgba(74,144,217,.1);border-radius:20px;padding:36px;border:1px solid rgba(74,144,217,.25);}
-.vm-card h3{font-size:1.15rem;font-weight:800;color:var(--gold);margin-bottom:12px;}
-.vm-card p{color:rgba(255,255,255,.88);font-size:.97rem;line-height:1.9;}
-
-/* ═══════════════════════════════════════════════════
-   QUICK LINKS
-═══════════════════════════════════════════════════ */
-.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;}
-.link-card{background:var(--surface);border-radius:16px;padding:22px 16px;text-align:center;text-decoration:none;color:var(--text);box-shadow:var(--card-shadow);transition:all .25s;border:1.5px solid var(--border);display:block;}
-.link-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--card-hover);}
-.link-icon{font-size:1.9rem;margin-bottom:10px;display:block;}
-.link-card h4{font-size:.85rem;font-weight:800;color:var(--text);margin-bottom:4px;}
-.link-card p{font-size:.72rem;color:var(--text3);line-height:1.4;}
-.link-card .arr{margin-top:10px;display:inline-flex;align-items:center;gap:3px;color:var(--accent);font-weight:700;font-size:.72rem;}
-
-/* ═══════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════════ */
-footer{background:var(--footer-bg);color:rgba(255,255,255,.7);padding:52px 0 0;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px;}
-.footer-brand img{height:48px;width:auto;filter:brightness(0) invert(1);margin-bottom:12px;}
-.footer-brand p{font-size:.83rem;line-height:1.8;max-width:280px;}
-.footer-col h5{color:var(--gold);font-size:.88rem;font-weight:700;margin-bottom:14px;}
-.footer-col ul{list-style:none;}
-.footer-col ul li{margin-bottom:8px;}
-.footer-col ul li a{color:rgba(255,255,255,.55);font-size:.83rem;transition:color .2s;}
-.footer-col ul li a:hover{color:var(--gold);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.75rem;color:rgba(255,255,255,.35);}
-
-/* ═══════════════════════════════════════════════════
-   SCROLL TOP BUTTON
-═══════════════════════════════════════════════════ */
-.scroll-top-btn{position:fixed;bottom:24px;left:24px;width:46px;height:46px;background:var(--accent);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(40,85,196,.4);transition:all .25s;opacity:0;pointer-events:none;z-index:300;}
-.scroll-top-btn.visible{opacity:1;pointer-events:auto;}
-.scroll-top-btn:hover{background:var(--gold);color:#0D1B3E;transform:translateY(-3px);}
-
-/* ═══════════════════════════════════════════════════
-   ANIMATIONS
-═══════════════════════════════════════════════════ */
-.fade-in{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
-
-/* ═══════════════════════════════════════════════════
-   RESPONSIVE — TABLET (≤ 900px)
-═══════════════════════════════════════════════════ */
-@media(max-width:900px){
-  .stats-grid{grid-template-columns:repeat(3,1fr);}
-  .stat-item:nth-child(4){border-left:none;}
-  .poster-layout{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
-  .vm-grid{grid-template-columns:1fr;}
-  nav.desktop-nav{display:none;}
-  .ham-btn{display:flex;}
-  .site-title h1{font-size:.92rem;}
-  .site-title p{display:none;}
+footer {
+  background: var(--brand-navy-dark);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 56px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ═══════════════════════════════════════════════════
-   RESPONSIVE — MOBILE (≤ 640px)
-═══════════════════════════════════════════════════ */
-@media(max-width:640px){
-  .top-strip{font-size:.7rem;padding:6px 10px;}
-  .header-inner{padding:10px 14px;}
-  .logo-block img{height:44px;}
-  .site-title h1{font-size:.82rem;}
-  .hero{padding:48px 0 58px;}
-  .hero-badge{font-size:.7rem;padding:5px 14px;}
-  .hero h2{font-size:1.6rem;}
-  .hero .sub{font-size:.88rem;}
-  .hero-cta .btn{font-size:.82rem;padding:10px 18px;}
-  .stats-grid{grid-template-columns:repeat(3,1fr);}
-  .stat-num{font-size:1.2rem;}
-  .stat-label{font-size:.62rem;}
-  section{padding:48px 0;}
-  .sh h2{font-size:1.35rem;}
-  .pw-card{flex-direction:column;padding:28px 20px;gap:20px;text-align:center;}
-  .pw-icon{width:64px;height:64px;margin:0 auto;}
-  .pw-text h3{font-size:1.15rem;}
-  .guide-intro{padding:24px 18px;}
-  .sblock{padding:22px 16px;}
-  .sb-icon{width:44px;height:44px;font-size:1.3rem;}
-  .sb-title h3{font-size:.98rem;}
-  .img-grid.two{grid-template-columns:1fr;}
-  .sv-grid{grid-template-columns:1fr;}
-  .v-grid{grid-template-columns:1fr;}
-  .poster-layout{gap:28px;}
-  .poster-info h2{font-size:1.4rem;}
-  .links-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .link-card{padding:16px 10px;}
-  .link-icon{font-size:1.6rem;}
-  .footer-grid{grid-template-columns:1fr;gap:24px;}
-  .footer-bottom{flex-direction:column;text-align:center;gap:4px;}
-  .scroll-top-btn{bottom:16px;left:16px;width:40px;height:40px;font-size:1rem;}
-  .btn-row{gap:6px;}
-  .sbtn{font-size:.78rem;padding:8px 14px;}
-  .vm-card{padding:24px 18px;}
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 44px;
 }
 
-/* ═══════════════════════════════════════════════════
-   RESPONSIVE — SMALL MOBILE (≤ 380px)
+.footer-brand-info img {
+  height: 52px;
+  filter: brightness(0) invert(1);
+  margin-bottom: 14px;
+}
+
+.footer-brand-info p {
+  font-size: 0.86rem;
+  line-height: 1.85;
+  max-width: 320px;
+}
+
+.footer-col h5 {
+  color: var(--brand-gold-glow);
+  font-size: 0.94rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 9px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.86rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ══════════════════════════════════════════════════════
+   FLOATING SCROLL TO TOP
 ═══════════════════════════════════════════════════ */
-@media(max-width:380px){
-  .stats-grid{grid-template-columns:repeat(2,1fr);}
-  .links-grid{grid-template-columns:1fr 1fr;}
-  .hero h2{font-size:1.4rem;}
-  .c{padding:0 12px;}
+.floating-scroll-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 46px;
+  height: 46px;
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: all 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 900;
+}
+
+.floating-scroll-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.floating-scroll-btn:hover {
+  background: var(--brand-gold);
+  color: #071533;
+  transform: translateY(-3px);
+}
+
+/* ══════════════════════════════════════════════════════
+   MEDIA QUERIES (MOBILE OPTIMIZATION)
+═══════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .desktop-nav-links {
+    display: none;
+  }
+  .poster-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stat-box:nth-child(4) {
+    border-left: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .announcement-bar {
+    font-size: 0.74rem;
+    padding: 6px 12px;
+  }
+  .header-container {
+    padding: 10px 16px;
+  }
+  .brand-logo-img {
+    height: 42px;
+  }
+  .brand-title h1 {
+    font-size: 0.88rem;
+  }
+  .brand-title p {
+    display: none;
+  }
+  .header-cta-btn {
+    display: none;
+  }
+  .hero-section {
+    padding: 48px 0 58px;
+  }
+  .hero-heading {
+    font-size: 1.7rem;
+  }
+  .hero-description {
+    font-size: 0.92rem;
+  }
+  .hero-buttons .btn-main {
+    font-size: 0.85rem;
+    padding: 11px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stat-number {
+    font-size: 1.3rem;
+  }
+  .stat-label {
+    font-size: 0.68rem;
+  }
+  .content-section {
+    padding: 48px 0;
+  }
+  .section-title {
+    font-size: 1.35rem;
+  }
+  .password-box-card {
+    flex-direction: column;
+    padding: 28px 20px;
+    text-align: center;
+    gap: 20px;
+  }
+  .password-icon-circle {
+    margin: 0 auto;
+  }
+  .service-detail-card {
+    padding: 22px 16px;
+  }
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .floating-scroll-btn {
+    bottom: 18px;
+    left: 18px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<div class="top-strip">🎓 دليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا الثانوية للبنين &nbsp;|&nbsp; E-Learning Guide — QSTSS</div>
+<!-- ══════════════ ANNOUNCEMENT STRIP ══════════════ -->
+<div class="announcement-bar">
+  <span class="badge-gold">دليل 2025/2026</span>
+  <span>🎓 مرحباً بكم في بوابة دليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا</span>
+</div>
 
-<!-- ══════════════ HEADER ══════════════ -->
-<header>
-  <div class="header-inner">
-    <div class="logo-block">
-      <img src="school-logo.png" alt="شعار المدرسة"/>
-      <div class="site-title">
-        <h1>مدارس قطر للعلوم والتكنولوجيا</h1>
-        <p class="en">Qatar Science &amp; Technology Preparatory Secondary School for Boys</p>
+<!-- ══════════════ MAIN HEADER ══════════════ -->
+<header id="mainHeader">
+  <div class="header-container">
+    
+    <!-- Right Side: Menu Button + Brand (Logo & School Name) -->
+    <div class="header-right">
+      <button class="menu-toggle-btn" id="drawerOpenBtn" aria-label="فتح القائمة الرئيسية">
+        <div class="menu-icon-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span>القائمة</span>
+      </button>
+
+      <div class="brand-wrapper">
+        <img src="school-logo.png" alt="شعار مدارس قطر للعلوم والتكنولوجيا" class="brand-logo-img"/>
+        <div class="brand-title">
+          <h1>مدارس قطر للعلوم والتكنولوجيا</h1>
+          <p class="en">Qatar Science &amp; Technology Preparatory Secondary School for Boys</p>
+        </div>
       </div>
     </div>
-    <nav class="desktop-nav">
-      <a href="#password">🔑 كلمة المرور</a>
-      <a href="#qeducation">🎓 قطر للتعليم</a>
-      <a href="#portal">📊 البوابة</a>
-      <a href="#classdojo">ClassDojo</a>
-      <a href="#achieve">Achieve</a>
-      <a href="#library">📚 المكتبة</a>
-      <a href="#guidance">🎯 الإرشاد</a>
-      <a href="#ministry">🏛️ وزارة</a>
-      <a href="#social">📱 تواصل</a>
-    </nav>
-    <div class="header-actions">
-      <button class="theme-btn" id="themeBtn" title="تبديل الوضع">🌙</button>
-      <button class="ham-btn" id="hamBtn" aria-label="القائمة">
-        <span></span><span></span><span></span>
+
+    <!-- Center Desktop Navigation Links -->
+    <ul class="desktop-nav-links">
+      <li><a href="#password">🔑 كلمة المرور</a></li>
+      <li><a href="#qeducation">🎓 قطر للتعليم</a></li>
+      <li><a href="#portal">📊 البوابة</a></li>
+      <li><a href="#classdojo">🧑‍🏫 ClassDojo</a></li>
+      <li><a href="#achieve">📖 Achieve 3000</a></li>
+      <li><a href="#library">📚 المكتبة</a></li>
+      <li><a href="#guidance">🎯 الإرشاد</a></li>
+      <li><a href="#ministry">🏛️ وزارة التربية</a></li>
+      <li><a href="#social">📱 التواصل</a></li>
+    </ul>
+
+    <!-- Left Side: Theme Toggle & Fast Access Button -->
+    <div class="header-left">
+      <button class="theme-switch-btn" id="themeToggleBtn" aria-label="تبديل وضع الألوان">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel">الوضع الليلي</span>
       </button>
+      <a href="#password" class="header-cta-btn">🔑 استعادة كلمة المرور</a>
     </div>
+
   </div>
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#password" onclick="closeMenu()">🔑 تغيير كلمة المرور</a>
-    <a href="#qeducation" onclick="closeMenu()">🎓 نظام قطر للتعليم</a>
-    <a href="#portal" onclick="closeMenu()">📊 البوابة الإلكترونية</a>
-    <a href="#classdojo" onclick="closeMenu()">🧑‍🏫 ClassDojo</a>
-    <a href="#achieve" onclick="closeMenu()">📖 Achieve 3000</a>
-    <a href="#library" onclick="closeMenu()">📚 المكتبة</a>
-    <a href="#guidance" onclick="closeMenu()">🎯 الإرشاد الأكاديمي</a>
-    <a href="#ministry" onclick="closeMenu()">🏛️ وزارة التربية</a>
-    <a href="#social" onclick="closeMenu()">📱 التواصل الاجتماعي</a>
-    <a href="#links" onclick="closeMenu()">🔗 الروابط المهمة</a>
-  </nav>
 </header>
 
-<!-- ══════════════ HERO ══════════════ -->
-<section class="hero">
-<div class="c"><div class="hero-content">
-  <div class="hero-badge">📚 دليل ولي الأمر لتفعيل الخدمات التكنولوجية — 2025/2026</div>
-  <h2>دليل التعليم الإلكتروني<br/><span>للطلاب وأولياء الأمور</span></h2>
-  <p class="sub en">Comprehensive guide to all digital services at Qatar Science &amp; Technology Preparatory Secondary School for Boys.</p>
-  <div class="hero-cta">
-    <a href="#qeducation" class="btn btn-primary">🎓 نظام قطر للتعليم</a>
-    <a href="#password" class="btn btn-gold">🔑 تغيير كلمة المرور</a>
-    <a href="#portal" class="btn btn-outline">📊 البوابة الإلكترونية</a>
+<!-- ══════════════ RIGHT-SIDE DRAWER (MOBILE & QUICK NAV) ══════════════ -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+<aside class="side-drawer" id="sideDrawer" aria-label="القائمة الجانبية">
+  <div class="drawer-header">
+    <div class="drawer-brand">
+      <img src="school-logo.png" alt="شعار المدرسة"/>
+      <strong style="font-size:0.95rem; color:var(--text-primary);">مدارس قطر للعلوم والتكنولوجيا</strong>
+    </div>
+    <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="إغلاق القائمة">✕</button>
   </div>
-</div></div>
+
+  <div class="drawer-content">
+    <div class="drawer-heading">الخدمات السريعة</div>
+    <a href="#password" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🔑</span><span>تغيير كلمة المرور</span></a>
+    <a href="#qeducation" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🎓</span><span>نظام قطر للتعليم (QEducation)</span></a>
+    <a href="#portal" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📊</span><span>البوابة الإلكترونية والتقارير</span></a>
+    <a href="#classdojo" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🧑‍🏫</span><span>متابعة السلوك (ClassDojo)</span></a>
+
+    <div class="drawer-heading">المنصات التعليمية والمكتبات</div>
+    <a href="#achieve" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📖</span><span>منصة Achieve 3000 (الإنجليزية)</span></a>
+    <a href="#iread" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📝</span><span>منصة أقرأ بالعربية</span></a>
+    <a href="#library" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📚</span><span>المكتبة الإلكترونية والرقمية</span></a>
+
+    <div class="drawer-heading">التوجيه والخدمات المدرسية</div>
+    <a href="#guidance" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🎯</span><span>الإرشاد الأكاديمي والنفسي</span></a>
+    <a href="#policies" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📋</span><span>السياسات المدرسية</span></a>
+    <a href="#ministry" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🏛️</span><span>خدمات وزارة التربية والتعليم</span></a>
+    <a href="#social" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📱</span><span>قنوات التواصل الاجتماعي</span></a>
+    <a href="#links" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🔗</span><span>دليل جميع الروابط</span></a>
+  </div>
+
+  <div class="drawer-footer">
+    <a href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid" style="width:100%; justify-content:center;">
+      🔑 إعادة تعيين كلمة المرور
+    </a>
+  </div>
+</aside>
+
+<!-- ══════════════ HERO SECTION ══════════════ -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge-pill">
+        <span>📚</span>
+        <span>دليل ولي الأمر لتفعيل الخدمات التكنولوجية — 2025/2026</span>
+      </div>
+      <h2 class="hero-heading">
+        دليل التعليم الإلكتروني<br/>
+        <span class="highlight">للطلاب وأولياء الأمور</span>
+      </h2>
+      <p class="hero-description en">
+        Your comprehensive, modern digital gateway to all e-learning portals, services &amp; academic resources at Qatar Science &amp; Technology Preparatory Secondary School for Boys.
+      </p>
+      <div class="hero-buttons">
+        <a href="#qeducation" class="btn-main btn-gold">🎓 الدخول لنظام قطر للتعليم</a>
+        <a href="#password" class="btn-main btn-outline-white">🔑 تغيير كلمة المرور</a>
+        <a href="#portal" class="btn-main btn-outline-white">📊 البوابة الإلكترونية</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar"><div class="c"><div class="stats-grid">
-  <div class="stat-item"><span class="stat-num">13+</span><span class="stat-label">خدمة رقمية</span></div>
-  <div class="stat-item"><span class="stat-num">15+</span><span class="stat-label">فيديو</span></div>
-  <div class="stat-item"><span class="stat-num">13</span><span class="stat-label">صورة توضيحية</span></div>
-  <div class="stat-item"><span class="stat-num">STEM</span><span class="stat-label">AP Education</span></div>
-  <div class="stat-item"><span class="stat-num">QE</span><span class="stat-label">Qatar Education</span></div>
-  <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label">وصول مستمر</span></div>
-</div></div></div>
-
-<!-- ══════════════ PASSWORD ══════════════ -->
-<section class="sec-white" id="password">
-<div class="c">
-  <div class="sh"><div class="sbadge">🔐 الدعم التقني</div><h2>تغيير كلمة المرور</h2><p>للطالب وولي الأمر — من الرابط الرسمي أدناه</p><div class="divider"></div></div>
-  <div class="pw-card">
-    <div class="pw-icon">🔑</div>
-    <div class="pw-text">
-      <h3>تغيير / إعادة تعيين كلمة المرور</h3>
-      <p>هل نسيت كلمة المرور؟ يمكنك إعادة تعيينها بسهولة من خلال البوابة الرسمية لوزارة التربية والتعليم والتعليم العالي.<br/><span class="en" style="font-size:.82rem;color:rgba(255,255,255,.6);">Forgot your password? Reset it through the official Ministry portal.</span></p>
-      <a class="pw-btn" href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer">🔑 &nbsp; إعادة تعيين كلمة المرور</a>
-      <p class="pw-url">🌐 https://pwdreset.edu.gov.qa/</p>
+<!-- ══════════════ QUICK NAV BAR (HORIZONTAL SCROLL) ══════════════ -->
+<div class="quick-nav-bar">
+  <div class="container">
+    <div class="pills-scroll-wrapper">
+      <a href="#password" class="nav-pill">🔑 كلمة المرور</a>
+      <a href="#qeducation" class="nav-pill">🎓 نظام قطر للتعليم</a>
+      <a href="#portal" class="nav-pill">📊 البوابة الإلكترونية</a>
+      <a href="#classdojo" class="nav-pill">🧑‍🏫 ClassDojo</a>
+      <a href="#achieve" class="nav-pill">📖 Achieve 3000</a>
+      <a href="#iread" class="nav-pill">📝 أقرأ بالعربية</a>
+      <a href="#library" class="nav-pill">📚 المكتبة الإلكترونية</a>
+      <a href="#guidance" class="nav-pill">🎯 الإرشاد والتوجيه</a>
+      <a href="#policies" class="nav-pill">📋 السياسات</a>
+      <a href="#ministry" class="nav-pill">🏛️ خدمات الوزارة</a>
+      <a href="#social" class="nav-pill">📱 قنوات التواصل</a>
+      <a href="#links" class="nav-pill">🔗 جميع الروابط</a>
     </div>
   </div>
 </div>
-</section>
 
-<!-- ══════════════ MAIN VIDEOS ══════════════ -->
-<section class="sec-alt" id="mainvideos">
-<div class="c">
-  <div class="sh"><div class="sbadge">🎬 الدليل المرئي</div><h2>فيديوهات الدليل التعليمي</h2><p>دليل استخدام نظام قطر للتعليم — للطالب ولولي الأمر</p><div class="divider"></div></div>
-  <div class="v-grid">
-    <div class="v-card fade-in">
-      <div class="v-card-head"><div class="v-icon" style="background:linear-gradient(135deg,#2855C4,#4A90D9);">👨‍👧</div><div class="v-meta"><h3>دليل استخدام ولي الأمر لنظام قطر للتعليم</h3><span class="en">Parent's Guide — Qatar Education System</span></div></div>
-      <div class="v-embed"><iframe src="https://www.youtube.com/embed/15mrMpPPhEg" title="دليل ولي الأمر" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-      <div class="v-foot"><span class="vtag">👨‍👧 ولي الأمر</span></div>
-    </div>
-    <div class="v-card fade-in">
-      <div class="v-card-head"><div class="v-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E);">🎓</div><div class="v-meta"><h3>دليل استخدام الطالب لنظام قطر للتعليم</h3><span class="en">Student's Guide — Qatar Education System</span></div></div>
-      <div class="v-embed"><iframe src="https://www.youtube.com/embed/yfDUVtKUweU" title="دليل الطالب" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-      <div class="v-foot"><span class="vtag">🎓 الطالب</span></div>
+<!-- ══════════════ STATS BAR ══════════════ -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-number">13+</span>
+        <span class="stat-label">خدمة رقمية متكاملة</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">فيديو إرشادي وشرح</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">13</span>
+        <span class="stat-label">دليل مصور وتوضيحي</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">STEM</span>
+        <span class="stat-label">AP Education</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">QE</span>
+        <span class="stat-label">Qatar Education</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">وصول دائم ومستمر</span>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- ══════════════ 1. PASSWORD RESET SECTION ══════════════ -->
+<section class="content-section section-light" id="password">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-badge-chip">🔐 الدعم الفني والتقني</div>
+      <h2 class="section-title">تغيير وإعادة تعيين كلمة المرور</h2>
+      <p class="section-subtitle">للطالب وولي الأمر — يمكنكم استعادة أو تحديث كلمة المرور بكل سهولة عبر الرابط المباشر</p>
+      <div class="section-accent-line"></div>
+    </div>
+
+    <div class="password-box-card">
+      <div class="password-icon-circle">🔑</div>
+      <div class="password-content">
+        <h3>بوابة استعادة وتغيير كلمة المرور الرسمية</h3>
+        <p>
+          هل نسيت كلمة المرور الخاصة بحساب الطالب أو ولي الأمر؟ يمكنك إعادة تعيينها وتفعيل الحساب مباشرة من خلال البوابة المركزية لوزارة التربية والتعليم والتعليم العالي.
+          <br/>
+          <span class="en" style="font-size:0.88rem; color:rgba(255,255,255,0.7);">
+            Forgot your password? Reset and manage your student or parent account credentials securely.
+          </span>
+        </p>
+        <a href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="password-action-btn">
+          🔑 &nbsp; الدخول لرابط إعادة تعيين كلمة المرور
+        </a>
+        <div class="password-url-text">🌐 https://pwdreset.edu.gov.qa/</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ══════════════ GUIDE INTRO ══════════════ -->
-<section class="sec-white" id="guide">
-<div class="c">
-  <div class="sh"><div class="sbadge">🗂️ دليل الخدمات التكنولوجية</div><h2>الخدمات الرقمية للمدرسة</h2><p>جميع المنصات والأدوات الرقمية لمتابعة أبنائكم وتعزيز تجربتهم التعليمية</p><div class="divider"></div></div>
-  <div class="guide-intro fade-in">
-    <h3>📖 مقدمة الدليل</h3>
-    <p>يتضمن الدليل الرقمي للخدمات الإلكترونية أهم المواقع الإلكترونية والتطبيقات الرقمية التي يمكن لولي الأمر من خلالها متابعة العملية التعليمية في <strong>مدارس قطر للعلوم والتكنولوجيا الثانوية للبنين</strong>، للبقاء على اطلاع دائم على أداء الطالب والمستجدات التعليمية الخاصة بالمنهج الدراسي.</p>
-  </div>
+<!-- ══════════════ 2. FEATURED VIDEOS ══════════════ -->
+<section class="content-section section-subtle" id="mainvideos">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-badge-chip">🎬 الدليل المرئي الشامل</div>
+      <h2 class="section-title">فيديوهات شرح نظام قطر للتعليم</h2>
+      <p class="section-subtitle">شاهد الشرح التوضيحي المفصل لكيفية استخدام النظام خطوة بخطوة</p>
+      <div class="section-accent-line"></div>
+    </div>
 
-  <!-- 1. Qatar Education -->
-  <div class="sblock b1 fade-in" id="qeducation">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#2855C4,#4A90D9);">🎓</div><div class="sb-title"><h3>نظام قطر للتعليم — Qatar Education</h3><span class="en">QEducation.edu.gov.qa</span></div></div>
-    <div class="sb-desc">نظام قطر للتعليم هي بيئة رقمية تمكن الطلاب وأولياء الأمور من الوصول إلى جميع جوانب المنهج الدراسي. مساحة تفاعلية تجمع بين الطلاب وأولياء الأمور والمعلمين. يُمكن للمعلمين رفع المواد الدراسية والواجبات، كما يتيح لأولياء الأمور متابعة سير العملية التعليمية.</div>
-    <p style="font-weight:700;color:var(--accent);margin-bottom:10px;font-size:.88rem;">📹 فيديوهات تعريفية:</p>
-    <div class="sv-grid">
-      <div><div class="sv-label">الفيديو التعريفي 1</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/DuvZDm4aCts" title="QE1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">الفيديو التعريفي 2</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/qyZ3OeWc-3M" title="QE2" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-    </div>
-    <p style="font-weight:700;color:var(--accent);margin:14px 0 10px;font-size:.88rem;">📹 فيديوهات إرشادية — دليل ولي الأمر:</p>
-    <div class="sv-grid">
-      <div><div class="sv-label">الدليل 1</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/iq1hUI5_qj0" title="g1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">الدليل 2</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/vpgzkYEPXZI" title="g2" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">الدليل 3</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/mr70owjZA80" title="g3" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">الدليل 4</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/g0pPf2SOQFY" title="g4" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">الدليل 5</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/3wzFAMtT7mo" title="g5" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-    </div>
-    <div class="btn-row">
-      <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="sbtn s-blue">🌐 الدخول على النظام</a>
-      <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer" class="sbtn s-out">🔑 اسم المستخدم وكلمة المرور</a>
-      <a href="https://apps.apple.com/ae/app/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85/id1610018335" target="_blank" rel="noopener noreferrer" class="sbtn s-ios">🍎 Apple iOS</a>
-      <a href="https://play.google.com/store/apps/details?id=app.qeducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="sbtn s-and">🤖 Android</a>
-    </div>
-  </div>
+    <div class="featured-videos-grid">
+      <!-- Parent Video -->
+      <div class="featured-video-card">
+        <div class="video-card-header">
+          <div class="video-badge-icon icon-parent">👨‍👧</div>
+          <div class="video-card-title">
+            <h3>دليل استخدام ولي الأمر لنظام قطر للتعليم</h3>
+            <span class="en">Parent's Guide — Qatar Education System</span>
+          </div>
+        </div>
+        <div class="video-embed-box">
+          <iframe src="https://www.youtube.com/embed/15mrMpPPhEg" title="دليل ولي الأمر" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-footer">
+          <span class="section-badge-chip">👨‍👧 مخصص لأولياء الأمور</span>
+        </div>
+      </div>
 
-  <!-- 2. School Website -->
-  <div class="sblock b2 fade-in">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E);">🏫</div><div class="sb-title"><h3>الموقع الإلكتروني للمدرسة</h3><span class="en">qstssboys.qa — School Official Website</span></div></div>
-    <div class="sb-desc">الموقع الإلكتروني يوفر موارد تعليمية متنوعة، وواجهة للفعاليات والأخبار، ويمكن متابعة الأحداث المدرسية عبر التقويم الإلكتروني، والوصول إلى التقارير الدورية.</div>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-website.png" alt="الموقع الإلكتروني للمدرسة" loading="lazy"/><div class="img-cap">الموقع الإلكتروني للمدرسة — qstssboys.qa</div></div></div>
-    <div class="btn-row"><a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="sbtn s-green">🌐 الدخول على الموقع الإلكتروني</a></div>
-  </div>
-
-  <!-- 3. E-Portal -->
-  <div class="sblock b2 fade-in" id="portal">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#1A3A7B,#2855C4);">📊</div><div class="sb-title"><h3>البوابة الإلكترونية للمدرسة</h3><span class="en">School E-Portal — Parent &amp; Student Access</span></div></div>
-    <div class="sb-desc">البوابة الإلكترونية تمكن أولياء الأمور من الاطلاع على الرسائل الأسبوعية والتقارير الأكاديمية الشهرية.<br/>⚠️ <strong>للدخول على التقرير الشهري — يجب استخدام اسم المستخدم والرقم الشخصي للطالب.</strong></div>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-portal.png" alt="البوابة الإلكترونية" loading="lazy"/><div class="img-cap">البوابة الإلكترونية — لولي الأمر والطالب</div></div></div>
-    <p style="font-weight:700;color:var(--accent);margin:14px 0 10px;font-size:.88rem;">📹 فيديوهات البوابة الإلكترونية:</p>
-    <div class="sv-grid">
-      <div><div class="sv-label">البوابة — ولي الأمر</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/2dkHEhzLtAE" title="portal parent" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">البوابة — الطالب</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/kK5VXmVQ1bc" title="portal student" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-    </div>
-    <p style="font-weight:700;color:var(--accent);margin:14px 0 10px;font-size:.88rem;">📩 الرسالة الأسبوعية:</p>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-weekly.png" alt="الرسالة الأسبوعية" loading="lazy"/><div class="img-cap">الرسالة الأسبوعية — اختر المرحلة الدراسية</div></div></div>
-    <div class="btn-row">
-      <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="sbtn s-blue">👨‍👧 البوابة — ولي الأمر</a>
-      <a href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer" class="sbtn s-out">🎓 التقرير الشهري — الطالب</a>
-      <a href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer" class="sbtn s-out">📩 الرسالة الأسبوعية</a>
+      <!-- Student Video -->
+      <div class="featured-video-card">
+        <div class="video-card-header">
+          <div class="video-badge-icon icon-student">🎓</div>
+          <div class="video-card-title">
+            <h3>دليل استخدام الطالب لنظام قطر للتعليم</h3>
+            <span class="en">Student's Guide — Qatar Education System</span>
+          </div>
+        </div>
+        <div class="video-embed-box">
+          <iframe src="https://www.youtube.com/embed/yfDUVtKUweU" title="دليل الطالب" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-footer">
+          <span class="section-badge-chip">🎓 مخصص للطلاب</span>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- 4. Study Tips -->
-  <div class="sblock b5 fade-in">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#C48A00,#F0A500);">💡</div><div class="sb-title"><h3>النصائح الدراسية</h3><span class="en">Study Tips — Academic Guidance</span></div></div>
-    <div class="sb-desc">النصائح الدراسية للطالب وهي توجيهات تساعد الطالب على تعميق فهم المواد الدراسية وتحسين نتائج الاختبارات مستقبلاً.</div>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-tips.jpg" alt="النصائح الدراسية" loading="lazy"/><div class="img-cap">النصائح الدراسية للطالب</div></div></div>
-    <div class="btn-row"><a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="sbtn s-gold">📄 الاطلاع على النصائح الدراسية</a></div>
-  </div>
-
-  <!-- 5. ClassDojo -->
-  <div class="sblock b3 fade-in" id="classdojo">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#6B1A8A,#9B40C0);">🧑‍🏫</div><div class="sb-title"><h3>ClassDojo — المتابعة السلوكية للطالب</h3><span class="en">ClassDojo — Student Behavioral Tracking</span></div></div>
-    <div class="sb-desc">تطبيق ClassDojo لمتابعة السلوك والمشاركة في الصف يومياً. يتيح لأولياء الأمور متابعة أداء أبنائهم السلوكي والتواصل المباشر مع المعلم.</div>
-    <div class="sv-grid"><div><div class="sv-label">فيديو ClassDojo</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/7F0txQY_XtE" title="ClassDojo" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div></div>
-    <div class="btn-row">
-      <a href="https://play.google.com/store/apps/details?id=com.classdojo.android&hl=en_US" target="_blank" rel="noopener noreferrer" class="sbtn s-and">🤖 Android</a>
-      <a href="https://apps.apple.com/us/app/classdojo/id552602056" target="_blank" rel="noopener noreferrer" class="sbtn s-ios">🍎 iOS</a>
-    </div>
-  </div>
-
-  <!-- 6. Achieve 3000 -->
-  <div class="sblock b4 fade-in" id="achieve">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#1A7B7B,#2AB5B5);">📖</div><div class="sb-title"><h3>Achieve 3000 — المنصة التعليمية</h3><span class="en">Achieve 3000 — English Literacy Platform</span></div></div>
-    <div class="sb-desc">منصة تعليمية مبتكرة يعتمدها قسم اللغة الإنجليزية. تستند إلى البحث العلمي وتقنيات التعلم الآلي لتخصيص محتوى تعليمي ملائم لكل طالب بناءً على مستواه الحالي.</div>
-    <div class="sv-grid"><div><div class="sv-label">فيديو Achieve 3000</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/O8t1VxUgqws" title="Achieve3000" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div></div>
-    <div class="btn-row"><a href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer" class="sbtn s-teal">📚 الاطلاع على المنصة</a></div>
-  </div>
-
-  <!-- 7. iRead Arabic -->
-  <div class="sblock b1 fade-in">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#2855C4,#4A90D9);">📝</div><div class="sb-title"><h3>منصة أقرأ بالعربية</h3><span class="en">iRead Arabic — Arabic Language Platform</span></div></div>
-    <div class="sb-desc">منصة تعليمية يعتمدها قسم اللغة العربية. تشمل كتباً إلكترونية مسجلة صوتياً، واختبارات تحليلية، وأوراق عمل، وفيديوهات تعزز المفاهيم مع التركيز على موضوعات STEM.</div>
-    <div class="sv-grid"><div><div class="sv-label">فيديو منصة أقرأ بالعربية</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/9p7bePK4rTo" title="iReadArabic" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div></div>
-    <div class="btn-row"><a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="sbtn s-blue">📝 الدخول إلى المنصة</a></div>
-  </div>
-
-  <!-- 8. Policies -->
-  <div class="sblock b2 fade-in">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E);">📋</div><div class="sb-title"><h3>السياسات المدرسية</h3><span class="en">School Policies — Student &amp; Parent Guide</span></div></div>
-    <div class="sb-desc">تتضمن: دليل الطالب وولي الأمر، سياسة التقويم السلوكي، الخطة الإستراتيجية، سياسة التعليم والتعلم، سياسة تقييم الطلاب، وغيرها.</div>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-policies.png" alt="السياسات المدرسية" loading="lazy"/><div class="img-cap">السياسات المدرسية — مدارس قطر للعلوم والتكنولوجيا</div></div></div>
-    <div class="btn-row"><a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="sbtn s-green">📋 جميع السياسات المدرسية</a></div>
-  </div>
-
-  <!-- 9. Newsletter + Timetable -->
-  <div class="sblock b2 fade-in">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#0D3B86,#1A5FBF);">📰</div><div class="sb-title"><h3>النشرة الشهرية والجدول الدراسي</h3><span class="en">Monthly Newsletter &amp; Class Timetable</span></div></div>
-    <div class="sb-desc"><strong>النشرة الشهرية:</strong> تُصدر شهرياً وتحتوي على الفعاليات والأنشطة وآخر الأخبار.<br/><strong>الجدول الدراسي:</strong> اطلع على جدول الحصص اليومية — اختر الصف الدراسي المعني.</div>
-    <div class="img-grid two">
-      <div class="img-box"><img src="images/img-newsletter.png" alt="النشرة الشهرية" loading="lazy"/><div class="img-cap">النشرة الشهرية الإلكترونية</div></div>
-      <div class="img-box"><img src="images/img-timetable.png" alt="الجدول الدراسي" loading="lazy"/><div class="img-cap">الجدول الدراسي — اختر الصف</div></div>
-    </div>
-    <div class="btn-row">
-      <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="sbtn s-navy">📰 النشرات الشهرية</a>
-      <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="sbtn s-out">📅 الجدول الدراسي</a>
-    </div>
-  </div>
-
-  <!-- 10. Social Media -->
-  <div class="sblock b6 fade-in" id="social">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#833AB4,#E1306C,#F77737);">📱</div><div class="sb-title"><h3>صفحات التواصل الاجتماعي للمدرسة</h3><span class="en">QSTSS Social Media Channels</span></div></div>
-    <div class="sb-desc">تمكن أولياء الأمور والطلاب وأفراد المجتمع المحلي من متابعة أحدث الأخبار والفعاليات المتعلقة بالعملية التعليمية.</div>
-    <div class="btn-row">
-      <a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer" class="sbtn s-tw s-social">𝕏 Twitter</a>
-      <a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer" class="sbtn s-fb s-social">📘 Facebook</a>
-      <a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer" class="sbtn s-yt s-social">▶ YouTube</a>
-      <a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer" class="sbtn s-ig s-social">📸 Instagram</a>
-    </div>
-  </div>
-
-  <!-- 11. Ministry -->
-  <div class="sblock b7 fade-in" id="ministry">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#0D3B86,#1A5FBF);">🏛️</div><div class="sb-title"><h3>الخدمات الإلكترونية — وزارة التربية والتعليم</h3><span class="en">Ministry of Education Digital Services — معارف</span></div></div>
-    <div class="sb-desc">منصة تتيح للمواطنين والمقيمين الحصول على خدمات وزارة التربية والتعليم والتعليم العالي من خلال بوابة موحدة ومتكاملة.</div>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-ministry.png" alt="بوابة معارف" loading="lazy"/><div class="img-cap">بوابة معارف — الخدمات الإلكترونية لوزارة التربية والتعليم</div></div></div>
-    <div class="btn-row">
-      <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="sbtn s-navy">🏛️ بوابة معارف</a>
-      <a href="https://eduservices.edu.gov.qa/Service.aspx?service=IssueDocuments" target="_blank" rel="noopener noreferrer" class="sbtn s-out">📄 إصدار الشهادات والإفادات</a>
-    </div>
-  </div>
-
-  <!-- 12. Library -->
-  <div class="sblock b8 fade-in" id="library">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#7B4A1A,#C07830);">📚</div><div class="sb-title"><h3>المكتبة الإلكترونية والمكتبة الرقمية</h3><span class="en">E-Library &amp; Digital Library</span></div></div>
-    <div class="sb-desc"><strong>المكتبة الإلكترونية:</strong> تتيح البحث في مصادر التعلم مع إمكانية حجز الكتب للإعارة وتجديدها.<br/><strong>المكتبة الرقمية:</strong> الوصول لقواعد البيانات العالمية بالتعاون مع مكتبة قطر الوطنية.<br/><strong>مكتبة قطر الوطنية:</strong> البحث في مصادر المعلومات الرقمية وقواعد البيانات العالمية.</div>
-    <div class="img-grid one"><div class="img-box"><img src="images/img-diglib.jpg" alt="المكتبة الرقمية" loading="lazy"/><div class="img-cap">المكتبة الرقمية — بالتعاون مع مكتبة قطر الوطنية</div></div></div>
-    <div class="sv-grid">
-      <div><div class="sv-label">المكتبة الإلكترونية للمدرسة</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/IbZT1yPe_Ds" title="elibrary" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-      <div><div class="sv-label">مكتبة قطر الوطنية</div><div class="v-embed"><iframe src="https://www.youtube.com/embed/8UELQQbk4OU" title="qnl" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
-    </div>
-    <div class="btn-row">
-      <a href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="sbtn s-blue">📚 المكتبة الإلكترونية</a>
-      <a href="https://sway.office.com/scQUx245tQhCgVrz?ref=Link&loc=play" target="_blank" rel="noopener noreferrer" class="sbtn s-out">📖 المكتبة الرقمية</a>
-      <a href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer" class="sbtn s-navy">🏛️ مكتبة قطر الوطنية</a>
-    </div>
-  </div>
-
-  <!-- 13. Guidance -->
-  <div class="sblock b9 fade-in" id="guidance">
-    <div class="sb-head"><div class="sb-icon" style="background:linear-gradient(135deg,#3D5A8A,#6B85BD);">🎯</div><div class="sb-title"><h3>الإرشاد الأكاديمي والإرشاد النفسي</h3><span class="en">Academic &amp; Psychological Guidance</span></div></div>
-    <div class="sb-desc"><strong>الإرشاد الأكاديمي:</strong> يهدف إلى مساعدة الطلاب على اختيار التخصص المناسب وتوجيههم في اختيار المقررات حسب الخطة الأكاديمية.<br/><br/>👨‍🏫 <strong>الأستاذ/ أحمد عصام — المرشد الأكاديمي</strong><br/>📧 <a href="mailto:a.a.wagialla0909@education.qa" style="color:var(--accent);">a.a.wagialla0909@education.qa</a></div>
-    <div class="img-grid two">
-      <div class="img-box"><img src="images/img-academic.jpg" alt="الإرشاد الأكاديمي" loading="lazy"/><div class="img-cap">الإرشاد الأكاديمي</div></div>
-      <div class="img-box"><img src="images/img-contact.jpg" alt="بيانات التواصل" loading="lazy"/><div class="img-cap">بيانات التواصل</div></div>
-    </div>
-    <p style="font-weight:700;color:var(--accent);margin:14px 0 10px;font-size:.88rem;">🧠 الإرشاد النفسي:</p>
-    <div class="img-grid two">
-      <div class="img-box"><img src="images/img-psych1.jpg" alt="الإرشاد النفسي 1" loading="lazy"/><div class="img-cap">الإرشاد النفسي — 1</div></div>
-      <div class="img-box"><img src="images/img-psych2.jpg" alt="الإرشاد النفسي 2" loading="lazy"/><div class="img-cap">الإرشاد النفسي — 2</div></div>
-    </div>
-  </div>
-
-</div>
 </section>
 
-<!-- ══════════════ POSTER ══════════════ -->
-<section class="sec-alt" id="poster">
-<div class="c"><div class="poster-layout fade-in">
-  <div class="poster-img-wrap"><img src="qatar-education-poster.jpg" alt="ولي الأمر خَلّك متابع"/></div>
-  <div class="poster-info">
-    <h2>ولي الأمر…<br/><span>خَلّك متابع! 👀</span></h2>
-    <p class="desc-text">نظام <strong>قطر للتعليم (QEducation)</strong> هو المنصة الرسمية التي تربط المعلم بالطالب وولي الأمر، مما يتيح لك متابعة أداء ابنك أولاً بأول وبكل سهولة ويسر.</p>
-    <ul class="feat-list">
-      <li><span class="chk">✓</span>متابعة نتائج الطالب ودرجاته لحظة بلحظة</li>
-      <li><span class="chk">✓</span>التواصل المباشر مع المعلم</li>
-      <li><span class="chk">✓</span>متابعة الواجبات والمشاريع والأنشطة</li>
-      <li><span class="chk">✓</span>تطبيق متاح على AppGallery وGoogle Play وApp Store</li>
-    </ul>
-    <a href="https://QEducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🌐 &nbsp; زيارة بوابة قطر للتعليم</a>
+<!-- ══════════════ 3. DETAILED SERVICES (FROM ADOBE EXPRESS GUIDE) ══════════════ -->
+<section class="content-section section-light" id="guide">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-badge-chip">🗂️ الدليل الشامل للخدمات</div>
+      <h2 class="section-title">الخدمات والمنصات التكنولوجية بالمدرسة</h2>
+      <p class="section-subtitle">دليل متكامل يوضح كافة المنصات والأدوات الرقمية لمتابعة أداء الطالب وتعزيز مسيرته الأكاديمية</p>
+      <div class="section-accent-line"></div>
+    </div>
+
+    <!-- Intro Box -->
+    <div class="intro-lead-box">
+      <h3>📖 مقدمة الدليل الرقمي</h3>
+      <p>
+        يتضمن الدليل الرقمي للخدمات الإلكترونية أهم المواقع الإلكترونية والتطبيقات الرقمية التي يمكن لولي الأمر من خلالها متابعة العملية التعليمية في <strong>مدارس قطر للعلوم والتكنولوجيا الثانوية للبنين</strong>، للبقاء على اطلاع دائم على أداء الطالب والمستجدات التعليمية الخاصة بالمنهج الدراسي.
+      </p>
+    </div>
+
+    <!-- 1. Qatar Education System -->
+    <div class="service-detail-card" id="qeducation">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">🎓</div>
+        <div class="service-title-text">
+          <h3>نظام قطر للتعليم — Qatar Education</h3>
+          <span class="en">QEducation.edu.gov.qa</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        نظام قطر للتعليم هي بيئة رقمية تمكن الطلاب وأولياء الأمور من الوصول إلى جميع جوانب المنهج الدراسي في جميع المواد. يُعتبر نظام قطر للتعليم مساحة تفاعلية تجمع بين الطلاب وأولياء الأمور والمعلمين. يُمكن للمعلمين رفع المواد الدراسية، والعروض التقديمية، والاختبارات القصيرة، والواجبات للطلاب. ويمكن للطلاب متابعة جميع دروسهم من خلال نظام قطر للتعليم. كما يتيح لأولياء الأمور الولوج إلى النظام باستخدام اسم المستخدم وكلمة المرور الخاص بهم لمتابعة سير العملية التعليمية.
+      </div>
+      
+      <p style="font-weight:800; color:var(--brand-blue); margin-bottom:10px; font-size:0.9rem;">📹 فيديوهات تعريفية بنظام قطر للتعليم:</p>
+      <div class="sub-videos-grid">
+        <div>
+          <div class="sub-video-label">الفيديو التعريفي الأول</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/DuvZDm4aCts" title="QE1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div>
+          <div class="sub-video-label">الفيديو التعريفي الثاني</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/qyZ3OeWc-3M" title="QE2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+
+      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📹 فيديوهات إرشادية — دليل استخدام ولي الأمر:</p>
+      <div class="sub-videos-grid">
+        <div><div class="sub-video-label">دليل ولي الأمر (1)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/iq1hUI5_qj0" title="g1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
+        <div><div class="sub-video-label">دليل ولي الأمر (2)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/vpgzkYEPXZI" title="g2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
+        <div><div class="sub-video-label">دليل ولي الأمر (3)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/mr70owjZA80" title="g3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
+        <div><div class="sub-video-label">دليل ولي الأمر (4)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/g0pPf2SOQFY" title="g4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
+        <div><div class="sub-video-label">دليل ولي الأمر (5)</div><div class="video-embed-box"><iframe src="https://www.youtube.com/embed/3wzFAMtT7mo" title="g5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
+      </div>
+
+      <div class="service-action-buttons">
+        <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">🌐 الدخول على نظام قطر للتعليم</a>
+        <a href="https://pwdreset.edu.gov.qa/ResetPassword.aspx" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🔑 معرفة اسم المستخدم وكلمة المرور</a>
+        <a href="https://apps.apple.com/ae/app/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85/id1610018335" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تطبيق iOS (Apple)</a>
+        <a href="https://play.google.com/store/apps/details?id=app.qeducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تطبيق Android</a>
+      </div>
+    </div>
+
+    <!-- 2. School Official Website -->
+    <div class="service-detail-card border-green">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">🏫</div>
+        <div class="service-title-text">
+          <h3>الموقع الإلكتروني للمدرسة</h3>
+          <span class="en">qstssboys.qa — School Official Website</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        الموقع الإلكتروني الخاص بالمدرسة يوفر مجموعة متنوعة من الأدوات والموارد التي تهدف إلى تعزيز تجربة التعلم. يتضمن ذلك موارد تعليمية متنوعة في شتى المواد الدراسية. كما يوفر الموقع واجهة للفعاليات والأخبار والمراجع الخاصة بالمدرسة، بالإضافة إلى متابعة الأنشطة المدرسية عبر التقويم الإلكتروني والوصول للتقارير الدورية.
+      </div>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-website.png" alt="الموقع الإلكتروني للمدرسة" loading="lazy"/>
+          <div class="image-caption-tag">الموقع الإلكتروني الرسمي — qstssboys.qa</div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">🌐 الدخول على الموقع الإلكتروني للمدرسة</a>
+      </div>
+    </div>
+
+    <!-- 3. E-Portal -->
+    <div class="service-detail-card border-navy" id="portal">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📊</div>
+        <div class="service-title-text">
+          <h3>البوابة الإلكترونية للمدرسة (E-Portal)</h3>
+          <span class="en">School E-Portal — Parent &amp; Student Access</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        البوابة الإلكترونية للمدرسة هي واجهة رقمية تمكن أولياء الأمور من الاطلاع على الرسائل الأسبوعية والتقارير الأكاديمية الشهرية المتعلقة بالمنهج الدراسي الخاصة بالطالب، حيث تتيح لولي الأمر متابعة سير العملية التعليمية والمتابعة الأكاديمية للطالب.
+        <br/><br/>
+        ⚠️ <strong>للدخول على التقرير الشهري:</strong> يجب استخدام اسم المستخدم والرقم الشخصي للطالب.
+      </div>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-portal.png" alt="البوابة الإلكترونية" loading="lazy"/>
+          <div class="image-caption-tag">بوابة ولي الأمر وبوابة الطالب الإلكترونية</div>
+        </div>
+      </div>
+
+      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📹 فيديوهات توضيحية للبوابة الإلكترونية:</p>
+      <div class="sub-videos-grid">
+        <div>
+          <div class="sub-video-label">البوابة الإلكترونية — لولي الأمر</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/2dkHEhzLtAE" title="portal parent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div>
+          <div class="sub-video-label">البوابة الإلكترونية للطالب</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/kK5VXmVQ1bc" title="portal student" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+
+      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">📩 الرسالة الأسبوعية للمدرسة:</p>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-weekly.png" alt="الرسالة الأسبوعية" loading="lazy"/>
+          <div class="image-caption-tag">الرسالة الأسبوعية — قم باختيار المرحلة الدراسية للاطلاع عليها</div>
+        </div>
+      </div>
+
+      <div class="service-action-buttons">
+        <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">👨‍👧 البوابة الإلكترونية — ولي الأمر</a>
+        <a href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">🎓 التقرير الشهري — الطالب</a>
+        <a href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📩 الرسالة الأسبوعية</a>
+      </div>
+    </div>
+
+    <!-- 4. Study Tips -->
+    <div class="service-detail-card border-gold">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#D98200,#FFB338); color:#071533;">💡</div>
+        <div class="service-title-text">
+          <h3>النصائح والتوجيهات الدراسية</h3>
+          <span class="en">Study Tips — Academic Guidance</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        النصائح الدراسية للطالب وهي بعض التوجيهات والنصائح القيمة التي تساعد الطالب على تعميق فهم المواد الدراسية، وتنظيم وقت المذاكرة، وتحسين نتائج الاختبارات والتحصيل العلمي مستقبلاً.
+      </div>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-tips.jpg" alt="النصائح الدراسية" loading="lazy"/>
+          <div class="image-caption-tag">النصائح والتوجيهات الدراسية المعتمدة للطالب</div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 تحميل ملف النصائح الدراسية (PDF)</a>
+      </div>
+    </div>
+
+    <!-- 5. ClassDojo -->
+    <div class="service-detail-card border-purple" id="classdojo">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B1FA2,#AB47BC); color:#fff;">🧑‍🏫</div>
+        <div class="service-title-text">
+          <h3>تطبيق ClassDojo — المتابعة السلوكية للطالب</h3>
+          <span class="en">ClassDojo — Student Behavioral Tracking</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        يُستخدم تطبيق ClassDojo لمتابعة السلوك والمشاركة الإيجابية في الصف بشكل يومي وتفاعلي. يتيح التطبيق لأولياء الأمور متابعة تفاصيل يومية ومباشرة عن أداء أبنائهم السلوكي والتواصل المباشر والمستمر مع المعلم.
+      </div>
+      <div class="sub-videos-grid" style="grid-template-columns:1fr;">
+        <div>
+          <div class="sub-video-label">فيديو شرح تطبيق ClassDojo</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/7F0txQY_XtE" title="ClassDojo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.classdojo.android&hl=en_US" target="_blank" rel="noopener noreferrer" class="action-btn btn-play-store">🤖 تحميل التطبيق (Android)</a>
+        <a href="https://apps.apple.com/us/app/classdojo/id552602056" target="_blank" rel="noopener noreferrer" class="action-btn btn-app-store">🍎 تحميل التطبيق (iOS Apple)</a>
+      </div>
+    </div>
+
+    <!-- 6. Achieve 3000 -->
+    <div class="service-detail-card border-teal" id="achieve">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#00897B,#26A69A); color:#fff;">📖</div>
+        <div class="service-title-text">
+          <h3>منصة Achieve 3000 التعليمية</h3>
+          <span class="en">Achieve 3000 — English Literacy Platform</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        موقع Achieve 3000 هو منصة تعليمية مبتكرة يعتمدها قسم اللغة الإنجليزية وتهدف إلى تحسين مهارات القراءة والفهم للطلاب من مختلف المستويات العمرية. يستند الموقع إلى البحث العلمي وتقنيات التعلم الآلي لتخصيص محتوى تعليمي ملائم لكل طالب بناءً على مستواه الحالي، مع أدوات تقييم تفصيلية للمعلمين.
+      </div>
+      <div class="sub-videos-grid" style="grid-template-columns:1fr;">
+        <div>
+          <div class="sub-video-label">فيديو شرح منصة Achieve 3000</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/O8t1VxUgqws" title="Achieve3000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer" class="action-btn btn-teal-solid">📚 الدخول لمنصة Achieve 3000</a>
+      </div>
+    </div>
+
+    <!-- 7. iRead Arabic -->
+    <div class="service-detail-card" id="iread">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">📝</div>
+        <div class="service-title-text">
+          <h3>منصة أقرأ بالعربية التعليمية</h3>
+          <span class="en">iRead Arabic — Arabic Language Platform</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        منصة "أقرأ بالعربية" منصة تعليمية يعتمدها قسم اللغة العربية في المدرسة وتقدم تجربة تعلم تفاعلية عالية الجودة، مصممة لتعزيز مهارات القرن الحادي والعشرين. يشمل البرنامج كتباً إلكترونية مسجلة صوتياً، واختبارات تحليلية تركز على فهم النصوص والنحو، وأوراق عمل تقييمية، وفيديوهات قصيرة تعزز المفاهيم مع التركيز على موضوعات STEM.
+      </div>
+      <div class="sub-videos-grid" style="grid-template-columns:1fr;">
+        <div>
+          <div class="sub-video-label">فيديو توضيحي لمنصة أقرأ بالعربية</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/9p7bePK4rTo" title="iReadArabic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📝 الدخول إلى منصة أقرأ بالعربية</a>
+      </div>
+    </div>
+
+    <!-- 8. School Policies -->
+    <div class="service-detail-card border-green" id="policies">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">📋</div>
+        <div class="service-title-text">
+          <h3>السياسات واللوائح المدرسية</h3>
+          <span class="en">School Policies — Student &amp; Parent Guide</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        يمكنكم من خلال الرابط أدناه الاطلاع على كافة السياسات الخاصة بالمدرسة والتي تتضمن: دليل الطالب وولي الأمر، سياسة التقويم السلوكي، الخطة الإستراتيجية للمدرسة، سياسة التعليم والتعلم، سياسة تقييم الطلاب وغيرها من السياسات التي تخدم العملية التعليمية.
+      </div>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-policies.png" alt="السياسات المدرسية" loading="lazy"/>
+          <div class="image-caption-tag">السياسات واللوائح التنظيمية — مدارس قطر للعلوم والتكنولوجيا</div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">📋 الاطلاع على جميع السياسات المدرسية</a>
+      </div>
+    </div>
+
+    <!-- 9. Newsletter & Timetable -->
+    <div class="service-detail-card border-navy">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📰</div>
+        <div class="service-title-text">
+          <h3>النشرة الشهرية وجدول الحصص الدراسي</h3>
+          <span class="en">Monthly Newsletter &amp; Class Timetable</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        <strong>النشرة الشهرية:</strong> يتم إصدارها بشكل دوري وتحتوي على كافة الفعاليات والأنشطة وإنجازات المدرسة.<br/>
+        <strong>الجدول الدراسي:</strong> يمكنكم الاطلاع على جدول الحصص الدراسية اليومية — يرجى اختيار الصف الدراسي المعني للاطلاع على الجدول بدقة.
+      </div>
+      <div class="service-images-grid">
+        <div class="service-image-holder">
+          <img src="images/img-newsletter.png" alt="النشرة الشهرية" loading="lazy"/>
+          <div class="image-caption-tag">النشرة الشهرية الإلكترونية للمدرسة</div>
+        </div>
+        <div class="service-image-holder">
+          <img src="images/img-timetable.png" alt="الجدول الدراسي" loading="lazy"/>
+          <div class="image-caption-tag">الجدول الدراسي — اختر الصف والمرحلة</div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📰 تصفح النشرات الشهرية</a>
+        <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📅 استعراض الجدول الدراسي</a>
+      </div>
+    </div>
+
+    <!-- 10. Social Media -->
+    <div class="service-detail-card border-social" id="social">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#833AB4,#E1306C,#F77737); color:#fff;">📱</div>
+        <div class="service-title-text">
+          <h3>صفحات التواصل الاجتماعي الرسمية للمدرسة</h3>
+          <span class="en">QSTSS Social Media Channels</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        تضم المدرسة صفحات رسمية على مختلف وسائل التواصل الاجتماعي، تمكن أولياء الأمور والطلاب وأفراد المجتمع من متابعة أحدث الأخبار والفعاليات والتغطيات المباشرة.
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-tw">𝕏 منصة X (تويتر)</a>
+        <a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-fb">📘 فيسبوك Facebook</a>
+        <a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-yt">▶ يوتيوب YouTube</a>
+        <a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer" class="action-btn btn-social-ig">📸 إنستغرام Instagram</a>
+      </div>
+    </div>
+
+    <!-- 11. Ministry Services -->
+    <div class="service-detail-card border-navy" id="ministry">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">🏛️</div>
+        <div class="service-title-text">
+          <h3>الخدمات الإلكترونية — وزارة التربية والتعليم والتعليم العالي</h3>
+          <span class="en">Ministry of Education Digital Services — بوابة معارف</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        بوابة موحدة تتيح للجمهور من المواطنين والمقيمين في دولة قطر الحصول على كافة الخدمات الإلكترونية التابعة لوزارة التربية والتعليم والتعليم العالي تحت مظلة واحدة متكاملة وسهلة الاستخدام.
+      </div>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-ministry.png" alt="بوابة معارف" loading="lazy"/>
+          <div class="image-caption-tag">بوابة معارف لخدمات الجمهور — وزارة التربية والتعليم والتعليم العالي</div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ الدخول لبوابة معارف</a>
+        <a href="https://eduservices.edu.gov.qa/Service.aspx?service=IssueDocuments" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📄 خدمة إصدار الشهادات والإفادات</a>
+      </div>
+    </div>
+
+    <!-- 12. Library -->
+    <div class="service-detail-card border-brown" id="library">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B4A1A,#C07830); color:#fff;">📚</div>
+        <div class="service-title-text">
+          <h3>المكتبة الإلكترونية والمكتبة الرقمية</h3>
+          <span class="en">E-Library &amp; Digital Library Portal</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        <strong>المكتبة الإلكترونية:</strong> تتيح البحث في مصادر المعلومات المتاحة بمركز مصادر التعلم بالمدرسة مع إمكانية حجز وتجديد إعارة الكتب.<br/>
+        <strong>المكتبة الرقمية:</strong> تتيح الوصول والبحث في قواعد البيانات والمكتبات العالمية بالتعاون مع مكتبة قطر الوطنية.
+      </div>
+      <div class="service-images-grid single-img">
+        <div class="service-image-holder">
+          <img src="images/img-diglib.jpg" alt="المكتبة الرقمية" loading="lazy"/>
+          <div class="image-caption-tag">المكتبة الرقمية — بالتعاون مع مكتبة قطر الوطنية</div>
+        </div>
+      </div>
+      <div class="sub-videos-grid">
+        <div>
+          <div class="sub-video-label">شرح المكتبة الإلكترونية للمدرسة</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/IbZT1yPe_Ds" title="elibrary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div>
+          <div class="sub-video-label">خدمات مكتبة قطر الوطنية</div>
+          <div class="video-embed-box"><iframe src="https://www.youtube.com/embed/8UELQQbk4OU" title="qnl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+      <div class="service-action-buttons">
+        <a href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-blue-solid">📚 موقع المكتبة الإلكترونية (مكتبتي)</a>
+        <a href="https://sway.office.com/scQUx245tQhCgVrz?ref=Link&loc=play" target="_blank" rel="noopener noreferrer" class="action-btn btn-outline-blue">📖 موقع المكتبة الرقمية</a>
+        <a href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ مكتبة قطر الوطنية QNL</a>
+      </div>
+    </div>
+
+    <!-- 13. Guidance -->
+    <div class="service-detail-card border-slate" id="guidance">
+      <div class="service-header-row">
+        <div class="service-avatar-icon" style="background:linear-gradient(135deg,#394B6B,#5C749E); color:#fff;">🎯</div>
+        <div class="service-title-text">
+          <h3>الإرشاد الأكاديمي والإرشاد النفسي</h3>
+          <span class="en">Academic &amp; Psychological Guidance</span>
+        </div>
+      </div>
+      <div class="service-explanation-box">
+        <strong>الإرشاد الأكاديمي:</strong> يهدف إلى مساعدة الطلاب على اختيار المسار والتخصص المناسب وفقاً لإمكاناتهم واهتماماتهم العلمية واحتياجات سوق العمل، وتوجيههم في اختيار المقررات الدراسية المناسبة.<br/><br/>
+        👨‍🏫 <strong>الأستاذ / أحمد عصام — المرشد الأكاديمي</strong><br/>
+        📧 البريد الإلكتروني: <a href="mailto:a.a.wagialla0909@education.qa" style="color:var(--brand-blue); font-weight:700;">a.a.wagialla0909@education.qa</a>
+      </div>
+      <div class="service-images-grid">
+        <div class="service-image-holder">
+          <img src="images/img-academic.jpg" alt="الإرشاد الأكاديمي" loading="lazy"/>
+          <div class="image-caption-tag">خدمات وتوجيهات الإرشاد الأكاديمي</div>
+        </div>
+        <div class="service-image-holder">
+          <img src="images/img-contact.jpg" alt="بيانات التواصل" loading="lazy"/>
+          <div class="image-caption-tag">بيانات التواصل المباشر مع المرشد الأكاديمي</div>
+        </div>
+      </div>
+
+      <p style="font-weight:800; color:var(--brand-blue); margin:16px 0 10px; font-size:0.9rem;">🧠 خدمات وتوجيهات الإرشاد النفسي:</p>
+      <div class="service-images-grid">
+        <div class="service-image-holder">
+          <img src="images/img-psych1.jpg" alt="الإرشاد النفسي 1" loading="lazy"/>
+          <div class="image-caption-tag">الإرشاد النفسي والتوجيه الطلابي (1)</div>
+        </div>
+        <div class="service-image-holder">
+          <img src="images/img-psych2.jpg" alt="الإرشاد النفسي 2" loading="lazy"/>
+          <div class="image-caption-tag">الإرشاد النفسي والتوجيه الطلابي (2)</div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div></div>
 </section>
 
-<!-- ══════════════ VISION & MISSION ══════════════ -->
-<section class="vm-section">
-<div class="c">
-  <div class="sh"><div class="sbadge" style="background:rgba(74,144,217,.2);color:var(--gold);border:1px solid rgba(74,144,217,.3);">🌟 رؤية ورسالة المدرسة</div><h2 style="color:#fff;">رؤية المدرسة ورسالتها</h2><div class="divider"></div></div>
-  <div class="vm-grid">
-    <div class="vm-card fade-in"><h3>🌟 رؤية المدرسة</h3><p>متعلم ريادي لتنمية مستدامة</p></div>
-    <div class="vm-card fade-in"><h3>🎯 رسالة المدرسة</h3><p>نرسي بيئة تعليمية شاملة ومبتكرة تعزز القيم والأخلاق وتؤهل المتعلم بمهارات عالية؛ لإعداد جيل واعٍ قادرٍ على بناء مجتمع متقدم واقتصاد مزدهر.</p></div>
+<!-- ══════════════ 4. POSTER SHOWCASE ══════════════ -->
+<section class="content-section section-subtle" id="poster">
+  <div class="container">
+    <div class="poster-showcase-grid">
+      <div class="poster-frame">
+        <img src="qatar-education-poster.jpg" alt="ولي الأمر خَلّك متابع — نظام قطر للتعليم" loading="lazy"/>
+      </div>
+      <div class="poster-info-box">
+        <h2>ولي الأمر…<br/><span>خَلّك متابع! 👀</span></h2>
+        <p>
+          نظام <strong>قطر للتعليم (QEducation)</strong> هو المنصة الرسمية التي تربط المعلم بالطالب وولي الأمر، مما يتيح لك متابعة مسيرة وتفوق ابنك التعليمي أولاً بأول وبكل سهولة ويسر.
+        </p>
+        <ul class="poster-features-list">
+          <li><span class="check-icon">✓</span>متابعة تقييمات ودرجات ونتائج الطالب فور صدورها</li>
+          <li><span class="check-icon">✓</span>قنوات تواصل مباشرة وفعالة مع المعلمين والإدارة</li>
+          <li><span class="check-icon">✓</span>متابعة تسليم الواجبات المدرسية والمشاريع والأنشطة</li>
+          <li><span class="check-icon">✓</span>تطبيقات سهلة التثبيت على App Store وGoogle Play وAppGallery</li>
+        </ul>
+        <a href="https://QEducation.edu.gov.qa" target="_blank" rel="noopener noreferrer" class="btn-main btn-gold">
+          🌐 &nbsp; زيارة بوابة نظام قطر للتعليم
+        </a>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
-<!-- ══════════════ QUICK LINKS ══════════════ -->
-<section class="sec-white" id="links">
-<div class="c">
-  <div class="sh"><div class="sbadge">🔗 روابط سريعة</div><h2>الروابط المهمة</h2><p>كل ما تحتاجه في مكان واحد</p><div class="divider"></div></div>
-  <div class="links-grid">
-    <a class="link-card fade-in" href="https://QEducation.edu.gov.qa" target="_blank" rel="noopener noreferrer"><span class="link-icon">🎓</span><h4>قطر للتعليم</h4><p>الدخول على النظام</p><span class="arr en">QEducation →</span></a>
-    <a class="link-card fade-in" href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer"><span class="link-icon">🔑</span><h4>كلمة المرور</h4><p>تغيير أو استعادة</p><span class="arr en">Reset →</span></a>
-    <a class="link-card fade-in" href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer"><span class="link-icon">🏫</span><h4>موقع المدرسة</h4><p>الموقع الرسمي</p><span class="arr en">qstssboys.qa →</span></a>
-    <a class="link-card fade-in" href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer"><span class="link-icon">📊</span><h4>البوابة</h4><p>بوابة أولياء الأمور</p><span class="arr">E-Portal →</span></a>
-    <a class="link-card fade-in" href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer"><span class="link-icon">📩</span><h4>الرسالة الأسبوعية</h4><p>آخر الرسائل</p><span class="arr en">Weekly →</span></a>
-    <a class="link-card fade-in" href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer"><span class="link-icon">📅</span><h4>الجدول الدراسي</h4><p>جدول الحصص</p><span class="arr en">Timetable →</span></a>
-    <a class="link-card fade-in" href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer"><span class="link-icon">📰</span><h4>النشرة الشهرية</h4><p>أخبار المدرسة</p><span class="arr en">Newsletter →</span></a>
-    <a class="link-card fade-in" href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer"><span class="link-icon">📋</span><h4>السياسات</h4><p>دليل الطالب وولي الأمر</p><span class="arr en">Policies →</span></a>
-    <a class="link-card fade-in" href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer"><span class="link-icon">📚</span><h4>المكتبة</h4><p>مصادر التعلم</p><span class="arr en">E-Library →</span></a>
-    <a class="link-card fade-in" href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer"><span class="link-icon">🏛️</span><h4>مكتبة قطر</h4><p>قواعد البيانات</p><span class="arr en">QNL →</span></a>
-    <a class="link-card fade-in" href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer"><span class="link-icon">🏢</span><h4>بوابة معارف</h4><p>خدمات الوزارة</p><span class="arr en">معارف →</span></a>
-    <a class="link-card fade-in" href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer"><span class="link-icon">📖</span><h4>Achieve 3000</h4><p>منصة الإنجليزية</p><span class="arr en">Achieve →</span></a>
-    <a class="link-card fade-in" href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer"><span class="link-icon">✍️</span><h4>أقرأ بالعربية</h4><p>منصة العربية</p><span class="arr en">iRead →</span></a>
-    <a class="link-card fade-in" href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer"><span class="link-icon">💡</span><h4>النصائح الدراسية</h4><p>تحسين الأداء</p><span class="arr en">Tips →</span></a>
+<!-- ══════════════ 5. VISION & MISSION ══════════════ -->
+<section class="vision-mission-section">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-badge-chip" style="background:rgba(255,179,56,0.2); color:var(--brand-gold-glow);">🌟 الهوية والرؤية المدرسية</div>
+      <h2 class="section-title" style="color:#FFFFFF;">رؤية المدرسة ورسالتها</h2>
+      <div class="section-accent-line"></div>
+    </div>
+
+    <div class="vision-mission-grid">
+      <div class="vm-glass-card">
+        <h3>🌟 رؤية المدرسة</h3>
+        <p>متعلم ريادي لتنمية مستدامة</p>
+      </div>
+      <div class="vm-glass-card">
+        <h3>🎯 رسالة المدرسة</h3>
+        <p>نرسي بيئة تعليمية شاملة ومبتكرة تعزز القيم والأخلاق وتؤهل المتعلم بمهارات عالية؛ لإعداد جيل واعٍ قادرٍ على بناء مجتمع متقدم واقتصاد مزدهر.</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- ══════════════ 6. QUICK LINKS DIRECTORY ══════════════ -->
+<section class="content-section section-light" id="links">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-badge-chip">🔗 الدليل المباشر السريع</div>
+      <h2 class="section-title">دليل الروابط السريعة المباشرة</h2>
+      <p class="section-subtitle">جميع المواقع والمنصات التعليمية والخدمية في مكان واحد</p>
+      <div class="section-accent-line"></div>
+    </div>
+
+    <div class="quick-links-grid">
+      <a class="quick-link-tile" href="https://QEducation.edu.gov.qa" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">🎓</span>
+        <h4>نظام قطر للتعليم</h4>
+        <p>بوابة الطلاب وأولياء الأمور</p>
+        <span class="tile-arrow en">QEducation →</span>
+      </a>
+      <a class="quick-link-tile" href="https://pwdreset.edu.gov.qa/" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">🔑</span>
+        <h4>إعادة تعيين كلمة المرور</h4>
+        <p>استعادة وتحديث الحساب</p>
+        <span class="tile-arrow en">pwdreset →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">🏫</span>
+        <h4>موقع المدرسة الرسمي</h4>
+        <p>البوابة الرسمية للمدرسة</p>
+        <span class="tile-arrow en">qstssboys.qa →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📊</span>
+        <h4>بوابة أولياء الأمور</h4>
+        <p>Parent E-Portal</p>
+        <span class="tile-arrow">دخول البوابة →</span>
+      </a>
+      <a class="quick-link-tile" href="https://www.qstssboys.qa/portal_std/" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">🧑‍🎓</span>
+        <h4>التقرير الشهري للطالب</h4>
+        <p>درجات وتقارير الطالب</p>
+        <span class="tile-arrow">التقرير الشهري →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📩</span>
+        <h4>الرسالة الأسبوعية</h4>
+        <p>الخطة والدروس الأسبوعية</p>
+        <span class="tile-arrow">Weekly Letter →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📅</span>
+        <h4>جدول الحصص</h4>
+        <p>الجدول الدراسي اليومي</p>
+        <span class="tile-arrow en">Timetable →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📰</span>
+        <h4>النشرة الشهرية</h4>
+        <p>إنجازات وفعاليات المدرسة</p>
+        <span class="tile-arrow en">Newsletter →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📋</span>
+        <h4>السياسات المدرسية</h4>
+        <p>دليل الطالب وولي الأمر</p>
+        <span class="tile-arrow en">Policies →</span>
+      </a>
+      <a class="quick-link-tile" href="http://maktabaty.edu.gov.qa" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📚</span>
+        <h4>المكتبة الإلكترونية</h4>
+        <p>مركز مصادر التعلم</p>
+        <span class="tile-arrow en">E-Library →</span>
+      </a>
+      <a class="quick-link-tile" href="http://www.qnl.qa" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">🏛️</span>
+        <h4>مكتبة قطر الوطنية</h4>
+        <p>قواعد البيانات العالمية</p>
+        <span class="tile-arrow en">QNL →</span>
+      </a>
+      <a class="quick-link-tile" href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">🏢</span>
+        <h4>بوابة معارف</h4>
+        <p>خدمات وزارة التربية</p>
+        <span class="tile-arrow en">Ministry →</span>
+      </a>
+      <a class="quick-link-tile" href="https://www.achieve3000.com/products/achieve3000-literacy/" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">📖</span>
+        <h4>منصة Achieve 3000</h4>
+        <p>تطوير مهارات القراءة</p>
+        <span class="tile-arrow en">Achieve →</span>
+      </a>
+      <a class="quick-link-tile" href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">✍️</span>
+        <h4>منصة أقرأ بالعربية</h4>
+        <p>مهارات اللغة العربية</p>
+        <span class="tile-arrow en">iRead →</span>
+      </a>
+      <a class="quick-link-tile" href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="tile-icon">💡</span>
+        <h4>النصائح الدراسية</h4>
+        <p>تحسين الأداء والتفوق</p>
+        <span class="tile-arrow en">Study Tips →</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════ FOOTER ══════════════ -->
 <footer>
-<div class="c">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="school-logo.png" alt="شعار المدرسة"/>
-      <p>مدارس قطر للعلوم والتكنولوجيا الإعدادية الثانوية للبنين — أم السنيم<br/><br/><span class="en">Qatar Science &amp; Technology Preparatory Secondary School for Boys | STEM &amp; AP Education</span><br/><br/><em style="font-size:.75rem;color:rgba(255,255,255,.4);">Created by E-Learning Dept — QSTSS</em></p>
+  <div class="container">
+    <div class="footer-top-grid">
+      
+      <!-- Brand column -->
+      <div class="footer-brand-info">
+        <img src="school-logo.png" alt="شعار مدارس قطر للعلوم والتكنولوجيا"/>
+        <p>
+          مدارس قطر للعلوم والتكنولوجيا الإعدادية الثانوية للبنين — أم السنيم
+          <br/><br/>
+          <span class="en">Qatar Science &amp; Technology Preparatory Secondary School for Boys | STEM &amp; AP Education</span>
+          <br/><br/>
+          <em style="font-size:0.75rem; color:rgba(255,255,255,0.45);">Created with ❤️ by E-Learning Department — QSTSS</em>
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div class="footer-col">
+        <h5>روابط هامة</h5>
+        <ul>
+          <li><a href="#password">🔑 تغيير كلمة المرور</a></li>
+          <li><a href="#qeducation">🎓 نظام قطر للتعليم</a></li>
+          <li><a href="#portal">📊 البوابة الإلكترونية</a></li>
+          <li><a href="#classdojo">🧑‍🏫 تطبيق ClassDojo</a></li>
+          <li><a href="#achieve">📖 منصة Achieve 3000</a></li>
+          <li><a href="#library">📚 المكتبة الإلكترونية</a></li>
+          <li><a href="#guidance">🎯 الإرشاد والتوجيه</a></li>
+          <li><a href="#ministry">🏛️ وزارة التربية والتعليم</a></li>
+        </ul>
+      </div>
+
+      <!-- Social & Official -->
+      <div class="footer-col">
+        <h5>قنوات التواصل الرسمية</h5>
+        <ul>
+          <li><a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer">𝕏 منصة X (تويتر)</a></li>
+          <li><a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer">📘 فيسبوك Facebook</a></li>
+          <li><a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer">▶ يوتيوب YouTube</a></li>
+          <li><a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer">📸 إنستغرام Instagram</a></li>
+          <li><a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer">🌐 موقع المدرسة qstssboys.qa</a></li>
+          <li><a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer">🏛️ بوابة معارف للخدمات</a></li>
+        </ul>
+      </div>
+
     </div>
-    <div class="footer-col">
-      <h5>روابط سريعة</h5>
-      <ul>
-        <li><a href="#password">🔑 كلمة المرور</a></li>
-        <li><a href="#qeducation">🎓 قطر للتعليم</a></li>
-        <li><a href="#portal">📊 البوابة الإلكترونية</a></li>
-        <li><a href="#classdojo">🧑‍🏫 ClassDojo</a></li>
-        <li><a href="#achieve">📖 Achieve 3000</a></li>
-        <li><a href="#library">📚 المكتبة</a></li>
-        <li><a href="#guidance">🎯 الإرشاد</a></li>
-        <li><a href="#ministry">🏛️ الوزارة</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>التواصل الاجتماعي</h5>
-      <ul>
-        <li><a href="https://twitter.com/Qsst_Boys" target="_blank" rel="noopener noreferrer">𝕏 Twitter (X)</a></li>
-        <li><a href="https://www.facebook.com/qsst.boys" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
-        <li><a href="https://www.youtube.com/@qsstboys" target="_blank" rel="noopener noreferrer">▶ YouTube</a></li>
-        <li><a href="https://www.instagram.com/qstss.boys/" target="_blank" rel="noopener noreferrer">📸 Instagram</a></li>
-        <li><a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer">🌐 qstssboys.qa</a></li>
-      </ul>
+
+    <!-- Bottom copyright -->
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025/2026 — جميع الحقوق محفوظة | مدارس قطر للعلوم والتكنولوجيا الثانوية للبنين</span>
+      <span>🇶🇦 دولة قطر | State of Qatar</span>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>&copy; 2025/2026 — مدارس قطر للعلوم والتكنولوجيا الإعدادية الثانوية للبنين</span>
-    <span>🇶🇦 State of Qatar | دولة قطر</span>
-  </div>
-</div>
 </footer>
 
-<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="العودة للأعلى">▲</button>
+<!-- ══════════════ FLOATING SCROLL-TO-TOP BUTTON ══════════════ -->
+<button class="floating-scroll-btn" id="scrollUpBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="العودة لأعلى الصفحة" aria-label="العودة لأعلى الصفحة">
+  ▲
+</button>
 
+<!-- ══════════════ JAVASCRIPT LOGIC ══════════════ -->
 <script>
-// ══════════════ THEME TOGGLE ══════════════
-const html = document.documentElement;
-const themeBtn = document.getElementById("themeBtn");
-const saved = localStorage.getItem("theme") || "light";
-html.setAttribute("data-theme", saved);
-themeBtn.textContent = saved === "dark" ? "☀️" : "🌙";
+// ══════════════════════════════════════════════
+// 1. THEME SWITCHER (DEFAULT: LIGHT MODE)
+// ══════════════════════════════════════════════
+const docEl = document.documentElement;
+const themeBtn = document.getElementById("themeToggleBtn");
+const themeIcon = document.getElementById("themeIcon");
+const themeLabel = document.getElementById("themeLabel");
+
+function applyTheme(theme) {
+  docEl.setAttribute("data-theme", theme);
+  localStorage.setItem("qstss_theme", theme);
+  
+  if (theme === "dark") {
+    themeIcon.textContent = "☀️";
+    themeLabel.textContent = "الوضع النهاري";
+  } else {
+    themeIcon.textContent = "🌙";
+    themeLabel.textContent = "الوضع الليلي";
+  }
+}
+
+// Initial theme: check saved or default to light
+const savedTheme = localStorage.getItem("qstss_theme") || "light";
+applyTheme(savedTheme);
 
 themeBtn.addEventListener("click", () => {
-  const current = html.getAttribute("data-theme");
+  const current = docEl.getAttribute("data-theme");
   const next = current === "dark" ? "light" : "dark";
-  html.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
-  themeBtn.textContent = next === "dark" ? "☀️" : "🌙";
+  applyTheme(next);
 });
 
-// ══════════════ HAMBURGER MENU ══════════════
-const hamBtn = document.getElementById("hamBtn");
-const mobileNav = document.getElementById("mobileNav");
-hamBtn.addEventListener("click", () => {
-  hamBtn.classList.toggle("open");
-  mobileNav.classList.toggle("open");
-});
-function closeMenu() {
-  hamBtn.classList.remove("open");
-  mobileNav.classList.remove("open");
+// ══════════════════════════════════════════════
+// 2. RIGHT-SIDE DRAWER (MOBILE & QUICK MENU)
+// ══════════════════════════════════════════════
+const drawerOpenBtn = document.getElementById("drawerOpenBtn");
+const drawerCloseBtn = document.getElementById("drawerCloseBtn");
+const sideDrawer = document.getElementById("sideDrawer");
+const drawerBackdrop = document.getElementById("drawerBackdrop");
+
+function openSideDrawer() {
+  sideDrawer.classList.add("active");
+  drawerBackdrop.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
-// Close on outside click
-document.addEventListener("click", (e) => {
-  if (!hamBtn.contains(e.target) && !mobileNav.contains(e.target)) closeMenu();
+
+function closeSideDrawer() {
+  sideDrawer.classList.remove("active");
+  drawerBackdrop.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+drawerOpenBtn.addEventListener("click", openSideDrawer);
+drawerCloseBtn.addEventListener("click", closeSideDrawer);
+drawerBackdrop.addEventListener("click", closeSideDrawer);
+
+// Escape key to close drawer
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && sideDrawer.classList.contains("active")) {
+    closeSideDrawer();
+  }
 });
 
-// ══════════════ SCROLL TO TOP ══════════════
-const scrollBtn = document.getElementById("scrollTopBtn");
+// ══════════════════════════════════════════════
+// 3. SCROLL-TO-TOP BUTTON
+// ══════════════════════════════════════════════
+const scrollUpBtn = document.getElementById("scrollUpBtn");
 window.addEventListener("scroll", () => {
-  scrollBtn.classList.toggle("visible", window.scrollY > 500);
+  if (window.scrollY > 400) {
+    scrollUpBtn.classList.add("show");
+  } else {
+    scrollUpBtn.classList.remove("show");
+  }
 });
-
-// ══════════════ FADE IN ANIMATIONS ══════════════
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); }
-  });
-}, { threshold: 0.07 });
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
