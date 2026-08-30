@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#0A193B"/>
 <meta name="description" content="البوابة الذكية الموحدة لدليل التعليم الإلكتروني لمدارس قطر للعلوم والتكنولوجيا الإعدادية الثانوية للبنين - منصات تفاعلية، خدمات رقمية، إرشادات وروابط مباشرة للطلاب وأولياء الأمور."/>
-<title>البوابة الذكية للتعليم الإلكتروني | مدارس قطر للعلوم والتكنولوجيا</title>
+<title>دليل التعليم الإلكتروني | مدارس قطر للعلوم والتكنولوجيا</title>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -21,7 +21,7 @@
   --bg-surface:         #FFFFFF;
   --bg-surface-subtle:  #F8FAFE;
   --bg-surface-elevated:#FFFFFF;
-  --bg-header:          rgba(255, 255, 255, 0.94);
+  --bg-header:          rgba(255, 255, 255, 0.96);
   --header-border:      rgba(15, 35, 75, 0.08);
   --border-subtle:      rgba(15, 35, 75, 0.08);
   --border-strong:      rgba(15, 35, 75, 0.16);
@@ -66,7 +66,7 @@
   --bg-surface:         #0C1935;
   --bg-surface-subtle:  #112247;
   --bg-surface-elevated:#142750;
-  --bg-header:          rgba(8, 17, 39, 0.94);
+  --bg-header:          rgba(8, 17, 39, 0.96);
   --header-border:      rgba(110, 160, 250, 0.14);
   --border-subtle:      rgba(110, 160, 250, 0.12);
   --border-strong:      rgba(110, 160, 250, 0.24);
@@ -108,7 +108,7 @@
 
 /* ══════════════════════════════════════════════════════
    GLOBAL BASE STYLES & RESET
-══════════════════════════════════════════════════════ */
+═══════════════════════════════════════════════════ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -133,6 +133,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Smooth anchor offsets for sticky headers */
+section, [id] {
+  scroll-margin-top: 135px;
+}
+
 .en {
   font-family: 'Inter', sans-serif;
   direction: ltr;
@@ -141,7 +146,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -156,22 +161,6 @@ a {
   color: inherit;
   text-decoration: none;
   transition: all 0.25s ease;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-page);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--brand-navy-light);
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-blue);
 }
 
 /* ══════════════════════════════════════════════════════
@@ -203,7 +192,7 @@ a {
 }
 
 /* ══════════════════════════════════════════════════════
-   HEADER (DESKTOP & MOBILE INTEGRATED)
+   HEADER (ORGANIZED & PERFECT FIT ON DESKTOP & MOBILE)
 ═══════════════════════════════════════════════════ */
 header {
   position: sticky;
@@ -220,19 +209,20 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
-  gap: 16px;
+  padding: 10px 24px;
+  gap: 12px;
 }
 
+/* Right Side: Menu Button + School Brand */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
 .menu-toggle-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -247,6 +237,7 @@ header {
   font-size: 0.88rem;
   transition: all 0.25s ease;
   box-shadow: var(--shadow-sm);
+  white-space: nowrap;
 }
 
 .menu-toggle-btn:hover {
@@ -274,11 +265,11 @@ header {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .brand-logo-img {
-  height: 52px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -289,7 +280,7 @@ header {
 }
 
 .brand-title h1 {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.25;
@@ -297,52 +288,101 @@ header {
 }
 
 .brand-title p {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
-.desktop-nav-links {
+/* Center: Organized Categorized Desktop Nav Dropdowns */
+.desktop-nav-organized {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   list-style: none;
-  margin-right: auto;
-  margin-left: 16px;
+  margin: 0 auto;
 }
 
-.desktop-nav-links a {
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  padding: 8px 12px;
-  border-radius: 8px;
-  white-space: nowrap;
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s ease;
 }
 
-.desktop-nav-links a:hover {
-  color: var(--brand-blue);
+.nav-dropdown-btn:hover, .nav-item-dropdown:hover .nav-dropdown-btn {
   background: var(--brand-blue-subtle);
-  transform: translateY(-1px);
+  color: var(--brand-blue);
 }
 
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 220px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1050;
+}
+
+.nav-item-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(2px);
+}
+
+.nav-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue);
+  transform: translateX(-3px);
+}
+
+/* Left Side: Theme Switch & Direct Password Button */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
 .theme-switch-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-strong);
   color: var(--text-primary);
@@ -354,6 +394,7 @@ header {
   font-weight: 800;
   transition: all 0.25s ease;
   box-shadow: var(--shadow-sm);
+  white-space: nowrap;
 }
 
 .theme-switch-btn:hover {
@@ -368,18 +409,18 @@ header {
   gap: 6px;
   background: var(--brand-navy);
   color: #FFFFFF !important;
-  padding: 8px 18px;
+  padding: 8px 16px;
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 800;
   box-shadow: 0 4px 14px rgba(14, 38, 92, 0.25);
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .header-cta-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.15);
-  box-shadow: 0 6px 18px rgba(14, 38, 92, 0.35);
 }
 
 /* ══════════════════════════════════════════════════════
@@ -424,7 +465,7 @@ header {
 }
 
 .drawer-header {
-  padding: 20px 22px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -439,16 +480,16 @@ header {
 }
 
 .drawer-brand img {
-  height: 40px;
+  height: 38px;
 }
 
 .drawer-close-btn {
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
   color: var(--text-primary);
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -464,10 +505,10 @@ header {
 }
 
 .drawer-content {
-  padding: 18px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex: 1;
 }
 
@@ -484,10 +525,10 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
-  border-radius: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
   color: var(--text-secondary);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 700;
   transition: all 0.2s ease;
 }
@@ -505,7 +546,7 @@ header {
 }
 
 .drawer-footer {
-  padding: 20px;
+  padding: 18px;
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-surface-subtle);
 }
@@ -516,7 +557,7 @@ header {
 .hero-section {
   background: var(--hero-gradient);
   color: var(--hero-text);
-  padding: 68px 0 88px;
+  padding: 64px 0 84px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -543,7 +584,7 @@ header {
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 980px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -563,7 +604,7 @@ header {
 }
 
 .hero-heading {
-  font-size: clamp(2rem, 5.2vw, 3.3rem);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 900;
   line-height: 1.25;
   margin-bottom: 16px;
@@ -576,10 +617,10 @@ header {
 }
 
 .hero-description {
-  font-size: clamp(0.96rem, 2.3vw, 1.18rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
   color: var(--hero-subtext);
   line-height: 1.85;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 
 /* SMART 4 ACTION HUBS */
@@ -587,7 +628,7 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 36px;
+  margin-top: 32px;
   text-align: right;
 }
 
@@ -648,9 +689,9 @@ header {
 .filter-search-section {
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 16px 0;
+  padding: 14px 0;
   position: sticky;
-  top: 77px;
+  top: 71px;
   z-index: 990;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(14px);
@@ -669,8 +710,8 @@ header {
 .search-input-box {
   position: relative;
   flex: 1;
-  min-width: 260px;
-  max-width: 440px;
+  min-width: 240px;
+  max-width: 420px;
 }
 
 .search-input-box input {
@@ -678,9 +719,9 @@ header {
   background: var(--bg-surface-subtle);
   border: 1.5px solid var(--border-strong);
   border-radius: 50px;
-  padding: 10px 42px 10px 18px;
+  padding: 9px 40px 9px 18px;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-primary);
   outline: none;
   transition: all 0.25s ease;
@@ -694,11 +735,11 @@ header {
 
 .search-icon {
   position: absolute;
-  right: 16px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   pointer-events: none;
 }
 
@@ -719,10 +760,11 @@ header {
 .category-filter-tabs {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
   padding: 4px 0;
+  flex-wrap: wrap;
 }
 
 .category-filter-tabs::-webkit-scrollbar {
@@ -736,9 +778,9 @@ header {
   background: var(--tab-bg);
   color: var(--tab-text);
   border: 1px solid var(--tab-border);
-  padding: 8px 18px;
+  padding: 7px 16px;
   border-radius: 50px;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
@@ -757,12 +799,12 @@ header {
   box-shadow: var(--shadow-sm);
 }
 
-/* Search results counter */
 .search-count-badge {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-muted);
   display: none;
+  margin-top: 6px;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -808,7 +850,7 @@ header {
    SECTION HEADINGS & CARD WRAPPERS
 ═══════════════════════════════════════════════════ */
 .content-section {
-  padding: 68px 0;
+  padding: 64px 0;
 }
 
 .section-light {
@@ -821,7 +863,7 @@ header {
 
 .section-header-block {
   text-align: center;
-  margin-bottom: 44px;
+  margin-bottom: 40px;
 }
 
 .section-badge-chip {
@@ -838,17 +880,17 @@ header {
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+  font-size: clamp(1.55rem, 3.6vw, 2.2rem);
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1.3;
 }
 
 .section-subtitle {
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: var(--text-muted);
   max-width: 600px;
-  margin: 10px auto 0;
+  margin: 8px auto 0;
   line-height: 1.75;
 }
 
@@ -857,7 +899,7 @@ header {
   height: 4px;
   background: linear-gradient(90deg, var(--brand-blue), var(--brand-gold));
   border-radius: 4px;
-  margin: 16px auto 0;
+  margin: 14px auto 0;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1211,7 +1253,7 @@ header {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   color: #FFFFFF;
   font-size: 0.72rem;
   font-weight: 700;
@@ -1631,7 +1673,7 @@ footer {
    MEDIA QUERIES (DESKTOP & MOBILE SPECIALIZATION)
 ═══════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .desktop-nav-links {
+  .desktop-nav-organized {
     display: none;
   }
   .hero-smart-hub-grid {
@@ -1666,7 +1708,7 @@ footer {
     height: 42px;
   }
   .brand-title h1 {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
   .brand-title p {
     display: none;
@@ -1675,17 +1717,17 @@ footer {
     display: none;
   }
   .hero-section {
-    padding: 48px 0 56px;
+    padding: 46px 0 54px;
   }
   .hero-heading {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
   .hero-description {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
   .hero-smart-hub-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
   .filter-search-wrapper {
     flex-direction: column;
@@ -1693,6 +1735,11 @@ footer {
   }
   .search-input-box {
     max-width: 100%;
+  }
+  .category-filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
   }
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1704,7 +1751,7 @@ footer {
     font-size: 0.7rem;
   }
   .content-section {
-    padding: 48px 0;
+    padding: 46px 0;
   }
   .section-title {
     font-size: 1.35rem;
@@ -1722,15 +1769,15 @@ footer {
     font-size: 1.9rem;
   }
   .service-detail-card {
-    padding: 22px 16px;
+    padding: 20px 16px;
   }
   .service-avatar-icon {
-    width: 46px;
-    height: 46px;
-    font-size: 1.35rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
   }
   .service-title-text h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
   .quick-links-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1766,7 +1813,7 @@ footer {
 <header id="mainHeader">
   <div class="header-container">
     
-    <!-- Right Side: Menu Button + Brand -->
+    <!-- Right Side: Menu Toggle + School Brand -->
     <div class="header-right">
       <button class="menu-toggle-btn" id="drawerOpenBtn" aria-label="فتح القائمة الرئيسية">
         <div class="menu-icon-bars">
@@ -1786,26 +1833,57 @@ footer {
       </div>
     </div>
 
-    <!-- Center Desktop Navigation Links -->
-    <ul class="desktop-nav-links">
-      <li><a href="#password">🔑 كلمة المرور</a></li>
-      <li><a href="#qeducation">🎓 قطر للتعليم</a></li>
-      <li><a href="#portal">📊 البوابة</a></li>
-      <li><a href="#classdojo">🧑‍🏫 ClassDojo</a></li>
-      <li><a href="#achieve">📖 Achieve 3000</a></li>
-      <li><a href="#library">📚 المكتبة</a></li>
-      <li><a href="#guidance">🎯 الإرشاد</a></li>
-      <li><a href="#ministry">🏛️ وزارة التربية</a></li>
-      <li><a href="#social">📱 التواصل</a></li>
+    <!-- Center Desktop Navigation (Clean Organized Categorized Dropdowns) -->
+    <ul class="desktop-nav-organized">
+      <li class="nav-item-dropdown">
+        <button class="nav-dropdown-btn">🎓 الأنظمة الأساسية ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="#qeducation" onclick="smoothNavigate(event, '#qeducation')">🎓 نظام قطر للتعليم</a>
+          <a href="#portal" onclick="smoothNavigate(event, '#portal')">📊 البوابة والتقارير</a>
+          <a href="#password" onclick="smoothNavigate(event, '#password')">🔑 تغيير كلمة المرور</a>
+        </div>
+      </li>
+
+      <li class="nav-item-dropdown">
+        <button class="nav-dropdown-btn">📖 المنصات والمكتبات ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="#achieve" onclick="smoothNavigate(event, '#achieve')">📖 Achieve 3000 (الإنجليزية)</a>
+          <a href="#iread" onclick="smoothNavigate(event, '#iread')">📝 منصة أقرأ بالعربية</a>
+          <a href="#library" onclick="smoothNavigate(event, '#library')">📚 المكتبة الإلكترونية والرقمية</a>
+        </div>
+      </li>
+
+      <li class="nav-item-dropdown">
+        <button class="nav-dropdown-btn">🎯 الإرشاد والمتابعة ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="#classdojo" onclick="smoothNavigate(event, '#classdojo')">🧑‍🏫 تطبيق ClassDojo</a>
+          <a href="#guidance" onclick="smoothNavigate(event, '#guidance')">🎯 الإرشاد الأكاديمي والنفسي</a>
+          <a href="#studytips" onclick="smoothNavigate(event, '#studytips')">💡 النصائح الدراسية</a>
+        </div>
+      </li>
+
+      <li class="nav-item-dropdown">
+        <button class="nav-dropdown-btn">🏛️ الوزارة والسياسات ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="#ministry" onclick="smoothNavigate(event, '#ministry')">🏛️ بوابة معارف (وزارة التربية)</a>
+          <a href="#policies" onclick="smoothNavigate(event, '#policies')">📋 السياسات واللوائح المدرسية</a>
+          <a href="#timetable" onclick="smoothNavigate(event, '#timetable')">📅 جدول الحصص والنشرة</a>
+          <a href="#social" onclick="smoothNavigate(event, '#social')">📱 قنوات التواصل الاجتماعي</a>
+        </div>
+      </li>
+
+      <li>
+        <a href="#links" class="nav-dropdown-btn" onclick="smoothNavigate(event, '#links')">🔗 جميع الروابط</a>
+      </li>
     </ul>
 
-    <!-- Left Side: Theme Toggle & Fast Access Button -->
+    <!-- Left Side: Theme Switch & Direct Password Reset Button -->
     <div class="header-left">
       <button class="theme-switch-btn" id="themeToggleBtn" aria-label="تبديل وضع الألوان">
         <span id="themeIcon">🌙</span>
         <span id="themeLabel">الوضع الليلي</span>
       </button>
-      <a href="#password" class="header-cta-btn">🔑 استعادة كلمة المرور</a>
+      <a href="#password" class="header-cta-btn" onclick="smoothNavigate(event, '#password')">🔑 كلمة المرور</a>
     </div>
 
   </div>
@@ -1818,29 +1896,31 @@ footer {
   <div class="drawer-header">
     <div class="drawer-brand">
       <img src="school-logo.png" alt="شعار المدرسة"/>
-      <strong style="font-size:0.95rem; color:var(--text-primary);">مدارس قطر للعلوم والتكنولوجيا</strong>
+      <strong style="font-size:0.92rem; color:var(--text-primary);">مدارس قطر للعلوم والتكنولوجيا</strong>
     </div>
     <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="إغلاق القائمة">✕</button>
   </div>
 
   <div class="drawer-content">
-    <div class="drawer-heading">الخدمات السريعة</div>
-    <a href="#password" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🔑</span><span>تغيير كلمة المرور</span></a>
-    <a href="#qeducation" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🎓</span><span>نظام قطر للتعليم (QEducation)</span></a>
-    <a href="#portal" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📊</span><span>البوابة الإلكترونية والتقارير</span></a>
-    <a href="#classdojo" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🧑‍🏫</span><span>متابعة السلوك (ClassDojo)</span></a>
+    <div class="drawer-heading">الأنظمة والخدمات الأساسية</div>
+    <a href="#password" class="drawer-link" onclick="handleDrawerClick(event, '#password')"><span class="icon">🔑</span><span>تغيير كلمة المرور</span></a>
+    <a href="#qeducation" class="drawer-link" onclick="handleDrawerClick(event, '#qeducation')"><span class="icon">🎓</span><span>نظام قطر للتعليم (QEducation)</span></a>
+    <a href="#portal" class="drawer-link" onclick="handleDrawerClick(event, '#portal')"><span class="icon">📊</span><span>البوابة الإلكترونية والتقارير</span></a>
+    <a href="#classdojo" class="drawer-link" onclick="handleDrawerClick(event, '#classdojo')"><span class="icon">🧑‍🏫</span><span>متابعة السلوك (ClassDojo)</span></a>
 
     <div class="drawer-heading">المنصات التعليمية والمكتبات</div>
-    <a href="#achieve" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📖</span><span>منصة Achieve 3000 (الإنجليزية)</span></a>
-    <a href="#iread" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📝</span><span>منصة أقرأ بالعربية</span></a>
-    <a href="#library" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📚</span><span>المكتبة الإلكترونية والرقمية</span></a>
+    <a href="#achieve" class="drawer-link" onclick="handleDrawerClick(event, '#achieve')"><span class="icon">📖</span><span>منصة Achieve 3000 (الإنجليزية)</span></a>
+    <a href="#iread" class="drawer-link" onclick="handleDrawerClick(event, '#iread')"><span class="icon">📝</span><span>منصة أقرأ بالعربية</span></a>
+    <a href="#library" class="drawer-link" onclick="handleDrawerClick(event, '#library')"><span class="icon">📚</span><span>المكتبة الإلكترونية والرقمية</span></a>
 
     <div class="drawer-heading">التوجيه والخدمات المدرسية</div>
-    <a href="#guidance" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🎯</span><span>الإرشاد الأكاديمي والنفسي</span></a>
-    <a href="#policies" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📋</span><span>السياسات المدرسية</span></a>
-    <a href="#ministry" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🏛️</span><span>خدمات وزارة التربية والتعليم</span></a>
-    <a href="#social" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">📱</span><span>قنوات التواصل الاجتماعي</span></a>
-    <a href="#links" class="drawer-link" onclick="closeSideDrawer()"><span class="icon">🔗</span><span>دليل جميع الروابط</span></a>
+    <a href="#guidance" class="drawer-link" onclick="handleDrawerClick(event, '#guidance')"><span class="icon">🎯</span><span>الإرشاد الأكاديمي والنفسي</span></a>
+    <a href="#studytips" class="drawer-link" onclick="handleDrawerClick(event, '#studytips')"><span class="icon">💡</span><span>النصائح الدراسية</span></a>
+    <a href="#policies" class="drawer-link" onclick="handleDrawerClick(event, '#policies')"><span class="icon">📋</span><span>السياسات واللوائح المدرسية</span></a>
+    <a href="#timetable" class="drawer-link" onclick="handleDrawerClick(event, '#timetable')"><span class="icon">📅</span><span>جدول الحصص والنشرة الشهرية</span></a>
+    <a href="#ministry" class="drawer-link" onclick="handleDrawerClick(event, '#ministry')"><span class="icon">🏛️</span><span>خدمات وزارة التربية والتعليم</span></a>
+    <a href="#social" class="drawer-link" onclick="handleDrawerClick(event, '#social')"><span class="icon">📱</span><span>قنوات التواصل الاجتماعي</span></a>
+    <a href="#links" class="drawer-link" onclick="handleDrawerClick(event, '#links')"><span class="icon">🔗</span><span>دليل جميع الروابط</span></a>
   </div>
 
   <div class="drawer-footer">
@@ -1868,7 +1948,7 @@ footer {
 
       <!-- 4 Smart Action Hub Cards -->
       <div class="hero-smart-hub-grid">
-        <a href="#password" class="smart-hub-card">
+        <a href="#password" class="smart-hub-card" onclick="smoothNavigate(event, '#password')">
           <div>
             <span class="smart-hub-icon">🔑</span>
             <h4>تغيير كلمة المرور</h4>
@@ -1877,7 +1957,7 @@ footer {
           <span class="smart-hub-link">الدخول للخدمة ←</span>
         </a>
 
-        <a href="#qeducation" class="smart-hub-card">
+        <a href="#qeducation" class="smart-hub-card" onclick="smoothNavigate(event, '#qeducation')">
           <div>
             <span class="smart-hub-icon">🎓</span>
             <h4>نظام قطر للتعليم</h4>
@@ -1886,7 +1966,7 @@ footer {
           <span class="smart-hub-link">تصفح النظام ←</span>
         </a>
 
-        <a href="#portal" class="smart-hub-card">
+        <a href="#portal" class="smart-hub-card" onclick="smoothNavigate(event, '#portal')">
           <div>
             <span class="smart-hub-icon">📊</span>
             <h4>بوابة ولي الأمر</h4>
@@ -1895,7 +1975,7 @@ footer {
           <span class="smart-hub-link">فتح البوابة ←</span>
         </a>
 
-        <a href="#classdojo" class="smart-hub-card">
+        <a href="#classdojo" class="smart-hub-card" onclick="smoothNavigate(event, '#classdojo')">
           <div>
             <span class="smart-hub-icon">🧑‍🏫</span>
             <h4>تطبيق ClassDojo</h4>
@@ -1916,10 +1996,10 @@ footer {
       <!-- Category Filter Tabs -->
       <div class="category-filter-tabs" role="tablist">
         <button class="filter-tab-btn active" data-category="all">🌟 جميع الخدمات (13)</button>
-        <button class="filter-tab-btn" data-category="core">🎓 الأنظمة الأساسية</button>
-        <button class="filter-tab-btn" data-category="academic">📖 المنصات والمكتبات</button>
-        <button class="filter-tab-btn" data-category="guidance">🎯 الإرشاد والمتابعة</button>
-        <button class="filter-tab-btn" data-category="services">🏛️ الوزارة والسياسات</button>
+        <button class="filter-tab-btn" data-category="core">🎓 الأنظمة الأساسية (3)</button>
+        <button class="filter-tab-btn" data-category="academic">📖 المنصات والمكتبات (3)</button>
+        <button class="filter-tab-btn" data-category="guidance">🎯 الإرشاد والمتابعة (3)</button>
+        <button class="filter-tab-btn" data-category="services">🏛️ الوزارة والسياسات (4)</button>
       </div>
 
       <!-- Live Search Box -->
@@ -2646,14 +2726,14 @@ footer {
       <div class="footer-col">
         <h5>روابط هامة</h5>
         <ul>
-          <li><a href="#password">🔑 تغيير كلمة المرور</a></li>
-          <li><a href="#qeducation">🎓 نظام قطر للتعليم</a></li>
-          <li><a href="#portal">📊 البوابة الإلكترونية</a></li>
-          <li><a href="#classdojo">🧑‍🏫 تطبيق ClassDojo</a></li>
-          <li><a href="#achieve">📖 منصة Achieve 3000</a></li>
-          <li><a href="#library">📚 المكتبة الإلكترونية</a></li>
-          <li><a href="#guidance">🎯 الإرشاد والتوجيه</a></li>
-          <li><a href="#ministry">🏛️ وزارة التربية والتعليم</a></li>
+          <li><a href="#password" onclick="smoothNavigate(event, '#password')">🔑 تغيير كلمة المرور</a></li>
+          <li><a href="#qeducation" onclick="smoothNavigate(event, '#qeducation')">🎓 نظام قطر للتعليم</a></li>
+          <li><a href="#portal" onclick="smoothNavigate(event, '#portal')">📊 البوابة الإلكترونية</a></li>
+          <li><a href="#classdojo" onclick="smoothNavigate(event, '#classdojo')">🧑‍🏫 تطبيق ClassDojo</a></li>
+          <li><a href="#achieve" onclick="smoothNavigate(event, '#achieve')">📖 منصة Achieve 3000</a></li>
+          <li><a href="#library" onclick="smoothNavigate(event, '#library')">📚 المكتبة الإلكترونية</a></li>
+          <li><a href="#guidance" onclick="smoothNavigate(event, '#guidance')">🎯 الإرشاد والتوجيه</a></li>
+          <li><a href="#ministry" onclick="smoothNavigate(event, '#ministry')">🏛️ وزارة التربية والتعليم</a></li>
         </ul>
       </div>
 
@@ -2693,7 +2773,7 @@ footer {
   ▲
 </button>
 
-<!-- ══════════════ SMART JAVASCRIPT LOGIC ══════════════ -->
+<!-- ══════════════ JAVASCRIPT LOGIC ══════════════ -->
 <script>
 // ══════════════════════════════════════════════
 // 1. THEME SWITCHER (DEFAULT: LIGHT MODE)
@@ -2743,6 +2823,26 @@ function closeSideDrawer() {
   sideDrawer.classList.remove("active");
   drawerBackdrop.classList.remove("active");
   document.body.style.overflow = "";
+}
+
+function handleDrawerClick(event, targetSelector) {
+  event.preventDefault();
+  closeSideDrawer();
+  
+  setTimeout(() => {
+    const targetEl = document.querySelector(targetSelector);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 150);
+}
+
+function smoothNavigate(event, targetSelector) {
+  event.preventDefault();
+  const targetEl = document.querySelector(targetSelector);
+  if (targetEl) {
+    targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 drawerOpenBtn.addEventListener("click", openSideDrawer);
