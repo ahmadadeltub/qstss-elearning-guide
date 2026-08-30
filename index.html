@@ -435,9 +435,9 @@ header {
 .mobile-dropdown-panel {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
-  left: 14px;
-  right: auto;
+  top: calc(100% + 4px);
+  right: 14px;
+  left: auto;
   width: min(340px, calc(100vw - 28px));
   background: var(--bg-surface);
   border: 1.5px solid var(--border-strong);
@@ -447,7 +447,7 @@ header {
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px) scale(0.96);
-  transform-origin: top left;
+  transform-origin: top right;
   transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.25s ease,
               transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1649,58 +1649,91 @@ footer {
   }
 }
 
-/* PHONE SPECIALIZATION */
+/* PHONE SPECIALIZATION (MENU & BUTTONS BELOW LOGO ON RIGHT SIDE) */
 @media (max-width: 768px) {
   .announcement-bar {
-    display: none;
+    display: flex;
+    padding: 8px 14px;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    text-align: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .header-container {
-    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 14px 8px;
     gap: 8px;
   }
   
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .brand-wrapper {
+    gap: 10px;
+  }
+
   .brand-logo-img {
-    height: 32px;
+    height: 36px;
   }
 
   .brand-title h1 {
-    font-size: 0.8rem;
+    font-size: 0.92rem;
+    font-weight: 900;
   }
 
   .brand-title p {
     display: none;
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Right side in RTL */
+    gap: 8px;
+    width: 100%;
+    padding-top: 4px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
   .header-cta-btn {
     display: none;
   }
 
+  .mobile-dropdown-toggle-btn {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    border-radius: 10px;
+  }
+
   .theme-switch-btn {
-    padding: 6px 10px;
-    font-size: 0.78rem;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 10px;
   }
 
   .theme-switch-btn span#themeLabel {
-    display: none;
-  }
-
-  .mobile-dropdown-toggle-btn {
-    padding: 6px 10px;
-    font-size: 0.8rem;
+    display: inline-block;
   }
 
   /* Extra small screens protection (e.g. iPhone SE / 320px - 360px wide) */
   @media (max-width: 375px) {
     .brand-logo-img {
-      height: 26px;
+      height: 30px;
     }
     .brand-title h1 {
-      font-size: 0.74rem;
+      font-size: 0.82rem;
     }
-    .header-container {
-      padding: 6px 8px;
-      gap: 4px;
+    .mobile-dropdown-toggle-btn, .theme-switch-btn {
+      padding: 5px 10px;
+      font-size: 0.76rem;
     }
   }
 
@@ -1936,17 +1969,11 @@ footer {
 
 <body>
 
-<!-- ══════════════ ANNOUNCEMENT STRIP (DESKTOP) ══════════════ -->
-<div class="announcement-bar">
-  <span class="badge-gold">دليل 2025/2026</span>
-  <span>🎓 مرحباً بكم في البوابة الذكية لدليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا</span>
-</div>
-
 <!-- ══════════════ MAIN HEADER ══════════════ -->
 <header id="mainHeader">
   <div class="header-container">
     
-    <!-- Right Side: School Brand + Logo -->
+    <!-- Right Side: School Brand + Logo (Row 1 on mobile) -->
     <div class="header-right">
       <div class="brand-wrapper">
         <img src="school-logo.png" alt="شعار مدارس قطر للعلوم والتكنولوجيا" class="brand-logo-img"/>
@@ -2001,20 +2028,22 @@ footer {
       </li>
     </ul>
 
-    <!-- Left Side: Theme Switch + Direct CTA + Mobile Dropdown Trigger -->
+    <!-- Controls Row: Menu Button + Theme Switch (Row 2 on mobile on the Right Side) -->
     <div class="header-left">
+      <!-- Mobile Drop-Down Toggle Button (Right Side on Mobile) -->
+      <button class="mobile-dropdown-toggle-btn" id="mobileDropdownToggle" aria-label="فتح القائمة المنسدلة">
+        <span>القائمة</span>
+        <span class="toggle-arrow-icon">▼</span>
+      </button>
+
+      <!-- Theme Switch Button -->
       <button class="theme-switch-btn" id="themeToggleBtn" aria-label="تبديل وضع الألوان">
         <span id="themeIcon">🌙</span>
         <span id="themeLabel">الوضع الليلي</span>
       </button>
 
+      <!-- Direct CTA (Desktop only) -->
       <a href="#password" class="header-cta-btn" onclick="navigateToSection(event, '#password')">🔑 كلمة المرور</a>
-
-      <!-- Mobile Drop-Down Toggle Button -->
-      <button class="mobile-dropdown-toggle-btn" id="mobileDropdownToggle" aria-label="فتح القائمة المنسدلة">
-        <span>القائمة</span>
-        <span class="toggle-arrow-icon">▼</span>
-      </button>
     </div>
 
   </div>
@@ -2118,6 +2147,12 @@ footer {
     </div>
   </div>
 </header>
+
+<!-- ══════════════ ANNOUNCEMENT STRIP (BELOW LOGO & BUTTONS) ══════════════ -->
+<div class="announcement-bar">
+  <span class="badge-gold">دليل 2025/2026</span>
+  <span>🎓 مرحباً بكم في البوابة الذكية لدليل التعليم الإلكتروني — مدارس قطر للعلوم والتكنولوجيا</span>
+</div>
 
 <!-- ══════════════ HERO SECTION ══════════════ -->
 <section class="hero-section">
