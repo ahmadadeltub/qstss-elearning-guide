@@ -3216,5 +3216,29 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+<!-- ══════════════ FIREBASE SDK & ANALYTICS (QSTSSDG) ══════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA7DccRkamybgj34rjJ62-wrW6SHymbNkk",
+    authDomain: "qstssdg.firebaseapp.com",
+    projectId: "qstssdg",
+    storageBucket: "qstssdg.firebasestorage.app",
+    messagingSenderId: "791958243810",
+    appId: "1:791958243810:web:7544558dc2dd2c3e1411bb",
+    measurementId: "G-QVPXLEEENF"
+  };
+
+  // Initialize Firebase & Google Analytics
+  try {
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  } catch (err) {
+    console.warn("Firebase Analytics init:", err);
+  }
+</script>
+
 </body>
 </html>

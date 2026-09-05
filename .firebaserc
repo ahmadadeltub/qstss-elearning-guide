@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "qstssschools"
+    "default": "qstssdg",
+    "qstssdg": "qstssdg",
+    "qstssschools": "qstssschools"
   }
 }
