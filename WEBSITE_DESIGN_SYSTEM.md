@@ -194,8 +194,8 @@ backdrop-filter: blur(12px);
 
 | Viewport Category | Exact Breakpoint Range | Container Max-Width | Horizontal Padding | Grid Columns | Navigation State | Header Layout |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Large Desktop** | `≥ 1440px` | `1240px` | `20px` (each side) | Hub: 4 \| Stats: 6 \| Footer: 3 (2:1:1) | Full Horizontal Dropdowns | Inline Row (Space-between) |
-| **Desktop / Laptop** | `1025px – 1439px` | `1240px` | `20px` | Hub: 4 \| Stats: 6 \| Footer: 3 (2:1:1) | Full Horizontal Dropdowns | Inline Row (Space-between) |
+| **Large Desktop** | `≥ 1440px` | `1240px` | `20px` (each side) | Hub: 5 \| Stats: 6 \| Footer: 3 (2:1:1) | Full Horizontal Dropdowns | Inline Row (Space-between) |
+| **Desktop / Laptop** | `1025px – 1439px` | `1240px` | `20px` | Hub: 5 \| Stats: 6 \| Footer: 3 (2:1:1) | Full Horizontal Dropdowns | Inline Row (Space-between) |
 | **Tablet / Small Laptop**| `769px – 1024px` | `100%` (`≤1024px`) | `20px` | Hub: 2 \| Stats: 3 \| Footer: 2 (1:1) | Mobile Toggle Button + Panel | Inline Row with Toggle Button |
 | **Standard Mobile** | `376px – 768px` | `100%` | `14px` | Hub: 2 (2x2) \| Stats: 3 \| Footer: 1 | Categorized Accordion Dropdown | **Vertical Stack** (Logo top, Actions right) |
 | **Small Mobile** | `≤ 375px` | `100%` | `12px` | Hub: 2 \| Stats: 3 \| Footer: 1 | Categorized Accordion Dropdown | Compact Vertical Stack (Logo 30px) |
@@ -223,7 +223,7 @@ The codebase follows a **Desktop-First Architecture with Deep Mobile Specializat
   * CTA button (`.header-cta-btn`) is completely hidden to eliminate header congestion.
 
 #### 2. Hero Smart Hub Cards
-* **Desktop:** `grid-template-columns: repeat(4, 1fr);` — 4 cards in a single clean row.
+* **Desktop:** `grid-template-columns: repeat(5, 1fr);` — 4 cards in a single clean row.
 * **Tablet (`1024px`):** `grid-template-columns: repeat(2, 1fr);` — 2 rows of 2 cards.
 * **Mobile (`≤ 768px`):** `grid-template-columns: 1fr 1fr;` — Compact 2x2 grid with reduced padding (`12px 10px`), icons (`1.35rem`), and tight line heights.
 
@@ -321,7 +321,7 @@ The website follows an 8-point harmonic spacing scale:
 /* 1. Hero 4 Action Hubs */
 .hero-smart-hub-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
 @media (max-width: 1024px) {
@@ -1047,7 +1047,7 @@ To create a new website sharing this exact design system, follow this sequence:
    * Desktop: Use `.desktop-nav-organized` with dropdown menus.
    * Mobile: Add `.mobile-dropdown-toggle-btn` and `.mobile-dropdown-panel` with `.m-accordion-group`.
 6. **Implement Theme Switcher:** Add toggle button script switching `data-theme="light|dark"` and persisting in `localStorage`.
-7. **Construct Hero Section:** Apply multi-stop navy gradient, dual radial glows, fluid title, and 4-card action grid.
+7. **Construct Hero Section:** Apply multi-stop navy gradient, dual radial glows, fluid title, and 5-card action grid.
 8. **Add Live Filter & Search Hub:** Create pill search input with sticky/subtle category tabs.
 9. **Build Stats Counter Bar:** 6-column grid with blue numbers and muted labels.
 10. **Implement Detailed Service Cards:** Use card structure with 5px colored right border, emoji avatar, explanation box, and action buttons.
