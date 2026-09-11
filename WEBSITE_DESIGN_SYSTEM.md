@@ -746,7 +746,7 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
   ```
 * **Badge Chip:** `.hero-badge-pill` with golden glow text `#FFAE26` and translucent border.
 * **Heading Structure:**
-  * Title: `دليل الخدمات الرقمية لولي الأمر والطالب` with highlighted word `<span>خيارك الذكي</span>`.
+  * Title: `دليل التعليم الإلكتروني والحلول الرقمية لولي الأمر والطالب` with highlighted word `<span>خيارك الذكي</span>`.
   * Desktop Font: `clamp(1.75rem, 4.5vw, 3rem); font-weight: 900; line-height: 1.28;`
   * Mobile Font: `1.5rem; line-height: 1.25;`
 * **Action Hubs:** 4 glassmorphic action cards at base of hero leading directly to critical services.
