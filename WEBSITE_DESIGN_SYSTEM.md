@@ -945,7 +945,7 @@ The design system is fundamentally built for **Arabic-first (Right-to-Left)** re
 
 ### C06: Metrics & Stats Strip
 * **Structure:** 6-column grid on desktop collapsing to 3-columns on mobile with left-borders.
-* **Stats Displayed:** 14+ Services, 15+ Videos, 13 Interactive Guides, STEM, QE, 24/7 Access.
+* **Stats Displayed:** 15+ Services, 15+ Videos, 13 Interactive Guides, STEM, QE, 24/7 Access.
 
 ### C07: Password Reset Hero Box
 * **Style:** High-priority card with deep gradient base, circular key icon, explanation, and golden CTA button.
