@@ -1226,55 +1226,59 @@ header {
   text-underline-offset: 3px;
 }
 
-/* Compact, Organized Image Previews */
+/* Medium-sized, Centered, Harmonious Image Previews */
 .service-images-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 10px 0 14px;
-  align-items: flex-start;
+  gap: 16px;
+  margin: 16px auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .service-images-grid.single-img {
   display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .service-image-holder {
-  width: 220px;
+  width: 330px;
   max-width: 100%;
-  height: 145px;
-  border-radius: 10px;
+  height: 210px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   background: var(--bg-surface-subtle);
   cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .service-image-holder:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
   border-color: var(--brand-blue);
 }
 
 .service-image-holder::after {
-  content: "🔍 تكبير";
+  content: "🔍 انقر للتكبير";
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 8px;
+  left: 8px;
   background: rgba(13, 27, 62, 0.85);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: #FFFFFF;
-  font-size: 0.64rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 12px;
+  padding: 3px 10px;
+  border-radius: 14px;
   opacity: 0.85;
   transition: all 0.2s ease;
   pointer-events: none;
@@ -1289,24 +1293,24 @@ header {
 
 .service-image-holder img {
   width: 100%;
-  height: 112px;
+  height: 170px;
   object-fit: cover;
   object-position: top center;
   transition: transform 0.3s ease;
 }
 
 .service-image-holder:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .image-caption-tag {
-  height: 33px;
+  height: 40px;
   background: var(--brand-navy);
   color: #FFFFFF;
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-align: center;
-  padding: 4px 8px;
+  padding: 4px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1319,32 +1323,36 @@ header {
 .sub-videos-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 10px 0 14px;
+  gap: 16px;
+  margin: 16px auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .sub-videos-grid > div {
-  width: 250px;
+  width: 330px;
   max-width: 100%;
   flex-shrink: 0;
 }
 
 .sub-video-label {
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--text-muted);
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   text-align: center;
 }
 
-/* Emphasized Action Buttons & Section Links */
+/* Emphasized Action Buttons & Section Links (Centered) */
 .service-action-buttons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 14px;
-  padding-top: 14px;
+  margin-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid var(--border-subtle);
+  justify-content: center;
 }
 
 .action-btn {
@@ -1385,18 +1393,18 @@ header {
 .btn-social-ig    { background: linear-gradient(45deg, #833AB4, #E1306C, #F77737); color: #FFFFFF !important; }
 
 /* ═══════════════════════════════════════════════════
-   POSTER SECTION (Compact Image & High-Focus Links)
+   POSTER SECTION (Medium Harmonious Image & High-Focus Links)
 ═══════════════════════════════════════════════════ */
 .poster-showcase-grid {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 32px;
+  grid-template-columns: 320px 1fr;
+  gap: 36px;
   align-items: center;
 }
 
 .poster-frame {
-  max-width: 240px;
-  max-height: 320px;
+  max-width: 320px;
+  max-height: 420px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -1421,9 +1429,9 @@ header {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: #FFFFFF;
-  font-size: 0.64rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 12px;
   opacity: 0.85;
   transition: all 0.2s ease;
@@ -1438,7 +1446,7 @@ header {
 
 .poster-frame img {
   width: 100%;
-  max-height: 320px;
+  max-height: 420px;
   object-fit: cover;
   object-position: top center;
   display: block;
@@ -1503,8 +1511,8 @@ header {
 ═══════════════════════════════════════════════════ */
 .login-guide-showcase-grid {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 28px;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
   align-items: start;
 }
 
@@ -1518,8 +1526,8 @@ header {
   transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
   display: flex;
   flex-direction: column;
-  max-width: 240px;
-  margin: 0;
+  max-width: 300px;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -1536,12 +1544,12 @@ header {
   background: #0A193B;
   display: flex;
   flex-direction: column;
-  max-height: 320px;
+  max-height: 400px;
 }
 
 .login-guide-poster-inner img {
   width: 100%;
-  max-height: 320px;
+  max-height: 400px;
   object-fit: cover;
   object-position: top center;
   display: block;
@@ -1750,7 +1758,7 @@ header {
     gap: 24px;
   }
   .login-guide-poster-wrapper {
-    max-width: 240px;
+    max-width: 300px;
     margin: 0 auto;
     width: 100%;
   }
@@ -1759,7 +1767,7 @@ header {
     gap: 24px;
   }
   .poster-frame {
-    max-width: 240px;
+    max-width: 320px;
     margin: 0 auto;
   }
   .login-support-card {
@@ -1776,10 +1784,11 @@ header {
 @media (max-width: 600px) {
   .service-image-holder {
     width: 100%;
-    max-width: 260px;
+    max-width: 330px;
   }
   .sub-videos-grid > div {
     width: 100%;
+    max-width: 330px;
   }
 }
 

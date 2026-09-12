@@ -592,54 +592,99 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
 
 ## 16. IMAGES, MEDIA & LIGHTBOX SYSTEM
 
-### 16.1 Image Grid Specifications
+### 16.1 Image Grid Specifications (Medium-Sized & Centered)
 ```css
 .service-images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-  margin: 14px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .service-images-grid.single-img {
-  grid-template-columns: minmax(240px, 480px);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .service-image-holder {
-  border-radius: 12px;
+  width: 330px;
+  max-width: 100%;
+  height: 210px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  background: var(--bg-surface);
+  background: var(--bg-surface-subtle);
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
 
 .service-image-holder:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+  border-color: var(--brand-blue);
+}
+
+.service-image-holder::after {
+  content: "🔍 انقر للتكبير";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(13, 27, 62, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 14px;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-image-holder:hover::after {
+  opacity: 1;
+  background: var(--brand-blue);
   border-color: var(--brand-blue);
 }
 
 .service-image-holder img {
   width: 100%;
-  height: 180px;
+  height: 170px;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   transition: transform 0.3s ease;
 }
 
 .service-image-holder:hover img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .image-caption-tag {
-  padding: 8px 12px;
+  height: 40px;
+  background: var(--brand-navy);
+  color: #FFFFFF;
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--text-secondary);
-  background: var(--bg-surface-subtle);
-  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 ```
 
