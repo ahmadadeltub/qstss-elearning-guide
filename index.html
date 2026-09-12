@@ -276,7 +276,7 @@ header {
 .desktop-nav-organized {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   list-style: none;
   margin: 0 auto;
 }
@@ -288,13 +288,13 @@ header {
 .nav-dropdown-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   background: transparent;
   border: none;
   color: var(--text-secondary);
-  font-size: 0.86rem;
+  font-size: 0.83rem;
   font-weight: 700;
-  padding: 8px 12px;
+  padding: 7px 9px;
   border-radius: 10px;
   cursor: pointer;
   white-space: nowrap;
@@ -2124,6 +2124,17 @@ footer {
 /* ═══════════════════════════════════════════════════
    RESPONSIVE MEDIA QUERIES
 ═══════════════════════════════════════════════════ */
+@media (max-width: 1240px) and (min-width: 1025px) {
+  .desktop-nav-organized {
+    gap: 2px;
+  }
+  .nav-dropdown-btn {
+    font-size: 0.79rem;
+    padding: 6px 7px;
+    gap: 3px;
+  }
+}
+
 @media (max-width: 1024px) {
   .desktop-nav-organized {
     display: none;
@@ -2497,9 +2508,9 @@ footer {
         <button class="nav-dropdown-btn">🎓 الأنظمة الأساسية ▾</button>
         <div class="nav-dropdown-menu">
           <a href="#qeducation-guide" onclick="navigateToSection(event, '#qeducation-guide')">📱 دليل الدخول لنظام قطر للتعليم</a>
-          <a href="#qeducation" onclick="navigateToSection(event, '#qeducation')">🎓 نظام قطر للتعليم</a>
-          <a href="#portal" onclick="navigateToSection(event, '#portal')">📊 البوابة والتقارير</a>
-          <a href="#password" onclick="navigateToSection(event, '#password')">🔑 تغيير كلمة المرور</a>
+          <a href="#qeducation" onclick="navigateToSection(event, '#qeducation')">🎓 نظام قطر للتعليم (QEducation)</a>
+          <a href="#portal" onclick="navigateToSection(event, '#portal')">📊 البوابة الإلكترونية والتقارير</a>
+          <a href="#password" onclick="navigateToSection(event, '#password')">🔑 تغيير واستعادة كلمة المرور</a>
         </div>
       </li>
 
@@ -2507,8 +2518,29 @@ footer {
         <button class="nav-dropdown-btn">📖 المنصات والمكتبات ▾</button>
         <div class="nav-dropdown-menu">
           <a href="https://qatareducation-my.sharepoint.com/:f:/g/personal/r_altoum1512_education_qa/IgBZDgxMwlZhQ7B21CInrURSAdMFVUDLKERuTPBfK1_eeyI?e=q8Nd7X" target="_blank" rel="noopener noreferrer">📚 الكتب الإلكترونية (E-Books) ↗</a>
+          <a href="#library" onclick="navigateToSection(event, '#library')">📚 المكتبة الرقمية والإلكترونية</a>
           <a href="#iread" onclick="navigateToSection(event, '#iread')">📝 منصة أقرأ بالعربية</a>
-          <a href="#library" onclick="navigateToSection(event, '#library')">📚 المكتبة الإلكترونية والرقمية</a>
+          <a href="#safespace" onclick="navigateToSection(event, '#safespace')">🛡️ منصة سيف سبيس (SafeSpace)</a>
+          <a href="#social" onclick="navigateToSection(event, '#social')">📱 قنوات التواصل الاجتماعي</a>
+        </div>
+      </li>
+
+      <li class="nav-item-dropdown">
+        <button class="nav-dropdown-btn">🏫 الخدمات المدرسية ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="#timetable" onclick="navigateToSection(event, '#timetable')">📅 جدول الحصص الدراسي</a>
+          <a href="#events-calendar" onclick="navigateToSection(event, '#events-calendar')">📅 تقويم فعاليات المدرسة ↗</a>
+          <a href="#parents-council" onclick="navigateToSection(event, '#parents-council')">👥 دليل مجلس أولياء الأمور ↗</a>
+          <a href="#ministry" onclick="navigateToSection(event, '#ministry')">🏛️ خدمات وزارة التربية (بوابة معارف)</a>
+        </div>
+      </li>
+
+      <li class="nav-item-dropdown">
+        <button class="nav-dropdown-btn">📋 السياسات المدرسية ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="#policies" onclick="navigateToSection(event, '#policies')">📋 السياسات واللوائح المدرسية</a>
+          <a href="#agreement" onclick="navigateToSection(event, '#agreement')">🤝 اتفاقية المدرسة والمنزل ↗</a>
+          <a href="https://qstssboys.qa/pdf/pdf_202620270005.pdf" target="_blank" rel="noopener noreferrer">🤖 سياسة دمج الذكاء الاصطناعي ↗</a>
         </div>
       </li>
 
@@ -2520,24 +2552,6 @@ footer {
         </div>
       </li>
 
-      <li class="nav-item-dropdown">
-        <button class="nav-dropdown-btn">🏛️ الوزارة والخدمات ▾</button>
-        <div class="nav-dropdown-menu">
-          <a href="#events-calendar" onclick="navigateToSection(event, '#events-calendar')">📅 تقويم فعاليات المدرسة ↗</a>
-          <a href="#parents-council" onclick="navigateToSection(event, '#parents-council')">👥 دليل مجلس أولياء الأمور ↗</a>
-          <a href="#agreement" onclick="navigateToSection(event, '#agreement')">🤝 اتفاقية المدرسة والمنزل ↗</a>
-          <a href="https://qstssboys.qa/pdf/pdf_202620270005.pdf" target="_blank" rel="noopener noreferrer">🤖 سياسة دمج الذكاء الاصطناعي في التعليم ↗</a>
-          <a href="#safespace" onclick="navigateToSection(event, '#safespace')">🛡️ منصة سيف سبيس (SafeSpace)</a>
-          <a href="#ministry" onclick="navigateToSection(event, '#ministry')">🏛️ بوابة معارف (وزارة التربية)</a>
-          <a href="#policies" onclick="navigateToSection(event, '#policies')">📋 السياسات واللوائح المدرسية</a>
-          <a href="#timetable" onclick="navigateToSection(event, '#timetable')">📅 جدول الحصص الدراسي</a>
-          <a href="#social" onclick="navigateToSection(event, '#social')">📱 قنوات التواصل الاجتماعي</a>
-        </div>
-      </li>
-
-      <li>
-        <a href="https://qatareducation-my.sharepoint.com/:f:/g/personal/r_altoum1512_education_qa/IgBZDgxMwlZhQ7B21CInrURSAdMFVUDLKERuTPBfK1_eeyI?e=q8Nd7X" target="_blank" rel="noopener noreferrer" class="nav-dropdown-btn" style="background:var(--brand-blue-subtle); color:var(--brand-blue); border:1px solid rgba(30,95,224,0.25); font-weight:800;">📚 E-Books ↗</a>
-      </li>
       <li>
         <a href="#links" class="nav-dropdown-btn" onclick="navigateToSection(event, '#links')">🔗 جميع الروابط</a>
       </li>
@@ -2570,7 +2584,7 @@ footer {
       <!-- Accordion 1: Core Systems -->
       <div class="m-accordion-group active">
         <button class="m-accordion-header" onclick="toggleAccordion(this)">
-          <span class="acc-title">🎓 الأنظمة والخدمات الأساسية</span>
+          <span class="acc-title">🎓 الأنظمة الأساسية</span>
           <span class="acc-chevron">▲</span>
         </button>
         <div class="m-accordion-links">
@@ -2584,23 +2598,19 @@ footer {
           </a>
           <a href="#portal" class="m-nav-link" onclick="navigateToSection(event, '#portal')">
             <span class="m-icon">📊</span>
-            <span>البوابة الإلكترونية والتقرير الشهري</span>
+            <span>البوابة الإلكترونية والتقارير</span>
           </a>
           <a href="#password" class="m-nav-link" onclick="navigateToSection(event, '#password')">
             <span class="m-icon">🔑</span>
             <span>تغيير واستعادة كلمة المرور</span>
           </a>
-          <a href="#classdojo" class="m-nav-link" onclick="navigateToSection(event, '#classdojo')">
-            <span class="m-icon">🧑‍🏫</span>
-            <span>متابعة السلوك (ClassDojo)</span>
-          </a>
         </div>
       </div>
 
-      <!-- Accordion 2: Academic Platforms -->
+      <!-- Accordion 2: Academic Platforms & Libraries -->
       <div class="m-accordion-group">
         <button class="m-accordion-header" onclick="toggleAccordion(this)">
-          <span class="acc-title">📖 المنصات التعليمية والمكتبات</span>
+          <span class="acc-title">📖 المنصات والمكتبات</span>
           <span class="acc-chevron">▼</span>
         </button>
         <div class="m-accordion-links">
@@ -2608,24 +2618,36 @@ footer {
             <span class="m-icon">📚</span>
             <span>الكتب الإلكترونية (E-Books) ↗</span>
           </a>
+          <a href="#library" class="m-nav-link" onclick="navigateToSection(event, '#library')">
+            <span class="m-icon">📚</span>
+            <span>المكتبة الرقمية والإلكترونية</span>
+          </a>
           <a href="#iread" class="m-nav-link" onclick="navigateToSection(event, '#iread')">
             <span class="m-icon">📝</span>
             <span>منصة أقرأ بالعربية</span>
           </a>
-          <a href="#library" class="m-nav-link" onclick="navigateToSection(event, '#library')">
-            <span class="m-icon">📚</span>
-            <span>المكتبة الإلكترونية والرقمية</span>
+          <a href="#safespace" class="m-nav-link" onclick="navigateToSection(event, '#safespace')">
+            <span class="m-icon">🛡️</span>
+            <span>منصة سيف سبيس (SafeSpace)</span>
+          </a>
+          <a href="#social" class="m-nav-link" onclick="navigateToSection(event, '#social')">
+            <span class="m-icon">📱</span>
+            <span>قنوات التواصل الاجتماعي</span>
           </a>
         </div>
       </div>
 
-      <!-- Accordion 3: Tips & Services -->
+      <!-- Accordion 3: School Services -->
       <div class="m-accordion-group">
         <button class="m-accordion-header" onclick="toggleAccordion(this)">
-          <span class="acc-title">🎯 الخدمات المدرسية والمتابعة والوزارة</span>
+          <span class="acc-title">🏫 الخدمات المدرسية</span>
           <span class="acc-chevron">▼</span>
         </button>
         <div class="m-accordion-links">
+          <a href="#timetable" class="m-nav-link" onclick="navigateToSection(event, '#timetable')">
+            <span class="m-icon">📅</span>
+            <span>جدول الحصص الدراسي</span>
+          </a>
           <a href="#events-calendar" class="m-nav-link" onclick="navigateToSection(event, '#events-calendar')">
             <span class="m-icon">📅</span>
             <span>تقويم فعاليات المدرسة ↗</span>
@@ -2633,6 +2655,24 @@ footer {
           <a href="#parents-council" class="m-nav-link" onclick="navigateToSection(event, '#parents-council')">
             <span class="m-icon">👥</span>
             <span>دليل مجلس أولياء الأمور ↗</span>
+          </a>
+          <a href="#ministry" class="m-nav-link" onclick="navigateToSection(event, '#ministry')">
+            <span class="m-icon">🏛️</span>
+            <span>خدمات وزارة التربية (بوابة معارف)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Accordion 4: School Policies -->
+      <div class="m-accordion-group">
+        <button class="m-accordion-header" onclick="toggleAccordion(this)">
+          <span class="acc-title">📋 السياسات المدرسية</span>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="m-accordion-links">
+          <a href="#policies" class="m-nav-link" onclick="navigateToSection(event, '#policies')">
+            <span class="m-icon">📋</span>
+            <span>السياسات واللوائح المدرسية</span>
           </a>
           <a href="#agreement" class="m-nav-link" onclick="navigateToSection(event, '#agreement')">
             <span class="m-icon">🤝</span>
@@ -2642,35 +2682,33 @@ footer {
             <span class="m-icon">🤖</span>
             <span>سياسة دمج الذكاء الاصطناعي في التعليم ↗</span>
           </a>
+        </div>
+      </div>
+
+      <!-- Accordion 5: Follow-up & Guidance -->
+      <div class="m-accordion-group">
+        <button class="m-accordion-header" onclick="toggleAccordion(this)">
+          <span class="acc-title">💡 المتابعة والنصائح</span>
+          <span class="acc-chevron">▼</span>
+        </button>
+        <div class="m-accordion-links">
+          <a href="#classdojo" class="m-nav-link" onclick="navigateToSection(event, '#classdojo')">
+            <span class="m-icon">🧑‍🏫</span>
+            <span>متابعة السلوك (ClassDojo)</span>
+          </a>
           <a href="#studytips" class="m-nav-link" onclick="navigateToSection(event, '#studytips')">
             <span class="m-icon">💡</span>
             <span>النصائح والتوجيهات الدراسية</span>
           </a>
-          <a href="#policies" class="m-nav-link" onclick="navigateToSection(event, '#policies')">
-            <span class="m-icon">📋</span>
-            <span>السياسات واللوائح المدرسية</span>
-          </a>
-          <a href="#timetable" class="m-nav-link" onclick="navigateToSection(event, '#timetable')">
-            <span class="m-icon">📅</span>
-            <span>جدول الحصص الدراسي</span>
-          </a>
-          <a href="#safespace" class="m-nav-link" onclick="navigateToSection(event, '#safespace')">
-            <span class="m-icon">🛡️</span>
-            <span>منصة سيف سبيس (SafeSpace)</span>
-          </a>
-          <a href="#ministry" class="m-nav-link" onclick="navigateToSection(event, '#ministry')">
-            <span class="m-icon">🏛️</span>
-            <span>خدمات وزارة التربية (بوابة معارف)</span>
-          </a>
-          <a href="#social" class="m-nav-link" onclick="navigateToSection(event, '#social')">
-            <span class="m-icon">📱</span>
-            <span>قنوات التواصل الاجتماعي</span>
-          </a>
-          <a href="#links" class="m-nav-link" onclick="navigateToSection(event, '#links')">
-            <span class="m-icon">🔗</span>
-            <span>دليل جميع الروابط السريعة</span>
-          </a>
         </div>
+      </div>
+
+      <!-- Direct Quick Link: All Links -->
+      <div style="padding-top: 4px;">
+        <a href="#links" class="m-nav-link" onclick="navigateToSection(event, '#links')" style="background:var(--bg-surface-subtle); border:1px solid var(--border-subtle); border-radius:12px; padding:10px 14px; font-weight:700;">
+          <span class="m-icon">🔗</span>
+          <span>دليل جميع الروابط السريعة</span>
+        </a>
       </div>
 
       <div class="mobile-dropdown-footer">
@@ -2765,9 +2803,10 @@ footer {
       <div class="category-filter-tabs" role="tablist">
         <button class="filter-tab-btn active" data-category="all">🌟 الكل (17)</button>
         <button class="filter-tab-btn" data-category="core">🎓 الأنظمة (2)</button>
-        <button class="filter-tab-btn" data-category="academic">📖 المنصات (3)</button>
+        <button class="filter-tab-btn" data-category="academic">📖 المنصات والمكتبات (5)</button>
+        <button class="filter-tab-btn" data-category="services">🏫 الخدمات المدرسية (5)</button>
+        <button class="filter-tab-btn" data-category="policies">📋 السياسات المدرسية (3)</button>
         <button class="filter-tab-btn" data-category="guidance">💡 المتابعة والنصائح (2)</button>
-        <button class="filter-tab-btn" data-category="services">🏛️ الوزارة والخدمات (10)</button>
         <a href="https://qatareducation-my.sharepoint.com/:f:/g/personal/r_altoum1512_education_qa/IgBZDgxMwlZhQ7B21CInrURSAdMFVUDLKERuTPBfK1_eeyI?e=q8Nd7X" target="_blank" rel="noopener noreferrer" class="filter-tab-btn" style="color:var(--brand-blue); font-weight:800; border-color:var(--brand-blue); text-decoration:none;">📚 E-Books ↗</a>
       </div>
 
@@ -3216,7 +3255,7 @@ footer {
       </div>
 
       <!-- 8. School Policies -->
-      <div class="service-detail-card border-green" id="policies" data-category="services" data-keywords="السياسات المدرسية لوائح دليل الطالب تقويم سلوكي خطة استراتيجية">
+      <div class="service-detail-card border-green" id="policies" data-category="policies" data-keywords="السياسات المدرسية لوائح دليل الطالب تقويم سلوكي خطة استراتيجية">
         <div class="service-header-row">
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">📋</div>
@@ -3276,7 +3315,7 @@ footer {
       </div>
 
       <!-- 10. Social Media -->
-      <div class="service-detail-card border-social" id="social" data-category="services" data-keywords="تواصل اجتماعي تويتر فيسبوك يوتيوب انستغرام twitter facebook instagram youtube">
+      <div class="service-detail-card border-social" id="social" data-category="academic" data-keywords="تواصل اجتماعي تويتر فيسبوك يوتيوب انستغرام twitter facebook instagram youtube">
         <div class="service-header-row">
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#833AB4,#E1306C,#F77737); color:#fff;">📱</div>
@@ -3395,7 +3434,7 @@ footer {
 
 
       <!-- 13. SafeSpace Platform -->
-      <div class="service-detail-card border-blue" id="safespace" data-category="services" data-keywords="سيف سبيس safespace سلامة رقمية أمن سيبراني حماية وقاية تمكين إنترنت أمان توعية أطفال طلاب معلمين آباء">
+      <div class="service-detail-card border-blue" id="safespace" data-category="academic" data-keywords="سيف سبيس safespace سلامة رقمية أمن سيبراني حماية وقاية تمكين إنترنت أمان توعية أطفال طلاب معلمين آباء">
         <div class="service-header-row">
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0072CE,#00A3E0); color:#fff;">🛡️</div>
@@ -3418,7 +3457,7 @@ footer {
       </div>
 
       <!-- 14. AI Integration & Safe Use Policy -->
-      <div class="service-detail-card border-purple" id="ai-policy" data-category="services" data-keywords="ذكاء اصطناعي سياسة دمج الذكاء الاصطناعي ai artificial intelligence ed-p01 تعهد ميثاق أجهزة تكنولوجيا روبوت نزاهة أكاديمية ميثاق التعهد 2026 2027">
+      <div class="service-detail-card border-purple" id="ai-policy" data-category="policies" data-keywords="ذكاء اصطناعي سياسة دمج الذكاء الاصطناعي ai artificial intelligence ed-p01 تعهد ميثاق أجهزة تكنولوجيا روبوت نزاهة أكاديمية ميثاق التعهد 2026 2027">
         <div class="service-header-row">
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#5B21B6,#7C3AED,#2563EB); color:#fff;">🤖</div>
@@ -3464,7 +3503,7 @@ footer {
       </div>
 
       <!-- 15. Home-School Agreement -->
-      <div class="service-detail-card border-gold" id="agreement" data-category="services" data-keywords="اتفاقية المدرسة والمنزل والأسرة تعهد ولي الأمر الدليل الإرشادي للطلبة وأولياء الأمور 2026 2027 ميثاق انضباط سلوكي حضور غياب مواظبة زي مدرسي pdf">
+      <div class="service-detail-card border-gold" id="agreement" data-category="policies" data-keywords="اتفاقية المدرسة والمنزل والأسرة تعهد ولي الأمر الدليل الإرشادي للطلبة وأولياء الأمور 2026 2027 ميثاق انضباط سلوكي حضور غياب مواظبة زي مدرسي pdf">
         <div class="service-header-row">
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#D98200,#FFB338); color:#071533;">🤝</div>
