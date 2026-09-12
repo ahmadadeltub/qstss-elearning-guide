@@ -521,6 +521,13 @@ The signature component of the portal.
 * **Shadow:** `var(--shadow-sm)`
 * **Hover:** `border-color: var(--brand-blue); transform: translateY(-2px);`
 
+### 12.5 Login Guide Showcase & Step Cards (`.login-guide-showcase-grid`, `.login-step-card`)
+* **Grid:** 2-column layout (`360px 1fr` on desktop, `1fr` on mobile `≤ 900px`).
+* **Poster Wrapper (`.login-guide-poster-wrapper`):** `var(--bg-surface)`, radius `20px`, padding `12px`, with floating zoom badge `rgba(10, 25, 59, 0.9)`.
+* **Step Card (`.login-step-card`):** `var(--bg-surface)`, border `1px solid var(--border-subtle)`, radius `18px`, padding `20px 24px`, pill badge with blue gradient.
+* **Username Format Badge (`.login-username-format-box`):** Dashed border `1.5px dashed var(--brand-blue)`, `font-family: 'Inter', monospace;`.
+* **Support WhatsApp Card (`.login-support-card`):** Dark midnight gradient `linear-gradient(135deg, #07294D 0%, #0A193B 100%)` with WhatsApp green accent border and direct CTA button `#25D366`.
+
 ---
 
 ## 13. BORDER RADIUS SYSTEM
