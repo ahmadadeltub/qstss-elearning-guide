@@ -1243,6 +1243,7 @@ header {
   width: 100%;
 }
 
+a.service-image-holder,
 .service-image-holder {
   width: 330px;
   max-width: 100%;
@@ -1257,6 +1258,8 @@ header {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  text-decoration: none !important;
+  color: inherit !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -1266,29 +1269,66 @@ header {
   border-color: var(--brand-blue);
 }
 
-.service-image-holder::after {
-  content: "🔍 انقر للتكبير";
+/* Direct link badge indicator (top-right in RTL) */
+.image-link-badge {
   position: absolute;
   top: 8px;
-  left: 8px;
-  background: rgba(13, 27, 62, 0.85);
+  right: 8px;
+  background: rgba(13, 27, 62, 0.88);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: #FFFFFF;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 14px;
-  opacity: 0.85;
-  transition: all 0.2s ease;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-.service-image-holder:hover::after {
-  opacity: 1;
+.service-image-holder:hover .image-link-badge,
+.poster-frame:hover .image-link-badge,
+.login-guide-poster-wrapper:hover .image-link-badge {
   background: var(--brand-blue);
   border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+/* Zoom button (top-left in RTL) */
+.image-zoom-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(13, 27, 62, 0.88);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.image-zoom-btn:hover {
+  background: var(--brand-gold);
+  color: #071533;
+  border-color: var(--brand-gold);
+  transform: scale(1.06);
 }
 
 .service-image-holder img {
@@ -1318,6 +1358,12 @@ header {
   overflow: hidden;
   text-overflow: ellipsis;
   flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.service-image-holder:hover .image-caption-tag {
+  background: #0E2E72;
+  color: #FFD56B;
 }
 
 .sub-videos-grid {
@@ -1402,6 +1448,7 @@ header {
   align-items: center;
 }
 
+a.poster-frame,
 .poster-frame {
   max-width: 320px;
   max-height: 420px;
@@ -1413,35 +1460,14 @@ header {
   position: relative;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   margin: 0 auto;
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 .poster-frame:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
-}
-
-.poster-frame::after {
-  content: "🔍 تكبير";
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: rgba(13, 27, 62, 0.85);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 12px;
-  opacity: 0.85;
-  transition: all 0.2s ease;
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.poster-frame:hover::after {
-  opacity: 1;
-  background: var(--brand-blue);
 }
 
 .poster-frame img {
@@ -1516,6 +1542,7 @@ header {
   align-items: start;
 }
 
+a.login-guide-poster-wrapper,
 .login-guide-poster-wrapper {
   background: var(--bg-surface);
   border-radius: 16px;
@@ -1529,6 +1556,8 @@ header {
   max-width: 300px;
   margin: 0 auto;
   width: 100%;
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 .login-guide-poster-wrapper:hover {
@@ -1977,19 +2006,70 @@ footer {
   position: relative;
   max-width: 92vw;
   max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lightbox-img-wrapper img {
   max-width: 100%;
-  max-height: 84vh;
-  border-radius: 12px;
+  max-height: 78vh;
+  border-radius: 12px 12px 0 0;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
   object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 16px;
+  background: rgba(10, 25, 59, 0.96);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  color: #FFFFFF;
+}
+
+.lightbox-caption-text {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  flex: 1;
+  min-width: 180px;
+}
+
+.lightbox-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FFB338, #D98200);
+  color: #071533 !important;
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(217, 130, 0, 0.35);
+}
+
+.lightbox-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 130, 0, 0.5);
+  background: linear-gradient(135deg, #FFC05A, #E68A00);
 }
 
 .lightbox-close-btn {
   position: absolute;
-  top: -40px;
+  top: -42px;
   left: 0;
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -2002,6 +2082,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .floating-scroll-btn {
@@ -2771,15 +2856,17 @@ footer {
     </div>
 
     <div class="login-guide-showcase-grid">
-      <!-- Visual Poster Frame (Click to open full-screen lightbox) -->
-      <div class="login-guide-poster-wrapper" onclick="openLightbox('images/qeducation-login-guide.jpg')" title="انقر لتكبير الدليل بدقة عالية">
+      <!-- Visual Poster Frame (Linked to Portal & with Zoom Button) -->
+      <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="login-guide-poster-wrapper" title="انقر للدخول إلى نظام قطر للتعليم ↗">
         <div class="login-guide-poster-inner">
           <img src="images/qeducation-login-guide.jpg" alt="دليل الدخول إلى نظام قطر للتعليم لأولياء الأمور" loading="lazy"/>
+          <span class="image-link-badge">🌐 فتح النظام ↗</span>
+          <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/qeducation-login-guide.jpg', 'https://qeducation.edu.gov.qa/', 'دليل الدخول إلى نظام قطر للتعليم لأولياء الأمور');" title="تكبير الدليل">🔍 تكبير</span>
           <div class="login-guide-zoom-hint">
-            <span>🔍 انقر لتكبير الدليل بدقة عالية</span>
+            <span>🌐 انقر للدخول إلى نظام قطر للتعليم ↗</span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Interactive Step-by-Step Walkthrough -->
       <div class="login-guide-steps-container">
@@ -2971,10 +3058,12 @@ footer {
           🔗 <strong>رابط الموقع الرسمي:</strong> <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer">https://qstssboys.qa ↗</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-website.png')">
+          <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لزيارة الموقع الإلكتروني للمدرسة ↗">
             <img src="images/img-website.png" alt="الموقع الإلكتروني للمدرسة" loading="lazy"/>
-            <div class="image-caption-tag">الموقع الإلكتروني الرسمي — qstssboys.qa (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">🌐 فتح الموقع ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-website.png', 'https://qstssboys.qa/', 'الموقع الإلكتروني الرسمي — qstssboys.qa');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">الموقع الإلكتروني الرسمي — qstssboys.qa ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">🌐 زيارة الموقع الرسمي للمدرسة</a>
@@ -3001,10 +3090,12 @@ footer {
           ⚠️ <strong>للدخول على التقرير الشهري:</strong> يجب استخدام اسم المستخدم والرقم الشخصي للطالب.
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-portal.png')">
+          <a href="https://qstssboys.qa/portal" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر للدخول إلى البوابة الإلكترونية للمدرسة ↗">
             <img src="images/img-portal.png" alt="البوابة الإلكترونية" loading="lazy"/>
-            <div class="image-caption-tag">بوابة ولي الأمر وبوابة الطالب الإلكترونية (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">🌐 فتح البوابة ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-portal.png', 'https://qstssboys.qa/portal', 'بوابة ولي الأمر وبوابة الطالب الإلكترونية');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">بوابة ولي الأمر وبوابة الطالب الإلكترونية ↗</div>
+          </a>
         </div>
 
         <p style="font-weight:800; color:var(--brand-blue); margin:12px 0 6px; font-size:0.86rem;">📹 فيديوهات توضيحية للبوابة الإلكترونية:</p>
@@ -3021,10 +3112,12 @@ footer {
 
         <p style="font-weight:800; color:var(--brand-blue); margin:12px 0 6px; font-size:0.86rem;">📩 الرسالة الأسبوعية للمدرسة:</p>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-weekly.png')">
+          <a href="https://qstssboys.qa/weekly_letter#acc13" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لعرض الرسالة الأسبوعية للمدرسة ↗">
             <img src="images/img-weekly.png" alt="الرسالة الأسبوعية" loading="lazy"/>
-            <div class="image-caption-tag">الرسالة الأسبوعية — اختر المرحلة الدراسية</div>
-          </div>
+            <span class="image-link-badge">📩 فتح الرسالة ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-weekly.png', 'https://qstssboys.qa/weekly_letter#acc13', 'الرسالة الأسبوعية للمدرسة — اختر المرحلة الدراسية');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">الرسالة الأسبوعية — اختر المرحلة الدراسية ↗</div>
+          </a>
         </div>
 
         <div class="service-action-buttons">
@@ -3052,10 +3145,12 @@ footer {
           🔗 <strong>رابط ملف النصائح والتوجيهات (PDF):</strong> <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer">تحميل ملف النصائح الدراسية (PDF) ↗</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-tips.jpg')">
+          <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل ملف النصائح والتوجيهات الدراسية (PDF) ↗">
             <img src="images/img-tips.jpg" alt="النصائح الدراسية" loading="lazy"/>
-            <div class="image-caption-tag">النصائح والتوجيهات الدراسية المعتمدة للطالب (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📄 فتح الدليل (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-tips.jpg', 'https://qstssboys.qa/pdf/study_tips_2023-2024.pdf', 'النصائح والتوجيهات الدراسية المعتمدة للطالب');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">النصائح والتوجيهات الدراسية المعتمدة للطالب (PDF) ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 تحميل ملف النصائح (PDF)</a>
@@ -3138,10 +3233,12 @@ footer {
           🔗 <strong>رابط السياسات واللوائح المباشر:</strong> <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer">https://qstssboys.qa/school_policies ↗</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-policies.png')">
+          <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لاستعراض السياسات واللوائح المدرسية ↗">
             <img src="images/img-policies.png" alt="السياسات المدرسية" loading="lazy"/>
-            <div class="image-caption-tag">السياسات واللوائح التنظيمية — مدارس قطر للعلوم والتكنولوجيا (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📋 فتح السياسات ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-policies.png', 'https://qstssboys.qa/school_policies', 'السياسات واللوائح التنظيمية — مدارس قطر للعلوم والتكنولوجيا');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">السياسات واللوائح التنظيمية — مدارس قطر للعلوم والتكنولوجيا ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="action-btn btn-green-solid">📋 استعراض السياسات المدرسية</a>
@@ -3167,14 +3264,18 @@ footer {
           🔗 <strong>رابط النشرات الشهرية:</strong> <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer">النشرات الشهرية ↗</a> &nbsp;|&nbsp; 🔗 <strong>رابط الجدول الدراسي:</strong> <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer">جدول الحصص Edupage ↗</a>
         </div>
         <div class="service-images-grid">
-          <div class="service-image-holder" onclick="openLightbox('images/img-newsletter.png')">
+          <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر للاطلاع على النشرات الشهرية ↗">
             <img src="images/img-newsletter.png" alt="النشرة الشهرية" loading="lazy"/>
-            <div class="image-caption-tag">النشرة الشهرية الإلكترونية للمدرسة (انقر للتكبير)</div>
-          </div>
-          <div class="service-image-holder" onclick="openLightbox('images/img-timetable.png')">
+            <span class="image-link-badge">📰 فتح النشرة ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-newsletter.png', 'https://qstssboys.qa/newsletter', 'النشرة الشهرية الإلكترونية للمدرسة');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">النشرة الشهرية الإلكترونية للمدرسة ↗</div>
+          </a>
+          <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر للاطلاع على جدول الحصص الدراسي ↗">
             <img src="images/img-timetable.png" alt="الجدول الدراسي" loading="lazy"/>
-            <div class="image-caption-tag">الجدول الدراسي — اختر الصف والمرحلة (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📅 فتح الجدول ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-timetable.png', 'https://qsst.edupage.org/timetable/?', 'الجدول الدراسي — اختر الصف والمرحلة');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">الجدول الدراسي — اختر الصف والمرحلة ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📰 النشرات الشهرية</a>
@@ -3223,10 +3324,12 @@ footer {
           🔗 <strong>رابط بوابة معارف المباشر:</strong> <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer">https://eduservices.edu.gov.qa ↗</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-ministry.png')">
+          <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لزيارة بوابة معارف لخدمات الجمهور ↗">
             <img src="images/img-ministry.png" alt="بوابة معارف" loading="lazy"/>
-            <div class="image-caption-tag">بوابة معارف لخدمات الجمهور — وزارة التربية والتعليم والتعليم العالي (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">🏛️ فتح البوابة ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-ministry.png', 'https://eduservices.edu.gov.qa/', 'بوابة معارف لخدمات الجمهور — وزارة التربية والتعليم والتعليم العالي');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">بوابة معارف لخدمات الجمهور — وزارة التربية والتعليم ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">🏛️ بوابة معارف</a>
@@ -3251,10 +3354,12 @@ footer {
           🔗 <strong>رابط المكتبة المباشر:</strong> <a href="https://qstssboys.qa/digital_library" target="_blank" rel="noopener noreferrer" style="color:var(--brand-blue); font-weight:800; text-decoration:underline; word-break:break-all;">https://qstssboys.qa/digital_library ↗</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-diglib.jpg')">
+          <a href="https://qstssboys.qa/digital_library" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر للدخول إلى المكتبة الرقمية والإلكترونية ↗">
             <img src="images/img-diglib.jpg" alt="المكتبة الرقمية والإلكترونية" loading="lazy"/>
-            <div class="image-caption-tag">المكتبة الرقمية والإلكترونية — مدارس قطر للعلوم والتكنولوجيا (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📚 فتح المكتبة ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-diglib.jpg', 'https://qstssboys.qa/digital_library', 'المكتبة الرقمية والإلكترونية — مدارس قطر للعلوم والتكنولوجيا');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">المكتبة الرقمية والإلكترونية — مدارس قطر للعلوم والتكنولوجيا ↗</div>
+          </a>
         </div>
         <div class="sub-videos-grid">
           <div>
@@ -3347,14 +3452,18 @@ footer {
           🔗 <strong>رابط وثيقة السياسة الرسمية (PDF):</strong> <a href="https://qstssboys.qa/pdf/pdf_202620270005.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--brand-blue); font-weight:800; text-decoration:underline;">https://qstssboys.qa/pdf/pdf_202620270005.pdf</a>
         </div>
         <div class="service-images-grid">
-          <div class="service-image-holder" onclick="openLightbox('images/img-ai-policy.png')">
+          <a href="https://qstssboys.qa/pdf/pdf_202620270005.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل وثيقة سياسة الذكاء الاصطناعي (PDF) ↗">
             <img src="images/img-ai-policy.png" alt="ميثاق التعهد وسياسة الاستخدام الآمن للتكنولوجيا والذكاء الاصطناعي" loading="lazy"/>
-            <div class="image-caption-tag">ميثاق التعهد وسياسة الاستخدام الآمن للتكنولوجيا والذكاء الاصطناعي (انقر للتكبير)</div>
-          </div>
-          <div class="service-image-holder" onclick="openLightbox('images/img-ai-doc.png')">
+            <span class="image-link-badge">🤖 فتح الوثيقة (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-ai-policy.png', 'https://qstssboys.qa/pdf/pdf_202620270005.pdf', 'ميثاق التعهد وسياسة الاستخدام الآمن للتكنولوجيا والذكاء الاصطناعي');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">ميثاق التعهد وسياسة الذكاء الاصطناعي (PDF) ↗</div>
+          </a>
+          <a href="https://qstssboys.qa/pdf/pdf_202620270005.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل وثيقة سياسة الذكاء الاصطناعي ED-P01 (PDF) ↗">
             <img src="images/img-ai-doc.png" alt="سياسة الاستخدام الآمن والأخلاقي لتقنيات الذكاء الاصطناعي ED-P01" loading="lazy"/>
-            <div class="image-caption-tag">سياسة الاستخدام الآمن والأخلاقي لتقنيات الذكاء الاصطناعي ED-P01 (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📄 فتح الوثيقة (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-ai-doc.png', 'https://qstssboys.qa/pdf/pdf_202620270005.pdf', 'سياسة الاستخدام الآمن والأخلاقي لتقنيات الذكاء الاصطناعي ED-P01');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">سياسة تقنيات الذكاء الاصطناعي ED-P01 (PDF) ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/pdf/pdf_202620270005.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-purple-solid">📄 فتح وتحميل وثيقة السياسة (PDF) ↗</a>
@@ -3389,14 +3498,18 @@ footer {
           🔗 <strong>رابط وثيقة الاتفاقية والدليل الإرشادي (PDF):</strong> <a href="https://qstssboys.qa/pdf/pdf_202620270007.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--brand-blue); font-weight:800; text-decoration:underline;">https://qstssboys.qa/pdf/pdf_202620270007.pdf</a>
         </div>
         <div class="service-images-grid">
-          <div class="service-image-holder" onclick="openLightbox('images/img-agreement-cover.jpg')">
+          <a href="https://qstssboys.qa/pdf/pdf_202620270007.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل اتفاقية المدرسة والمنزل (PDF) ↗">
             <img src="images/img-agreement-cover.jpg" alt="غلاف الدليل الإرشادي للطلبة وأولياء الأمور 2026/2027" loading="lazy"/>
-            <div class="image-caption-tag">غلاف الدليل الإرشادي للطلبة وأولياء الأمور 2026/2027 (انقر للتكبير)</div>
-          </div>
-          <div class="service-image-holder" onclick="openLightbox('images/img-agreement-doc.jpg')">
+            <span class="image-link-badge">🤝 فتح الغلاف (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-agreement-cover.jpg', 'https://qstssboys.qa/pdf/pdf_202620270007.pdf', 'غلاف الدليل الإرشادي للطلبة وأولياء الأمور 2026/2027');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">غلاف الدليل الإرشادي للطلبة وأولياء الأمور (PDF) ↗</div>
+          </a>
+          <a href="https://qstssboys.qa/pdf/pdf_202620270007.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل اتفاقية المدرسة والمنزل (PDF) ↗">
             <img src="images/img-agreement-doc.jpg" alt="اتفاقية المدرسة والأسرة — إقرار وتعهد ولي الأمر" loading="lazy"/>
-            <div class="image-caption-tag">اتفاقية المدرسة والأسرة — إقرار وتعهد ولي الأمر (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📄 فتح الإقرار (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-agreement-doc.jpg', 'https://qstssboys.qa/pdf/pdf_202620270007.pdf', 'اتفاقية المدرسة والأسرة — إقرار وتعهد ولي الأمر');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">اتفاقية المدرسة والأسرة — إقرار وتعهد ولي الأمر (PDF) ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/pdf/pdf_202620270007.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">📄 فتح وتحميل اتفاقية المدرسة والمنزل (PDF) ↗</a>
@@ -3431,10 +3544,12 @@ footer {
           🔗 <strong>رابط تقويم الفعاليات الرسمي (PDF):</strong> <a href="https://qstssboys.qa/pdf/pdf_202620270008.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--brand-blue); font-weight:800; text-decoration:underline;">https://qstssboys.qa/pdf/pdf_202620270008.pdf</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-events-calendar.jpg')">
+          <a href="https://qstssboys.qa/pdf/pdf_202620270008.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل تقويم فعاليات العام الأكاديمي (PDF) ↗">
             <img src="images/img-events-calendar.jpg" alt="تقويم فعاليات العام الأكاديمي 2026/2027 — مدارس قطر للعلوم والتكنولوجيا" loading="lazy"/>
-            <div class="image-caption-tag">تقويم فعاليات العام الأكاديمي 2026/2027 — مدارس قطر للعلوم والتكنولوجيا (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">📅 فتح التقويم (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-events-calendar.jpg', 'https://qstssboys.qa/pdf/pdf_202620270008.pdf', 'تقويم فعاليات العام الأكاديمي 2026/2027 — مدارس قطر للعلوم والتكنولوجيا');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">تقويم الفعاليات 2026/2027 — مدارس قطر للعلوم والتكنولوجيا (PDF) ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/pdf/pdf_202620270008.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-navy-solid">📅 فتح وتحميل تقويم الفعاليات (PDF) ↗</a>
@@ -3469,10 +3584,12 @@ footer {
           🔗 <strong>رابط دليل مجلس أولياء الأمور الرسمي (PDF):</strong> <a href="https://qstssboys.qa/pdf/pdf_202620270009.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--brand-blue); font-weight:800; text-decoration:underline;">https://qstssboys.qa/pdf/pdf_202620270009.pdf</a>
         </div>
         <div class="service-images-grid single-img">
-          <div class="service-image-holder" onclick="openLightbox('images/img-parents-council.jpg')">
+          <a href="https://qstssboys.qa/pdf/pdf_202620270009.pdf" target="_blank" rel="noopener noreferrer" class="service-image-holder" title="انقر لتحميل دليل مجلس أولياء الأمور (PDF) ↗">
             <img src="images/img-parents-council.jpg" alt="غلاف دليل مجلس أولياء الأمور — وزارة التربية والتعليم والتعليم العالي" loading="lazy"/>
-            <div class="image-caption-tag">غلاف دليل مجلس أولياء الأمور — قطاع الشؤون التعليمية (انقر للتكبير)</div>
-          </div>
+            <span class="image-link-badge">👥 فتح الدليل (PDF) ↗</span>
+            <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('images/img-parents-council.jpg', 'https://qstssboys.qa/pdf/pdf_202620270009.pdf', 'غلاف دليل مجلس أولياء الأمور — وزارة التربية والتعليم والتعليم العالي');" title="تكبير الصورة">🔍 تكبير</span>
+            <div class="image-caption-tag">غلاف دليل مجلس أولياء الأمور — وزارة التربية والتعليم (PDF) ↗</div>
+          </a>
         </div>
         <div class="service-action-buttons">
           <a href="https://qstssboys.qa/pdf/pdf_202620270009.pdf" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold-solid">👥 فتح وتحميل دليل مجلس أولياء الأمور (PDF) ↗</a>
@@ -3492,9 +3609,11 @@ footer {
 <section class="content-section section-subtle" id="poster">
   <div class="container">
     <div class="poster-showcase-grid">
-      <div class="poster-frame" onclick="openLightbox('qatar-education-poster.jpg')">
+      <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="poster-frame" title="انقر لزيارة نظام قطر للتعليم ↗">
         <img src="qatar-education-poster.jpg" alt="ولي الأمر خَلّك متابع — نظام قطر للتعليم" loading="lazy"/>
-      </div>
+        <span class="image-link-badge">🌐 فتح النظام ↗</span>
+        <span class="image-zoom-btn" onclick="event.preventDefault(); event.stopPropagation(); openLightbox('qatar-education-poster.jpg', 'https://qeducation.edu.gov.qa/', 'ولي الأمر خَلّك متابع — نظام قطر للتعليم');" title="تكبير البوستر">🔍 تكبير</span>
+      </a>
       <div class="poster-info-box">
         <h2>ولي الأمر…<br/><span>خَلّك متابع! 👀</span></h2>
         <p>
@@ -3743,8 +3862,14 @@ footer {
 <!-- ══════════════ IMAGE LIGHTBOX MODAL ══════════════ -->
 <div class="lightbox-modal" id="imageLightbox" onclick="closeLightbox(event)">
   <div class="lightbox-img-wrapper">
-    <button class="lightbox-close-btn" onclick="closeLightboxDirect()">✕</button>
+    <button class="lightbox-close-btn" onclick="closeLightboxDirect()" title="إغلاق المعاينة">✕</button>
     <img id="lightboxImageTag" src="" alt="صورة توضيحية مكبرة"/>
+    <div class="lightbox-caption-bar" id="lightboxCaptionBar">
+      <span class="lightbox-caption-text" id="lightboxCaptionText"></span>
+      <a id="lightboxLinkBtn" href="#" target="_blank" rel="noopener noreferrer" class="lightbox-link-btn" style="display:none;">
+        🔗 الانتقال إلى الرابط المباشر ↗
+      </a>
+    </div>
   </div>
 </div>
 
@@ -3949,9 +4074,27 @@ qeTabs.forEach(tab => {
 // ══════════════════════════════════════════════
 const lightboxModal = document.getElementById("imageLightbox");
 const lightboxImg = document.getElementById("lightboxImageTag");
+const lightboxCaption = document.getElementById("lightboxCaptionText");
+const lightboxLinkBtn = document.getElementById("lightboxLinkBtn");
 
-function openLightbox(imgSrc) {
+function openLightbox(imgSrc, linkUrl, captionText) {
   lightboxImg.src = imgSrc;
+  
+  if (captionText && lightboxCaption) {
+    lightboxCaption.textContent = captionText;
+    lightboxCaption.style.display = "inline";
+  } else if (lightboxCaption) {
+    lightboxCaption.textContent = "";
+    lightboxCaption.style.display = "none";
+  }
+  
+  if (linkUrl && lightboxLinkBtn) {
+    lightboxLinkBtn.href = linkUrl;
+    lightboxLinkBtn.style.display = "inline-flex";
+  } else if (lightboxLinkBtn) {
+    lightboxLinkBtn.style.display = "none";
+  }
+
   lightboxModal.classList.add("active");
   document.body.style.overflow = "hidden";
 }

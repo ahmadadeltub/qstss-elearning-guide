@@ -592,7 +592,9 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
 
 ## 16. IMAGES, MEDIA & LIGHTBOX SYSTEM
 
-### 16.1 Image Grid Specifications (Medium-Sized & Centered)
+### 16.1 Image Grid Specifications (Medium-Sized, Centered & Direct Linked)
+All image previews on the site are active hyperlinks pointing directly to the respective official portal, service, or PDF document, with a dedicated zoom button for lightbox viewing:
+
 ```css
 .service-images-grid {
   display: flex;
@@ -610,6 +612,7 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
   width: 100%;
 }
 
+a.service-image-holder,
 .service-image-holder {
   width: 330px;
   max-width: 100%;
@@ -625,6 +628,8 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 .service-image-holder:hover {
@@ -633,29 +638,64 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
   border-color: var(--brand-blue);
 }
 
-.service-image-holder::after {
-  content: "🔍 انقر للتكبير";
+/* Direct link badge indicator (top-right in RTL) */
+.image-link-badge {
   position: absolute;
   top: 8px;
-  left: 8px;
-  background: rgba(13, 27, 62, 0.85);
+  right: 8px;
+  background: rgba(13, 27, 62, 0.88);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: #FFFFFF;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 14px;
-  opacity: 0.85;
-  transition: all 0.2s ease;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-.service-image-holder:hover::after {
-  opacity: 1;
+.service-image-holder:hover .image-link-badge {
   background: var(--brand-blue);
   border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+/* Zoom button (top-left in RTL) */
+.image-zoom-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(13, 27, 62, 0.88);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.image-zoom-btn:hover {
+  background: var(--brand-gold);
+  color: #071533;
+  border-color: var(--brand-gold);
+  transform: scale(1.06);
 }
 
 .service-image-holder img {
@@ -685,6 +725,12 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
   overflow: hidden;
   text-overflow: ellipsis;
   flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.service-image-holder:hover .image-caption-tag {
+  background: #0E2E72;
+  color: #FFD56B;
 }
 ```
 
