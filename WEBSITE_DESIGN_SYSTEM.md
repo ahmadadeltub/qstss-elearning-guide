@@ -88,7 +88,7 @@ Each detailed service card has a colored right-border accent (`5px solid <color>
 | `.border-green`| `#0D6E4A` | `rgb(13, 110, 74)` | Official Policies, Regulations & Compliance |
 | `.border-gold` | `#D98200` | `rgb(217, 130, 0)` | Student Advice, Tips & Password Services |
 | `.border-purple`| `#7B1FA2` | `rgb(123, 31, 162)` | Parent Engagement & Classroom Apps (ClassDojo) |
-| `.border-teal` | `#00897B` | `rgb(0, 137, 123)` | Literacy & Advanced English (Achieve 3000) |
+| `.border-teal` | `#00897B` | `rgb(0, 137, 123)` | E-Books & Academic Platforms |
 | `.border-brown`| `#7B4A1A` | `rgb(123, 74, 26)` | E-Library, Digital Research & Qatar National Library |
 | `.border-social`| `#E1306C` | `rgb(225, 48, 108)` | Social Media Platforms & Public Channels |
 | `.border-slate`| `#394B6B` | `rgb(57, 75, 107)` | Organizational Governance & General Guides |
@@ -465,11 +465,11 @@ The portal defines a standardized button typography and geometry with multiple s
 | Class Name | Background Color | Text Color | Border | Shadow / Effect | Usage |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `.btn-navy-solid` | `var(--brand-navy)` | `#FFFFFF` | None | `--shadow-sm` | Primary portal actions, newsletter links |
-| `.btn-blue-solid` | `var(--brand-blue)` (`#1E5FE0`) | `#FFFFFF` | None | `--shadow-sm` | Primary platform actions (Achieve, iRead, SafeSpace) |
+| `.btn-blue-solid` | `var(--brand-blue)` (`#1E5FE0`) | `#FFFFFF` | None | `--shadow-sm` | Primary platform actions (iRead, SafeSpace) |
 | `.btn-green-solid` | `#0D6E4A` | `#FFFFFF` | None | `--shadow-sm` | Policies, guides, downloads |
 | `.btn-gold-solid` | `var(--brand-gold)` (`#D98200`)| `#071533` | None | `--shadow-sm` | Direct password reset shortcuts, highlighted actions |
 | `.btn-purple-solid`| `#7B1FA2` | `#FFFFFF` | None | `--shadow-sm` | ClassDojo app access |
-| `.btn-teal-solid` | `#00897B` | `#FFFFFF` | None | `--shadow-sm` | Achieve 3000 alternate actions |
+| `.btn-teal-solid` | `#00897B` | `#FFFFFF` | None | `--shadow-sm` | E-Books access and alternate actions |
 | `.btn-outline-blue`| `transparent` | `var(--brand-blue)` | `1.5px solid var(--brand-blue)` | None | Secondary/alternative actions, document viewing |
 | `.btn-app-store` | `#333333` | `#FFFFFF` | None | `0 2px 8px rgba(0,0,0,0.2)` | Apple App Store direct downloads |
 | `.btn-play-store` | `#0F9D58` | `#FFFFFF` | None | `0 2px 8px rgba(15,157,88,0.2)`| Google Play Store direct downloads |
@@ -578,7 +578,7 @@ Rather than relying on heavy third-party font icon bundles, the portal implement
 Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.35rem;`) container with an explicit linear gradient:
 * **Academic / Education (QEducation):** `linear-gradient(135deg, #1E5FE0, #4A90D9)` with `🎓`
 * **E-Portal & Grades:** `linear-gradient(135deg, #0D6E4A, #1AA56E)` with `📊`
-* **Achieve 3000 Literacy:** `linear-gradient(135deg, #00897B, #26A69A)` with `📖`
+* **E-Books & Digital Curricula:** `linear-gradient(135deg, #00897B, #26A69A)` with `📚`
 * **iRead Arabic:** `linear-gradient(135deg, #1E5FE0, #4A90D9)` with `📝`
 * **ClassDojo:** `linear-gradient(135deg, #7B1FA2, #AB47BC)` with `🧑‍🏫`
 * **SafeSpace Digital Safety:** `linear-gradient(135deg, #0072CE, #00A3E0)` with `🛡️`
