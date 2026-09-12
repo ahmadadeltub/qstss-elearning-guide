@@ -583,7 +583,7 @@ Each card or category uses a `44px × 44px` (`border-radius: 12px; font-size: 1.
 * **ClassDojo:** `linear-gradient(135deg, #7B1FA2, #AB47BC)` with `🧑‍🏫`
 * **SafeSpace Digital Safety:** `linear-gradient(135deg, #0072CE, #00A3E0)` with `🛡️`
 * **School Policies:** `linear-gradient(135deg, #0D6E4A, #1AA56E)` with `📋`
-* **Schedules & Newsletter:** `linear-gradient(135deg, #0D3B86, #1E5FE0)` with `📰`
+* **Class Timetable:** `linear-gradient(135deg, #0D3B86, #1E5FE0)` with `📅`
 * **Social Media Channels:** `linear-gradient(135deg, #833AB4, #E1306C, #F77737)` with `📱`
 * **Ministry Services:** `linear-gradient(135deg, #0D3B86, #1E5FE0)` with `🏛️`
 * **E-Library & Digital Resources:** `linear-gradient(135deg, #7B4A1A, #C07830)` with `📚`
