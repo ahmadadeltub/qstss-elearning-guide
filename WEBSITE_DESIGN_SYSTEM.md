@@ -964,7 +964,7 @@ The design system is fundamentally built for **Arabic-first (Right-to-Left)** re
 * **Structure:** Embedded master iframe player with a horizontal scrolling tab playlist underneath for switching videos dynamically without reloading.
 
 ### C10: Detailed Service Cards Catalog
-* **Structure:** Catalog of 13 cards with colored right borders, gradient icon avatars, status tags, explanation boxes, media previews, and action buttons.
+* **Structure:** Catalog of 17 cards with colored right borders, gradient icon avatars, status tags, explanation boxes, media previews, and action buttons.
 
 ### C11: Qatar Education Poster Showcase
 * **Structure:** Split 2-column showcase with clickable poster (triggers lightbox) and bulleted checklist of parental benefits.
