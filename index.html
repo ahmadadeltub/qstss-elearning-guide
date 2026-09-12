@@ -1184,78 +1184,149 @@ header {
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 14px 18px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 0.9rem;
   line-height: 1.8;
   color: var(--text-secondary);
 }
 
+.service-explanation-box a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue) !important;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none !important;
+  border: 1px solid rgba(30, 95, 224, 0.25);
+  transition: all 0.2s ease;
+  word-break: break-all;
+  margin: 2px 0;
+  font-size: 0.85rem;
+}
+
+.service-explanation-box a:hover {
+  background: var(--brand-blue);
+  color: #FFFFFF !important;
+  border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+.service-title-text h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.service-title-text h3 a:hover {
+  color: var(--brand-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Compact, Organized Image Previews */
 .service-images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  margin: 12px 0 16px;
+  margin: 10px 0 14px;
+  align-items: flex-start;
 }
 
 .service-images-grid.single-img {
-  grid-template-columns: 1fr;
+  display: flex;
 }
 
 .service-image-holder {
-  border-radius: 12px;
+  width: 220px;
+  max-width: 100%;
+  height: 145px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
-  background: var(--bg-surface);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: var(--bg-surface-subtle);
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.service-image-holder:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  border-color: var(--brand-blue);
 }
 
 .service-image-holder::after {
-  content: "🔍 انقر للتكبير";
+  content: "🔍 تكبير";
   position: absolute;
-  top: 8px;
-  left: 8px;
-  background: rgba(0, 0, 0, 0.75);
+  top: 6px;
+  left: 6px;
+  background: rgba(13, 27, 62, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 14px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 12px;
+  opacity: 0.85;
+  transition: all 0.2s ease;
   pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .service-image-holder:hover::after {
   opacity: 1;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 
 .service-image-holder img {
   width: 100%;
-  height: auto;
+  height: 112px;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.3s ease;
 }
 
 .service-image-holder:hover img {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .image-caption-tag {
+  height: 33px;
   background: var(--brand-navy);
   color: #FFFFFF;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-align: center;
-  padding: 6px 10px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .sub-videos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  margin: 12px 0 16px;
+  margin: 10px 0 14px;
+}
+
+.sub-videos-grid > div {
+  width: 250px;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
 .sub-video-label {
@@ -1266,28 +1337,35 @@ header {
   text-align: center;
 }
 
+/* Emphasized Action Buttons & Section Links */
 .service-action-buttons {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
 }
 
 .action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 0.82rem;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 0.88rem;
   font-weight: 800;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  letter-spacing: -0.2px;
 }
 
 .action-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
 .btn-navy-solid   { background: var(--brand-navy); color: #FFFFFF !important; }
@@ -1296,7 +1374,9 @@ header {
 .btn-gold-solid   { background: var(--brand-gold); color: #071533 !important; }
 .btn-purple-solid { background: #7B1FA2; color: #FFFFFF !important; }
 .btn-teal-solid   { background: #00897B; color: #FFFFFF !important; }
-.btn-outline-blue { background: transparent; color: var(--brand-blue) !important; border: 1.5px solid var(--brand-blue); }
+.btn-brown-solid  { background: #7B4A1A; color: #FFFFFF !important; }
+.btn-outline-blue { background: var(--brand-blue-subtle); color: var(--brand-blue) !important; border: 1.5px solid var(--brand-blue); }
+.btn-outline-blue:hover { background: var(--brand-blue); color: #FFFFFF !important; }
 .btn-app-store    { background: #333333; color: #FFFFFF !important; }
 .btn-play-store   { background: #0F9D58; color: #FFFFFF !important; }
 .btn-social-tw    { background: #1DA1F2; color: #FFFFFF !important; }
@@ -1305,21 +1385,68 @@ header {
 .btn-social-ig    { background: linear-gradient(45deg, #833AB4, #E1306C, #F77737); color: #FFFFFF !important; }
 
 /* ═══════════════════════════════════════════════════
-   POSTER SECTION
+   POSTER SECTION (Compact Image & High-Focus Links)
 ═══════════════════════════════════════════════════ */
 .poster-showcase-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
   align-items: center;
 }
 
 .poster-frame {
-  border-radius: 18px;
+  max-width: 240px;
+  max-height: 320px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--border-subtle);
   cursor: pointer;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  margin: 0 auto;
+}
+
+.poster-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.poster-frame::after {
+  content: "🔍 تكبير";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(13, 27, 62, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.poster-frame:hover::after {
+  opacity: 1;
+  background: var(--brand-blue);
+}
+
+.poster-frame img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.poster-frame:hover img {
+  transform: scale(1.03);
 }
 
 .poster-info-box h2 {
@@ -1376,25 +1503,28 @@ header {
 ═══════════════════════════════════════════════════ */
 .login-guide-showcase-grid {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 32px;
-  align-items: stretch;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
 .login-guide-poster-wrapper {
   background: var(--bg-surface);
-  border-radius: 20px;
+  border-radius: 16px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-md);
-  padding: 12px;
+  padding: 8px;
   cursor: pointer;
   transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
   display: flex;
   flex-direction: column;
+  max-width: 240px;
+  margin: 0;
+  width: 100%;
 }
 
 .login-guide-poster-wrapper:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
   border-color: var(--brand-blue);
 }
@@ -1402,18 +1532,20 @@ header {
 .login-guide-poster-inner {
   position: relative;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 12px;
   background: #0A193B;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  max-height: 320px;
 }
 
 .login-guide-poster-inner img {
   width: 100%;
-  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: top center;
   display: block;
-  border-radius: 14px;
+  border-radius: 12px;
   transition: transform var(--transition-medium);
 }
 
@@ -1618,9 +1750,17 @@ header {
     gap: 24px;
   }
   .login-guide-poster-wrapper {
-    max-width: 380px;
+    max-width: 240px;
     margin: 0 auto;
     width: 100%;
+  }
+  .poster-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .poster-frame {
+    max-width: 240px;
+    margin: 0 auto;
   }
   .login-support-card {
     flex-direction: column;
@@ -1630,6 +1770,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-image-holder {
+    width: 100%;
+    max-width: 260px;
+  }
+  .sub-videos-grid > div {
+    width: 100%;
   }
 }
 
@@ -2755,14 +2905,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">🎓</div>
             <div class="service-title-text">
-              <h3>نظام قطر للتعليم — Qatar Education</h3>
+              <h3><a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer">نظام قطر للتعليم — Qatar Education ↗</a></h3>
               <span class="en">QEducation.edu.gov.qa</span>
             </div>
           </div>
-          <span class="service-status-tag">🟢 متاح ونشط</span>
+          <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">🟢 دخول النظام ↗</a>
         </div>
         <div class="service-explanation-box">
           نظام قطر للتعليم هي بيئة رقمية تمكن الطلاب وأولياء الأمور من الوصول إلى جميع جوانب المنهج الدراسي في جميع المواد. يُعتبر نظام قطر للتعليم مساحة تفاعلية تجمع بين الطلاب وأولياء الأمور والمعلمين. يُمكن للمعلمين رفع المواد الدراسية، والعروض التقديمية، والاختبارات القصيرة، والواجبات للطلاب. ويمكن للطلاب متابعة جميع دروسهم من خلال نظام قطر للتعليم. كما يتيح لأولياء الأمور الولوج إلى النظام باستخدام اسم المستخدم وكلمة المرور الخاص بهم لمتابعة سير العملية التعليمية.
+          <br/><br/>
+          🔗 <strong>رابط منصة قطر للتعليم المباشر:</strong> <a href="https://qeducation.edu.gov.qa/" target="_blank" rel="noopener noreferrer">https://qeducation.edu.gov.qa ↗</a>
         </div>
 
         <!-- SMART TABBED VIDEO PLAYER -->
@@ -2798,14 +2950,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">🏫</div>
             <div class="service-title-text">
-              <h3>الموقع الإلكتروني للمدرسة</h3>
+              <h3><a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer">الموقع الإلكتروني للمدرسة ↗</a></h3>
               <span class="en">qstssboys.qa — School Official Website</span>
             </div>
           </div>
-          <span class="service-status-tag">🟢 رسمي ومباشر</span>
+          <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">🟢 زيارة الموقع ↗</a>
         </div>
         <div class="service-explanation-box">
           الموقع الإلكتروني الخاص بالمدرسة يوفر مجموعة متنوعة من الأدوات والموارد التي تهدف إلى تعزيز تجربة التعلم. يتضمن ذلك موارد تعليمية متنوعة في شتى المواد الدراسية. كما يوفر الموقع واجهة للفعاليات والأخبار والمراجع الخاصة بالمدرسة، بالإضافة إلى متابعة الأنشطة المدرسية عبر التقويم الإلكتروني والوصول للتقارير الدورية.
+          <br/><br/>
+          🔗 <strong>رابط الموقع الرسمي:</strong> <a href="https://qstssboys.qa/" target="_blank" rel="noopener noreferrer">https://qstssboys.qa ↗</a>
         </div>
         <div class="service-images-grid single-img">
           <div class="service-image-holder" onclick="openLightbox('images/img-website.png')">
@@ -2877,14 +3031,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#D98200,#FFB338); color:#071533;">💡</div>
             <div class="service-title-text">
-              <h3>النصائح والتوجيهات الدراسية</h3>
+              <h3><a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer">النصائح والتوجيهات الدراسية ↗</a></h3>
               <span class="en">Study Tips — Academic Guidance</span>
             </div>
           </div>
-          <span class="service-status-tag">📄 ملف إرشادي</span>
+          <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">📄 تحميل الدليل ↗</a>
         </div>
         <div class="service-explanation-box">
           النصائح الدراسية للطالب وهي بعض التوجيهات والنصائح القيمة التي تساعد الطالب على تعميق فهم المواد الدراسية، وتنظيم وقت المذاكرة، وتحسين نتائج الاختبارات والتحصيل العلمي مستقبلاً.
+          <br/><br/>
+          🔗 <strong>رابط ملف النصائح والتوجيهات (PDF):</strong> <a href="https://qstssboys.qa/pdf/study_tips_2023-2024.pdf" target="_blank" rel="noopener noreferrer">تحميل ملف النصائح الدراسية (PDF) ↗</a>
         </div>
         <div class="service-images-grid single-img">
           <div class="service-image-holder" onclick="openLightbox('images/img-tips.jpg')">
@@ -2903,14 +3059,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#7B1FA2,#AB47BC); color:#fff;">🧑‍🏫</div>
             <div class="service-title-text">
-              <h3>تطبيق ClassDojo — المتابعة السلوكية للطالب</h3>
+              <h3><a href="https://www.classdojo.com/" target="_blank" rel="noopener noreferrer">تطبيق ClassDojo — المتابعة السلوكية للطالب ↗</a></h3>
               <span class="en">ClassDojo — Student Behavioral Tracking</span>
             </div>
           </div>
-          <span class="service-status-tag">📱 تطبيق هاتف</span>
+          <a href="https://www.classdojo.com/" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">📱 موقع ClassDojo ↗</a>
         </div>
         <div class="service-explanation-box">
           يُستخدم تطبيق ClassDojo لمتابعة السلوك والمشاركة الإيجابية في الصف بشكل يومي وتفاعلي. يتيح التطبيق لأولياء الأمور متابعة تفاصيل يومية ومباشرة عن أداء أبنائهم السلوكي والتواصل المباشر والمستمر مع المعلم.
+          <br/><br/>
+          🔗 <strong>رابط منصة ClassDojo الرسمي:</strong> <a href="https://www.classdojo.com/" target="_blank" rel="noopener noreferrer">https://www.classdojo.com ↗</a>
         </div>
         <div class="sub-videos-grid" style="grid-template-columns:1fr;">
           <div>
@@ -2931,14 +3089,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#1E5FE0,#4A90D9); color:#fff;">📝</div>
             <div class="service-title-text">
-              <h3>منصة أقرأ بالعربية التعليمية</h3>
+              <h3><a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer">منصة أقرأ بالعربية التعليمية ↗</a></h3>
               <span class="en">iRead Arabic — Arabic Language Platform</span>
             </div>
           </div>
-          <span class="service-status-tag">📝 منصة عربية</span>
+          <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">📝 دخول المنصة ↗</a>
         </div>
         <div class="service-explanation-box">
           منصة "أقرأ بالعربية" منصة تعليمية يعتمدها قسم اللغة العربية في المدرسة وتقدم تجربة تعلم تفاعلية عالية الجودة، مصممة لتعزيز مهارات القرن الحادي والعشرين. يشمل البرنامج كتباً إلكترونية مسجلة صوتياً، واختبارات تحليلية تركز على فهم النصوص والنحو، وأوراق عمل تقييمية، وفيديوهات قصيرة تعزز المفاهيم مع التركيز على موضوعات STEM.
+          <br/><br/>
+          🔗 <strong>رابط تسجيل الدخول المباشر:</strong> <a href="https://www.ireadarabic.com/ar/Login" target="_blank" rel="noopener noreferrer">https://www.ireadarabic.com ↗</a>
         </div>
         <div class="sub-videos-grid" style="grid-template-columns:1fr;">
           <div>
@@ -2957,14 +3117,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D6E4A,#1AA56E); color:#fff;">📋</div>
             <div class="service-title-text">
-              <h3>السياسات واللوائح المدرسية</h3>
+              <h3><a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer">السياسات واللوائح المدرسية ↗</a></h3>
               <span class="en">School Policies — Student &amp; Parent Guide</span>
             </div>
           </div>
-          <span class="service-status-tag">📋 دليل تنظيمي</span>
+          <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">📋 استعراض السياسات ↗</a>
         </div>
         <div class="service-explanation-box">
           يمكنكم من خلال الرابط أدناه الاطلاع على كافة السياسات الخاصة بالمدرسة والتي تتضمن: دليل الطالب وولي الأمر، سياسة التقويم السلوكي، الخطة الإستراتيجية للمدرسة، سياسة التعليم والتعلم، سياسة تقييم الطلاب وغيرها من السياسات التي تخدم العملية التعليمية.
+          <br/><br/>
+          🔗 <strong>رابط السياسات واللوائح المباشر:</strong> <a href="https://qstssboys.qa/school_policies" target="_blank" rel="noopener noreferrer">https://qstssboys.qa/school_policies ↗</a>
         </div>
         <div class="service-images-grid single-img">
           <div class="service-image-holder" onclick="openLightbox('images/img-policies.png')">
@@ -2983,15 +3145,17 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">📰</div>
             <div class="service-title-text">
-              <h3>النشرة الشهرية وجدول الحصص الدراسي</h3>
+              <h3><a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer">النشرة الشهرية وجدول الحصص الدراسي ↗</a></h3>
               <span class="en">Monthly Newsletter &amp; Class Timetable</span>
             </div>
           </div>
-          <span class="service-status-tag">📅 جدول ونشرة</span>
+          <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">📅 النشرة والجدول ↗</a>
         </div>
         <div class="service-explanation-box">
           <strong>النشرة الشهرية:</strong> يتم إصدارها بشكل دوري وتحتوي على كافة الفعاليات والأنشطة وإنجازات المدرسة.<br/>
           <strong>الجدول الدراسي:</strong> يمكنكم الاطلاع على جدول الحصص الدراسية اليومية — يرجى اختيار الصف الدراسي المعني للاطلاع على الجدول بدقة.
+          <br/><br/>
+          🔗 <strong>رابط النشرات الشهرية:</strong> <a href="https://qstssboys.qa/newsletter" target="_blank" rel="noopener noreferrer">النشرات الشهرية ↗</a> &nbsp;|&nbsp; 🔗 <strong>رابط الجدول الدراسي:</strong> <a href="https://qsst.edupage.org/timetable/?" target="_blank" rel="noopener noreferrer">جدول الحصص Edupage ↗</a>
         </div>
         <div class="service-images-grid">
           <div class="service-image-holder" onclick="openLightbox('images/img-newsletter.png')">
@@ -3038,14 +3202,16 @@ footer {
           <div class="service-header-left">
             <div class="service-avatar-icon" style="background:linear-gradient(135deg,#0D3B86,#1E5FE0); color:#fff;">🏛️</div>
             <div class="service-title-text">
-              <h3>الخدمات الإلكترونية — وزارة التربية والتعليم والتعليم العالي</h3>
+              <h3><a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer">الخدمات الإلكترونية — وزارة التربية والتعليم (بوابة معارف) ↗</a></h3>
               <span class="en">Ministry of Education Digital Services — بوابة معارف</span>
             </div>
           </div>
-          <span class="service-status-tag">🏛️ بوابة الوزارة</span>
+          <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer" class="service-status-tag" style="text-decoration:none; cursor:pointer;">🏛️ بوابة معارف ↗</a>
         </div>
         <div class="service-explanation-box">
           بوابة موحدة تتيح للجمهور من المواطنين والمقيمين في دولة قطر الحصول على كافة الخدمات الإلكترونية التابعة لوزارة التربية والتعليم والتعليم العالي تحت مظلة واحدة متكاملة وسهلة الاستخدام.
+          <br/><br/>
+          🔗 <strong>رابط بوابة معارف المباشر:</strong> <a href="https://eduservices.edu.gov.qa/" target="_blank" rel="noopener noreferrer">https://eduservices.edu.gov.qa ↗</a>
         </div>
         <div class="service-images-grid single-img">
           <div class="service-image-holder" onclick="openLightbox('images/img-ministry.png')">

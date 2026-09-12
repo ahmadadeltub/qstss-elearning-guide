@@ -964,10 +964,11 @@ The design system is fundamentally built for **Arabic-first (Right-to-Left)** re
 * **Structure:** Embedded master iframe player with a horizontal scrolling tab playlist underneath for switching videos dynamically without reloading.
 
 ### C10: Detailed Service Cards Catalog
-* **Structure:** Catalog of 17 cards with colored right borders, gradient icon avatars, status tags, explanation boxes, media previews, and action buttons.
+* **Structure:** Catalog of 17 cards with colored right borders, gradient icon avatars, status tags, explanation boxes, compact media previews (`width: 220px; height: 145px; object-fit: cover; object-position: top;` with click-to-zoom Lightbox), and prominent action buttons.
+* **Link Focus Principle:** Primary focus is directed toward direct clickable links, linked card titles, inline pill badges, and high-contrast action buttons rather than giant dominating images.
 
 ### C11: Qatar Education Poster Showcase
-* **Structure:** Split 2-column showcase with clickable poster (triggers lightbox) and bulleted checklist of parental benefits.
+* **Structure:** 2-column showcase with compact preview poster (`max-width: 240px; max-height: 320px;` with click-to-zoom lightbox) and prominent bulleted checklist of parental benefits and direct access buttons.
 
 ### C12: Vision & Mission Section
 * **Structure:** 2-column dark gradient container with 2 glassmorphic cards for School Vision and School Mission.
